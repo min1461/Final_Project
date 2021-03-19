@@ -4,16 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="./resources/css/indexcss.css" rel="stylesheet">
+<link href="./resources/css/css.css" rel="stylesheet">
 
 <title>KG대학교 학사관리시스템에 오신것을 환영합니다.</title>
 </head>
 <body>
 
-<form action="////" method="post">
 <header>
-<img src ="./resources/img/logo.png" id="logo">
-KG University 학사관리시스템
+<img src ="./resources/img/long_logo.png" id="logo">
 </header>
 
 <section>
@@ -25,8 +23,6 @@ KG University 학사관리시스템
 
 </section>
 
-
-</form>
 
 </body>
 </html>
