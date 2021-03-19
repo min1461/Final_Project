@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>나빼고 다 바보</h1>
+<h1>나빼고 다 바보-민규가-</h1>
 </body>
 </html>
