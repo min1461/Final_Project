@@ -5,23 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <link href="./resources/css/css.css" rel="stylesheet">
-
-<title>KG대학교 학사관리시스템에 오신것을 환영합니다.</title>
+<title>KG대학교 학사관리시스템</title>
 </head>
 <body>
-
 <header>
+<div class="head">
 <img src ="./resources/img/long_logo.png" id="logo">
+</div>
 </header>
 
-<section>
+<!-- 학생 -->
 <div class="main">
-<div class="main_div"><img src="./resources/img/loginbtn_stu.png" class="main_image"><br>학생</div>
-<div class="main_div"><img src="./resources/img/loginbtn_pro.png" class="main_image"><br>교수</div>
-<div class="main_div"><img src="./resources/img/loginbtn_admin.png" class="main_image"><br>관리자</div>
+<div class="banner">
+<img src = "./resources/img/stu.png" id="loginimg">
+<span class="text">student</span>
 </div>
 
-</section>
+<!-- 교수 -->
+<div class="banner">
+<img src = "./resources/img/pro.png" id="loginimg">
+<span class="text">professor</span>
+</div>
+
+<!-- 관리자 -->
+<div class="banner">
+<img src = "./resources/img/admin.png" id="loginimg">
+<span class="text">admin</span>
+</div>
+</div>
 
 
 </body>
