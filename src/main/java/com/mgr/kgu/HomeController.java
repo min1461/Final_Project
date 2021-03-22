@@ -61,7 +61,7 @@ public class HomeController {
 	@RequestMapping(value = "/main_admin")
 	public String main_admin(Model model, admin_VO admin_VO) {
 		model.addAttribute("admin_VO", admin_VO);
-		return "main_admin";
+		return "main_adm";
 	}
 
 }

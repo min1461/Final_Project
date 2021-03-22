@@ -16,26 +16,28 @@
 
 	<!-- 학생 -->
 	<div class="main">
-		<div class="banner">
-			<a href="main_std">
-				<img src="./resources/img/stu.png" id="loginimg"> 
-				<span class="text">student</span>
-			</a>
-		</div>
+		<a href="main_std">
+			<div class="banner">
+				<img src="./resources/img/stu.png" id="loginimg">
+				<span class="text">STUDENT</span>
+			</div>
+		</a>
 
 		<!-- 교수 -->
-		<div class="banner">
-			<img src="./resources/img/pro.png" id="loginimg"> 
-			<span class="text">professor</span>
-		</div>
+		<a href="main_prof">
+			<div class="banner">
+				<img src="./resources/img/pro.png" id="loginimg"> 
+				<span class="text">PROFESSOR</span>
+			</div>
+		</a>
 
 		<!-- 관리자 -->
-		<div class="banner">
-			<img src="./resources/img/admin.png" id="loginimg"> 
-			<span class="text">admin</span>
-		</div>
+		<a href="main_admin">
+			<div class="banner">
+				<img src="./resources/img/admin.png" id="loginimg"> 
+				<span class="text">ADMINISTER</span>
+			</div>
+		</a>
 	</div>
-
-
 </body>
 </html>

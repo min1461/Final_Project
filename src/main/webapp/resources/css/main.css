@@ -44,7 +44,7 @@
 	width: 350px; height: 60px;
 	position: absolute;
 	top: 0px; left: 0px; 
-	background-image: url('long_logo.png');
+	background-image: url('./img/long_logo.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
@@ -63,7 +63,7 @@
 	overflow: auto;
 	width: 1550px; height: 880px;
 	position: absolute;
-	top: 70px; left: 360px;"
+	top: 70px; left: 360px;
 }
 
 #logout {
