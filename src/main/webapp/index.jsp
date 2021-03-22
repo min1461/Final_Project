@@ -16,24 +16,29 @@
 
 <!-- 학생 -->
 <div class="main">
+<a href="./views/main_std.jsp">
 <div class="banner">
 <img src = "./resources/img/stu.png" id="loginimg">
 <span class="text">student</span>
 </div>
+</a>
 
 <!-- 교수 -->
+<a href="./views/main_prof.jsp">
 <div class="banner">
 <img src = "./resources/img/pro.png" id="loginimg">
 <span class="text">professor</span>
 </div>
+</a>
 
 <!-- 관리자 -->
+<a href="./views/main_adm.jsp">
 <div class="banner">
 <img src = "./resources/img/admin.png" id="loginimg">
 <span class="text">admin</span>
 </div>
+</a>
 </div>
-
 
 </body>
 </html>
