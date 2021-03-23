@@ -116,5 +116,6 @@
 
 	<!-- 불러온 페이지 띄우는 부분 -->
 	<div id="center_page"></div>
+
 </body>
 </html>
