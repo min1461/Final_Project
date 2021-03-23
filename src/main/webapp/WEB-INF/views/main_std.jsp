@@ -17,7 +17,7 @@
 	<div id="side_page">
 
 		<div class="dropdown">
-			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('../notice.jsp')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
+			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('notice.jsp')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
 		</div>
 
 		<div class="dropdown">
