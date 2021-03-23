@@ -1,3 +1,7 @@
+button {
+	text-align: left;
+}
+
 .dropbtn {
   background-color: white;
   color: black;
@@ -15,6 +19,7 @@
  
 .dropdown {
   position: relative;
+  text-align: left;
   display: inline-block;
 }
  
@@ -40,8 +45,7 @@
 .show {display: block;}
 
 #logo {
-	margin-top:5px;
-	border-color:rgb(200,200,200);
+	border: 1px solid; border-color:rgb(200,200,200);
 	width: 350px; height: 60px;
 	position: absolute;
 	top: 0px; left: 0px; 

@@ -18,21 +18,21 @@
 	<div id="side_page">
 		
 		<div class="dropdown">
-			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('index.jsp')">공지사항</button>
+			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('index.jsp')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
 		</div>
 			
 		<div class="dropdown">
-			<button onclick="myFunction1()" class="dropbtn" >관리자</button>
-			<ul id="myDropdown1" class="dropdown-content">
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">학생 등록</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('C.jsp')">교수 등록</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">강의 등록</a></li>
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">기숙사 배정</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('C.jsp')">휴복학 승인</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">등록금 및 장학금 등록</a></li>
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">공지사항 등록</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('C.jsp')">일정 등록</a></li> 
-			</ul>
+			<button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 관리자</button>
+			<div id="myDropdown1" class="dropdown-content">
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 학생 등록</a> 
+				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 교수 등록</a> 
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 강의 등록</a>
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 기숙사 배정</a>
+				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 휴복학 승인</a>
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 등록금 및 장학금 등록</a>
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 공지사항 등록</a>
+				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 일정 등록</a> 
+			</div>
 		</div>
 
 	</div>

@@ -18,16 +18,16 @@
 	<div id="side_page">
 		
 		<div class="dropdown">
-			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('index.jsp')">공지사항</button>
+			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('index.jsp')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
 		</div>
 			
 		<div class="dropdown">
-			<button onclick="myFunction1()" class="dropbtn" >교수</button>
-			<ul id="myDropdown1" class="dropdown-content">
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">출석관리</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('C.jsp')">성적입력</a></li> 
-				<li><a href="javascript:void(0);" onclick="btnclick('B.jsp')">시험일정입력</a></li>
-			</ul>
+			<button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 교수</button>
+			<div id="myDropdown1" class="dropdown-content">
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 출석관리</a>
+				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 성적입력</a>
+				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 시험일정입력</a>
+			</div>
 		</div>
 
 	</div>
