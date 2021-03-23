@@ -44,7 +44,7 @@
 	width: 350px; height: 60px;
 	position: absolute;
 	top: 0px; left: 0px; 
-	background-image: url('./img/long_logo.png');
+	background-image: url('../img/long_logo.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
