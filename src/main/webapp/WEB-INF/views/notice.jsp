@@ -5,13 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>KG대학교-공지사항</title>
+<link href="./resources/css/notice.css" rel="stylesheet">
 </head>
    <div class="center_page">
-      <table>
-         <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>등록일</th>
+      <table class="tabletool">
+         <tr class="tablecategory">
+            <th width="100px">번호</th>
+            <th width="500px">제목</th>
+            <th width="200px">작성자</th>
+            <th width="200px">작성일</th>
          </tr>
          <%-- <c:forEach var="i" items="${}"> --%>
          <tr>
@@ -22,7 +24,6 @@
          </tr>
          <%-- </c:forEach> --%>
       </table>
-      <a href=write.jsp > 글쓰기</a>
    </div>
 </body>
 </html>

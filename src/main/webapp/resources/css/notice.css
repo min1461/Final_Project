@@ -1,0 +1,10 @@
+.tabletool{
+	border: 1px solid;
+	border-color:rgb(40,40,40);
+	height: 20px;
+}
+
+.tablecategory{
+	background-color: rgb(187,179,255);
+	height: 30px;
+}
