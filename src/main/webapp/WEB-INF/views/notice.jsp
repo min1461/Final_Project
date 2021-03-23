@@ -7,7 +7,7 @@
 <title>KG대학교-공지사항</title>
 </head>
 <body>
-   <section class="center_page">
+   <div class="center_page">
       <table>
          <tr>
             <th>번호</th>
@@ -24,6 +24,6 @@
          <%-- </c:forEach> --%>
       </table>
       <a href=write.jsp > 글쓰기</a>
-   </section>
+   </div>
 </body>
 </html>

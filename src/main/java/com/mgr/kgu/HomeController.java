@@ -76,5 +76,20 @@ public class HomeController {
 		model.addAttribute("admin_VO", admin_VO);
 		return "main_admin";
 	}
+	
+	@RequestMapping(value = "/notice")
+	public String notice(Model model) {
+		return "notice";
+	}
+	
+	@RequestMapping(value = "/grades_chk")
+	public String grades_chk(Model model) {
+		return "grades_chk";
+	}
+	
+	@RequestMapping(value = "/just_main")
+	public String just_main(Model model) {
+		return "just_main";
+	}
 
 }

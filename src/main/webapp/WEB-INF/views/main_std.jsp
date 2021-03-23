@@ -11,19 +11,21 @@
 <body>
 
 	<!-- 로고 이미지 부분 -->
+	<a onClick="window.location.reload()" style="cursor: pointer;">
 	<div id="logo"></div>
-
+	</a>
+	
 	<!-- 사이드 메뉴 부분 -->
 	<div id="side_page">
 
 		<div class="dropdown">
-			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('../notice.jsp')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
+			<button class="dropbtn" href="javascript:void(0);" onclick="btnclick('notice')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
 		</div>
 
 		<div class="dropdown">
 			<button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 수업시스템</button>
 			<div id="myDropdown1" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 성적확인</a>
+				<a href="javascript:void(0);" onclick="btnclick('grades_chk')"><img src="./resources/img/arrow_red.png"> 성적확인</a>
 				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 강의평가</a>
 				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 출석조회</a>
 			</div>
@@ -70,9 +72,9 @@
 			$.ajax({
 				url : _url, //호출 url 설정, GET방식일경우 뒤에 파라티터를 붙여서 사용해도됨
 				type : 'post', //전송방식을 지정한다 get, post
-				//datatype : Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용하면 됨
+				//datatype : //Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용하면 됨
 				success : function(data) { //성공했을때의 처리 부분, 해당부분에서 데이터 핸들링
-					$('#center_page').jsp(data); //div에 받아온 값을 넣는다
+					$('#center_page').html(data); //div에 받아온 값을 넣는다
 				},
 				error : function() { //에러났을때의 처리 부분
 					$('#center_page').text('페이지 점검중 입니다.'); //에러
@@ -82,7 +84,7 @@
 
 		//div안에 메인페이지 넣어놓음
 		$(document).ready(function() {
-			$("#center_page").load("notice.jsp");
+			$("#center_page").load("just_main");
 		});
 
 		/* When the user clicks on the button, 
