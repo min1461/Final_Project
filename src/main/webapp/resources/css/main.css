@@ -45,6 +45,7 @@ button {
 .show {display: block;}
 
 #logo {
+	margin-top: 5px;
 	border-color:rgb(200,200,200);
 	width: 350px; height: 60px;
 	position: absolute;
