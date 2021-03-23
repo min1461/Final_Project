@@ -40,9 +40,22 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = "/")
-	public String haksaLogin(Model model) {
-		return "haksaLogin";
+	@RequestMapping(value = "/login_std")
+	public String login_std(Model model) {
+//		return "login_std";
+		return "main_std";
+	}
+	
+	@RequestMapping(value = "/login_prof")
+	public String login_prof(Model model) {
+//		return "login_prof";
+		return "main_prof";
+	}
+	
+	@RequestMapping(value = "/login_admin")
+	public String login_admin(Model model) {
+//		return "login_admin";
+		return "main_admin";
 	}
 
 	@RequestMapping(value = "/main_std")
@@ -61,7 +74,7 @@ public class HomeController {
 	@RequestMapping(value = "/main_admin")
 	public String main_admin(Model model, admin_VO admin_VO) {
 		model.addAttribute("admin_VO", admin_VO);
-		return "main_adm";
+		return "main_admin";
 	}
 
 }

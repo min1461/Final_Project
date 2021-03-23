@@ -16,7 +16,7 @@
 
 	<!-- 학생 -->
 	<div class="main">
-		<a href="main_std">
+		<a href="login_std">
 			<div class="banner">
 				<img src="./resources/img/stu.png" id="loginimg">
 				<span class="text">STUDENT</span>
@@ -24,7 +24,7 @@
 		</a>
 
 		<!-- 교수 -->
-		<a href="main_prof">
+		<a href="login_prof">
 			<div class="banner">
 				<img src="./resources/img/pro.png" id="loginimg"> 
 				<span class="text">PROFESSOR</span>
@@ -32,7 +32,7 @@
 		</a>
 
 		<!-- 관리자 -->
-		<a href="main_admin">
+		<a href="login_admin">
 			<div class="banner">
 				<img src="./resources/img/admin.png" id="loginimg"> 
 				<span class="text">ADMINISTER</span>
