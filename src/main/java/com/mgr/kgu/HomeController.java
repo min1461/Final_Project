@@ -1,3 +1,4 @@
+
 package com.mgr.kgu;
 
 import java.text.DateFormat;
@@ -42,51 +43,50 @@ public class HomeController {
 
 	@RequestMapping(value = "/login_std")
 	public String login_std(Model model) {
-//		return "login_std";
-		return "main_std";
+		return "login_std";
 	}
-	
+
 	@RequestMapping(value = "/login_prof")
 	public String login_prof(Model model) {
-//		return "login_prof";
-		return "main_prof";
+		return "login_prof";
 	}
-	
+
 	@RequestMapping(value = "/login_admin")
 	public String login_admin(Model model) {
-//		return "login_admin";
-		return "main_admin";
+		return "login_admin";
 	}
 
 	@RequestMapping(value = "/main_std")
-	public String main_std(Model model, std_VO std_VO) {
-		// 로그인아이디,비밀번호를 parameter로 받아서 std_VO 생성
-		model.addAttribute("std_VO", std_VO);
+	public String main_std(Model model, int id, String pw) {
+		std_VO sv = new std_VO(id, pw);
+		model.addAttribute("std_VO", sv);
 		return "main_std";
 	}
 
 	@RequestMapping(value = "/main_prof")
-	public String main_prof(Model model, prof_VO prof_VO) {
-		model.addAttribute("prof_VO", prof_VO);
+	public String main_prof(Model model, int id, String pw) {
+		prof_VO pv = new prof_VO(id, pw);
+		model.addAttribute("prof_VO", pw);
 		return "main_prof";
 	}
 
 	@RequestMapping(value = "/main_admin")
-	public String main_admin(Model model, admin_VO admin_VO) {
-		model.addAttribute("admin_VO", admin_VO);
+	public String main_admin(Model model, int id, String pw) {
+		admin_VO av = new admin_VO(id, pw);
+		model.addAttribute("admin_VO", av);
 		return "main_admin";
 	}
-	
+
 	@RequestMapping(value = "/notice")
 	public String notice(Model model) {
 		return "notice";
 	}
-	
+
 	@RequestMapping(value = "/grades_chk")
 	public String grades_chk(Model model) {
 		return "grades_chk";
 	}
-	
+
 	@RequestMapping(value = "/just_main")
 	public String just_main(Model model) {
 		return "just_main";

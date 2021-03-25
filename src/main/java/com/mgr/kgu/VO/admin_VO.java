@@ -8,6 +8,11 @@ public class admin_VO {
 	// 관리자 비밀번호
 	private String admin_PW;
 
+	public admin_VO(int id, String pw) {
+		admin_NUM = id;
+		admin_PW = pw;
+	}
+
 	public int getAdmin_NUM() {
 		return admin_NUM;
 	}

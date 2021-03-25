@@ -46,6 +46,11 @@ public class std_VO {
 	// 사진?
 	private String stu_PHOTO;
 
+	public std_VO(int id, String pw) {
+		stu_NUM = id;
+		stu_PW = pw;
+	}
+
 	public int getStu_NUM() {
 		return stu_NUM;
 	}
