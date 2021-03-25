@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>KGUniversity_student</title>
 <script src="http://false9.wckorea.gethompy.com/js/jquery-1.8.3.min.js"></script>
-<link href="./resources/css/main.css" rel="stylesheet">
+<link href="./resources/css/main.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
 
