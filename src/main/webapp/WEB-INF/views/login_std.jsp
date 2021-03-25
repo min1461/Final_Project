@@ -57,7 +57,7 @@ $(document).ready(function(){
 </div> 
 </article>
 
-<form action="studentLogin.do" method="post">
+<form action="main_std" method="post">
   
   <div id="login_box">
     <h2>LOGIN</h2>

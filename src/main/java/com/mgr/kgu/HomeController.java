@@ -5,6 +5,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -43,7 +45,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/login_std")
 	public String login_std(Model model) {
-		return "main_std";
+		return "login_std";
 	}
 
 	@RequestMapping(value = "/login_prof")
@@ -57,7 +59,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/main_std")
-	public String main_std(Model model, int id, String pw) {
+	public String main_std(Model model,HttpServletRequest request) {
+		int id = Integer.parseInt(request.getParameter("HAKBUN"));
+		String pw = request.getParameter("HAK_PW");
 		std_VO sv = new std_VO(id, pw);
 		model.addAttribute("std_VO", sv);
 		return "main_std";
