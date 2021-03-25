@@ -19,7 +19,7 @@
    <div id="side_page">
 
       <div class="dropdown">
-         <button class="dropbtn" href="javascript:void(0);" onclick="btnclick('notice')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항</button>
+         <button class="dropbtn" href="javascript:void(0);" onclick="btnclick('notice')"><img src="./resources/img/arrow_blue_circle.png"> 공지사항 및 일정</button>
       </div>
 
       <div class="dropdown">
@@ -84,7 +84,7 @@
 
       //div안에 메인페이지 넣어놓음
       $(document).ready(function() {
-         $("#center_page").load("just_main");
+         $("#center_page").load("notice");
       });
 
       /* When the user clicks on the button, 
