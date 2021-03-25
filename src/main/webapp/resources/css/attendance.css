@@ -1,20 +1,59 @@
 @charset "UTF-8";
 
 *{
-	margin : 0;
+	margin-left : 10px;
 	padding : 0;
-	background : pink;
 }
 
 #header{
-	width : 100%;
+	width : 90%;
+	border-bottom : 1px solid;
 }
 
+#header1, #header3{
+	width : 10%;
+	background : #FCF6F5;
+	text-align : center;
+	padding : 0;
+}
 
+#header2, #header4{
+	width : 20%;
+}
 
+#section{
+	width : 90%;
+}
 
+table{
+	border-collapse : collapse;
+}
 
+tr{
+	border-bottom : 1px solid;
+	width : 90%;
+}
 
+th{
+	text-align : left;
+	background : #7b9acc;
+	color : white;
+	height : 40px;
+	padding : 2px 2px 2px 20px;
+}
+
+td{
+	border-bottom : 1px solid gray;
+	height : 35px;
+	padding : 2px 2px 2px 20px;
+}
+
+#btn{
+	width : 100px;
+	height : 30px;
+	background : #FCF6F5;
+	border : 1px solid black;
+}
 
 
 

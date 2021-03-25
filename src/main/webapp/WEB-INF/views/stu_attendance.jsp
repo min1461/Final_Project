@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="./resources/css/attendance.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
