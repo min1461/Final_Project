@@ -3,10 +3,11 @@
 *{
 	margin : 0;
 	padding : 0;
+	background : pink;
 }
 
-#id{
-	
+#header{
+	width : 100%;
 }
 
 
