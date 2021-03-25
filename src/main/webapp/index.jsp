@@ -15,7 +15,7 @@
 	</header>
 
 	<!-- 학생 -->
--+	<div class="main">
+	<div class="main">
 		<a href="login_std">
 			<div class="banner">
 				<img src="./resources/img/stu.png" id="loginimg">
