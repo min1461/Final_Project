@@ -46,12 +46,13 @@
 
 .center_page2 {
 	position: absolute;
-	width: 50%;
-	top: 250px;
+	width: 100%;
+	top: 350px;
 }
 
 table {
 	table-layout: fixed; /* 테이블 길이 고정 */
+	height: 300px;
 }
 
 td {

@@ -26,7 +26,7 @@
          <button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 수업시스템</button>
          <div id="myDropdown1" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('grades_chk')"><img src="./resources/img/arrow_red.png"> 성적확인</a>
-            <a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 강의평가</a>
+            <a href="javascript:void(0);" onclick="btnclick('n_contents')"><img src="./resources/img/arrow_red.png"> 강의평가</a>
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 출석조회</a>
          </div>
       </div>
