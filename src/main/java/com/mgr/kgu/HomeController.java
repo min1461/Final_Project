@@ -95,5 +95,10 @@ public class HomeController {
 	public String n_contents(Model model) {
 		return "n_contents";
 	}
+	
+	@RequestMapping(value ="/scoreinsert")
+	public String scoreinsert(Model model) {
+		return "scoreinsert";
+	}
 
 }
