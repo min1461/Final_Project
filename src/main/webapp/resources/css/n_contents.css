@@ -1,0 +1,16 @@
+.back {
+	text-align: center;
+}
+
+.btn {
+	border: 1px solid; border-color: rgb(102,051,000);
+	background-color: rgb(204,153,000);
+	color: black;
+	width: auto;
+	height: 35px;
+	padding-left: 5px;
+	font-size: 16px;
+	text-align: left;
+	border: none;
+	cursor: pointer;
+}

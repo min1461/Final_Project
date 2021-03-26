@@ -91,9 +91,9 @@ public class HomeController {
 		return "grades_chk";
 	}
 
-	@RequestMapping(value = "/just_main")
-	public String just_main(Model model) {
-		return "just_main";
+	@RequestMapping(value = "/n_contents")
+	public String n_contents(Model model) {
+		return "n_contents";
 	}
 
 }
