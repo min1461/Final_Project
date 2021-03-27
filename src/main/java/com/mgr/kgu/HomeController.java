@@ -43,21 +43,25 @@ public class HomeController {
 		return "home";
 	}
 
+	// index=>학생로그인페이지
 	@RequestMapping(value = "/login_std")
 	public String login_std(Model model) {
 		return "main_std";
 	}
 
+	// index=>교수로그인페이지
 	@RequestMapping(value = "/login_prof")
 	public String login_prof(Model model) {
-		return "login_prof";
+		return "main_prof";
 	}
 
+	// index=>관리자로그인페이지
 	@RequestMapping(value = "/login_admin")
 	public String login_admin(Model model) {
-		return "login_admin";
+		return "main_admin";
 	}
 
+	// 학생로그인페이지=>학생메인
 	@RequestMapping(value = "/main_std")
 	public String main_std(Model model,HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("HAKBUN"));
@@ -67,6 +71,7 @@ public class HomeController {
 		return "main_std";
 	}
 
+	// 교수로그인페이지=>교수메인
 	@RequestMapping(value = "/main_prof")
 	public String main_prof(Model model, int id, String pw) {
 		prof_VO pv = new prof_VO(id, pw);
@@ -74,6 +79,7 @@ public class HomeController {
 		return "main_prof";
 	}
 
+	// 관리자로그인페이지=>관리자메인
 	@RequestMapping(value = "/main_admin")
 	public String main_admin(Model model, int id, String pw) {
 		admin_VO av = new admin_VO(id, pw);
@@ -81,24 +87,51 @@ public class HomeController {
 		return "main_admin";
 	}
 
+	// 공지사항(전체)
 	@RequestMapping(value = "/notice")
 	public String notice(Model model) {
 		return "notice";
 	}
-
-	@RequestMapping(value = "/grades_chk")
-	public String grades_chk(Model model) {
-		return "grades_chk";
-	}
-
+	
+	// 세부공지사항
 	@RequestMapping(value = "/n_contents")
 	public String n_contents(Model model) {
 		return "n_contents";
 	}
+
+	// 성적확인
+	@RequestMapping(value = "/grades_chk")
+	public String grades_chk(Model model) {
+		return "grades_chk";
+	}
 	
+	// 학점 
 	@RequestMapping(value ="/scoreinsert")
 	public String scoreinsert(Model model) {
 		return "scoreinsert";
 	}
-
+	
+	// 학생관리(호출페이지)
+	@RequestMapping(value ="/std_call")
+	public String std_call(Model model) {
+		return "std_call";
+	}
+	
+	// 학생관리(추가)
+	@RequestMapping(value ="/std_insert")
+	public String std_insert(Model model) {
+		return "std_insert";
+	}
+	
+	// 학생관리(수정)
+	@RequestMapping(value ="/std_update")
+	public String std_update(Model model) {
+		return "std_update";
+	}
+	
+	// 학생관리(상태 변경)
+	@RequestMapping(value ="/std_state")
+	public String std_state(Model model) {
+		return "std_state";
+	}
 }
