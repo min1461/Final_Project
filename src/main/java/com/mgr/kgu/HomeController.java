@@ -45,7 +45,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/login_std")
 	public String login_std(Model model) {
-		return "login_std";
+		return "main_std";
 	}
 
 	@RequestMapping(value = "/login_prof")
