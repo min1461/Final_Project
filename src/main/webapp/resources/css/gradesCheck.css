@@ -1,0 +1,31 @@
+@charset "UTF-8";
+.sco_check {
+	font-size:30px;
+	color:#A4A4A4;
+	margin-left:6px;
+}
+
+ .gradesCheck {
+      border-collapse: collapse;
+      border-top: 3px solid #168;
+      margin-top:20px;
+    }  
+    .gradesCheck th {
+      color: #168;
+      background: #f0f6f9;
+      text-align: center;
+    }
+    .gradesCheck th, .gradesCheck td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    .gradesCheck th:first-child, .gradesCheck td:first-child {
+      border-left: 0;
+    }
+    .gradesCheck th:last-child, .gradesChecke td:last-child {
+      border-right: 0;
+    }
+    .gradesCheck tr td:first-child{
+      text-align: center;
+    }
+    .gradesCheck caption{caption-side: bottom; display: none;}
