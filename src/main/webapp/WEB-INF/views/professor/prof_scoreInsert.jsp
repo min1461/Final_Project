@@ -16,10 +16,21 @@
           <th scope="row">수강년도학기</th>
           <td><select name="semester">
     <option value="">학기선택</option>
-    <option value="2020/1">2020년도 1학기</option>
-    <option value="2020/2">2020년도 2학기</option>
-    <option value="2021/1">2021년도 1학기</option>
-    <option value="2021/2">2021년도 2학기</option>
+    <option value="semester1">2020년도 1학기</option>
+    <option value="semester2">2020년도 2학기</option>
+    <option value="semester3">2021년도 1학기</option>
+    <option value="semester4">2021년도 2학기</option>
+	</select>
+	</td>
+        </tr>
+    <tr>
+          <th scope="row">학년</th>
+          <td><select name="grades">
+    <option value="">학년선택</option>
+    <option value="grade1">1</option>
+    <option value="grade2">2</option>
+    <option value="grade3">3</option>
+    <option value="grade4">4</option>
 	</select>
 	</td>
         </tr>
