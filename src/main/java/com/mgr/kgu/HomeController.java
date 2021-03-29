@@ -63,7 +63,7 @@ public class HomeController {
 
 	// 학생로그인페이지=>학생메인
 	@RequestMapping(value = "/std_main")
-	public String std_main(Model model,HttpServletRequest request) {
+	public String std_main(Model model, HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
 		std_VO sv = new std_VO(id, pw);
@@ -92,7 +92,7 @@ public class HomeController {
 	public String notice(Model model) {
 		return "common/notice";
 	}
-	
+
 	// 세부공지사항
 	@RequestMapping(value = "/n_contents")
 	public String n_contents(Model model) {
@@ -104,41 +104,41 @@ public class HomeController {
 	public String std_gradesCheck(Model model) {
 		return "student/std_gradesCheck";
 	}
-	
-	// 학점 
-	@RequestMapping(value ="/prof_scoreInsert")
+
+	// 학점
+	@RequestMapping(value = "/prof_scoreInsert")
 	public String prof_scoreInsert(Model model) {
 		return "professor/prof_scoreInsert";
 	}
-	
-	//----------- 아직 안만진곳 ------------
+
+	// ----------- 아직 안만진곳 ------------
 	// 학생관리(호출페이지)
-	@RequestMapping(value ="/std_call")
+	@RequestMapping(value = "/std_call")
 	public String std_call(Model model) {
 		return "std_call";
 	}
-	
+
 	// 학생관리(추가)
-	@RequestMapping(value ="/std_insert")
+	@RequestMapping(value = "/std_insert")
 	public String std_insert(Model model) {
 		return "std_insert";
 	}
-	
+
 	// 학생관리(수정)
-	@RequestMapping(value ="/std_update")
+	@RequestMapping(value = "/std_update")
 	public String std_update(Model model) {
 		return "std_update";
 	}
-	
+
 	// 학생관리(상태 변경)
-	@RequestMapping(value ="/std_state")
+	@RequestMapping(value = "/std_state")
 	public String std_state(Model model) {
 		return "std_state";
 	}
-	
+
 	// 학생관리(상태 변경)
-		@RequestMapping(value ="/std_infoUpdate")
-		public String std_infoUpdate(Model model) {
-			return "student/std_infoUpdate";
-		}
+	@RequestMapping(value = "/std_infoUpdate")
+	public String std_infoUpdate(Model model) {
+		return "student/std_infoUpdate";
+	}
 }
