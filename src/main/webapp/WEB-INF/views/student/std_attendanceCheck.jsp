@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="./attendance.css" rel="stylesheet">
+<link href="./resources/css/attendance.css" rel="stylesheet">
 <title>학생출석현황</title>
 </head>
 <body>

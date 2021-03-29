@@ -136,10 +136,16 @@ public class HomeController {
 		return "std_state";
 	}
 	
-	// 교수출석관리
+	// 교수출석 (입력)
 	@RequestMapping(value ="/prof_attendance")
 	public String prof_attendance(Model model) {
 	    return "professor/prof_attendance";
 	}
+	
+	// 학생출석 (조회)
+	@RequestMapping(value ="/std_attendanceCheck")
+	public String std_attendanceCheck(Model model) {
+        return "student/std_attendanceCheck";
+		}
 
 }
