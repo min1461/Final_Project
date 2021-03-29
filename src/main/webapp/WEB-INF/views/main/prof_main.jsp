@@ -24,7 +24,7 @@
 		<div class="dropdown">
 			<button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 교수</button>
 			<div id="myDropdown1" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 출석관리</a>
+				<a href="javascript:void(0);" onclick="btnclick('prof_attendance')"><img src="./resources/img/arrow_red.png"> 출석관리</a>
 				<a href="javascript:void(0);" onclick="btnclick('prof_scoreInsert')"><img src="./resources/img/arrow_red.png"> 성적입력</a>
 				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 시험일정입력</a>
 			</div>
