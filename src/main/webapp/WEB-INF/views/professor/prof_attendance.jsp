@@ -27,7 +27,6 @@
 </table>
 </div>
 <br>
-<br>
 
 <div class="attendance_section">
 <%-- <c:forEach var="?" items ="${}"> --%>
@@ -49,7 +48,7 @@
 <input type="radio" name="A" value="결석">결석</td></tr>
 </table>
 <%-- </c:forEach> --%>
-<br><br>
+<br>
 <input type="button" name="submit1" id="btn"  value="저장">
 <input type="reset" id="btn"  value="취소">
 <!-- <input type="submit" name="">저장 -->
