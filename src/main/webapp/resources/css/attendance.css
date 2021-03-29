@@ -6,7 +6,7 @@
 }
 
 #header{
-	width : 90%;
+	width : 100%;
 }
 
 #header1, #header3, #header5, #header7, #header9{
@@ -32,12 +32,12 @@
 
 .attendance_section table{
 	border-collapse : collapse;
-	width : 90%;
+	width : 100%;
 }
 
 .attendance_section tr{
 	border-bottom : 1px solid;
-	width : 90%;
+	width : 100%;
 }
 
 .attendance_section th{
