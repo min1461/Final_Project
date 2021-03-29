@@ -12,7 +12,7 @@
 #header1, #header3, #header5, #header7, #header9{
 	width : 10%;
 	height : 28px;
-	background : #FCF6F5;
+	background : #DCDCDC;
 	text-align : center;
 	padding : 0;
 }
@@ -22,9 +22,12 @@
 	width : 20%;
 }
 
-/* #header11{
-	padding-left : 45%;
-} */
+#header11{
+	width : 10%;
+	height : 28px;
+	background : white;
+	padding : 0;
+}
 
 
 .attendance_section table{
@@ -39,14 +42,13 @@
 
 .attendance_section th{
 	text-align : left;
-	background : #7b9acc;
-	color : white;
+	background : #DCDCDC;
 	height : 40px;
 	padding : 2px 2px 2px 20px;
 }
 
 .attendance_section td{
-	border-bottom : 1px solid gray;
+	border-bottom : 1px solid #DCDCDC;
 	height : 35px;
 	padding : 2px 2px 2px 20px;
 }
