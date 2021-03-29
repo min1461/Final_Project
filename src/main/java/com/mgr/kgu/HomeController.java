@@ -50,41 +50,41 @@ public class HomeController {
 	}
 
 	// index=>교수로그인페이지
-	@RequestMapping(value = "/login_prof")
-	public String login_prof(Model model) {
-		return "main_prof";
+	@RequestMapping(value = "/prof_login")
+	public String prof_login(Model model) {
+		return "main/prof_main";
 	}
 
 	// index=>관리자로그인페이지
-	@RequestMapping(value = "/login_adm")
-	public String login_adm(Model model) {
-		return "main_adm";
+	@RequestMapping(value = "/adm_login")
+	public String adm_login(Model model) {
+		return "main/adm_main";
 	}
 
 	// 학생로그인페이지=>학생메인
-	@RequestMapping(value = "/main_std")
-	public String main_std(Model model,HttpServletRequest request) {
+	@RequestMapping(value = "/std_main")
+	public String std_main(Model model,HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
 		std_VO sv = new std_VO(id, pw);
 		model.addAttribute("std_VO", sv);
-		return "main_std";
+		return "main/std_main";
 	}
 
 	// 교수로그인페이지=>교수메인
-	@RequestMapping(value = "/main_prof")
-	public String main_prof(Model model, int id, String pw) {
+	@RequestMapping(value = "/prof_main")
+	public String prof_main(Model model, int id, String pw) {
 		prof_VO pv = new prof_VO(id, pw);
 		model.addAttribute("prof_VO", pw);
-		return "main_prof";
+		return "main/prof_main";
 	}
 
 	// 관리자로그인페이지=>관리자메인
-	@RequestMapping(value = "/main_adm")
-	public String main_adm(Model model, int id, String pw) {
+	@RequestMapping(value = "/adm_main")
+	public String adm_main(Model model, int id, String pw) {
 		admin_VO av = new admin_VO(id, pw);
 		model.addAttribute("admin_VO", av);
-		return "main_adm";
+		return "main/adm_main";
 	}
 
 	// 공지사항(전체)
@@ -96,21 +96,22 @@ public class HomeController {
 	// 세부공지사항
 	@RequestMapping(value = "/n_contents")
 	public String n_contents(Model model) {
-		return "n_contents";
+		return "common/n_contents";
 	}
 
 	// 성적확인
-	@RequestMapping(value = "/grades_chk")
-	public String grades_chk(Model model) {
-		return "grades_chk";
+	@RequestMapping(value = "/std_gradesCheck")
+	public String std_gradesCheck(Model model) {
+		return "student/std_gradesCheck";
 	}
 	
 	// 학점 
-	@RequestMapping(value ="/scoreinsert")
-	public String scoreinsert(Model model) {
-		return "scoreinsert";
+	@RequestMapping(value ="/prof_scoreInsert")
+	public String prof_scoreInsert(Model model) {
+		return "professor/prof_scoreInsert";
 	}
 	
+	//----------- 아직 안만진곳 ------------
 	// 학생관리(호출페이지)
 	@RequestMapping(value ="/std_call")
 	public String std_call(Model model) {
