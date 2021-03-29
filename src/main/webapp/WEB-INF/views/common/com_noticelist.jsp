@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KG대학교-공지사항</title>
-<script src="http://false9.wckorea.gethompy.com/js/jquery-1.8.3.min.js"></script>
+<script src="./resources/js/jquery-latest.min.js"></script>
 <link href="./resources/css/notice.css" rel="stylesheet">
 </head>
 <body>
@@ -21,27 +21,7 @@
 		<%-- <c:forEach var="i" items="${}"> --%>
 		<tr>
 			<td>1</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('n_contents')">KG대학교 공지사항</a></td>
-			<td>김민석</td>
-			<td>2021-03-25</td>
-		</tr>
-		<%-- </c:forEach> --%>
-	</table>
-</div>
-	
-<div class="center_page2">
-	<table class="tabletool2">
-		<caption class="calendar"><img class="LS_img" src="./resources/img/CL.png"> 주요일정</caption>
-		<tr class="tablecategory2">
-			<th width="15%">날짜</th>
-			<th width="55%">제목</th>
-			<th width="15%">작성자</th>
-			<th width="15%">작성일</th>
-		</tr>
-		<%-- <c:forEach var="i" items="${}"> --%>
-		<tr>
-			<td>2021-04-25</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('n_contents')">KG대학교 주요일정@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a></td>
+			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">KG대학교 공지사항</a></td>
 			<td>김민석</td>
 			<td>2021-03-25</td>
 		</tr>
