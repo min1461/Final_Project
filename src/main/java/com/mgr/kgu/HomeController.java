@@ -44,9 +44,9 @@ public class HomeController {
 	}
 
 	// index=>학생로그인페이지
-	@RequestMapping(value = "/login_std")
-	public String login_std(Model model) {
-		return "main_std";
+	@RequestMapping(value = "/std_login")
+	public String std_login(Model model) {
+		return "main/std_main";
 	}
 
 	// index=>교수로그인페이지
@@ -90,7 +90,7 @@ public class HomeController {
 	// 공지사항(전체)
 	@RequestMapping(value = "/notice")
 	public String notice(Model model) {
-		return "notice";
+		return "common/notice";
 	}
 	
 	// 세부공지사항
