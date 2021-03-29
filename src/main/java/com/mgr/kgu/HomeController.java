@@ -145,6 +145,8 @@ public class HomeController {
 	// 학생관리(상태 변경)
 	@RequestMapping(value = "/std_infoUpdate")
 	public String std_infoUpdate(Model model) {
+//		std_VO sv = new std_VO(111, "12345");
+//		model.addAttribute("sv",sv);
 		return "student/std_infoUpdate";
 	}
 
