@@ -135,10 +135,20 @@ public class HomeController {
 	public String std_state(Model model) {
 		return "std_state";
 	}
+<<<<<<< HEAD
+	
+	// 교수출석관리
+	@RequestMapping(value ="/prof_attendance")
+	public String prof_attendance(Model model) {
+	    return "professor/prof_attendance";
+	}
+			
+=======
 
 	// 학생관리(상태 변경)
 	@RequestMapping(value = "/std_infoUpdate")
 	public String std_infoUpdate(Model model) {
 		return "student/std_infoUpdate";
 	}
+>>>>>>> 490f2104323972bbd2d17bd9c92262ee9d199b26
 }
