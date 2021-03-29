@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항 내용</title>
-<script src="http://false9.wckorea.gethompy.com/js/jquery-1.8.3.min.js"></script>
+<script src="./resources/js/jquery-latest.min.js"></script>
 <link href="./resources/css/n_contents.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
@@ -14,7 +14,7 @@
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
 				<tr>
-					<th colspan="2" style="background-color: #eeeeee; text-align:center;">공지사항 보기</th>
+					<th colspan="2" style="background-color: #eeeeee; text-align:center;">주요일정 보기</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,7 +36,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<a href="javascript:void(0);" onclick="btnclick('notice')">목록</a>
+		<a href="javascript:void(0);" onclick="btnclick('com_schedulelist')">목록</a>
 	</div>
 </div>
 

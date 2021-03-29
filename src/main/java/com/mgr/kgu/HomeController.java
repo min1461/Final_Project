@@ -87,18 +87,30 @@ public class HomeController {
 		return "main/adm_main";
 	}
 
-	// 공지사항(전체)
-	@RequestMapping(value = "/notice")
-	public String notice(Model model) {
-		return "common/notice";
+	// 공지사항 리스트
+	@RequestMapping(value = "/com_noticelist")
+	public String com_noticelist(Model model) {
+		return "common/com_noticelist";
 	}
 
 	// 세부공지사항
-	@RequestMapping(value = "/n_contents")
-	public String n_contents(Model model) {
-		return "common/n_contents";
+	@RequestMapping(value = "/com_noticeCheck")
+	public String com_noticeCheck(Model model) {
+		return "common/com_noticeCheck";
 	}
-
+	
+	//주요일정 리스트
+	@RequestMapping(value = "/com_schedulelist")
+	public String com_schedulelist(Model model) {
+		return "common/com_schedulelist";
+	}
+	
+	//세부주요일정
+	@RequestMapping(value = "/com_scheduleCheck")
+	public String com_scheduleCheck(Model model) {
+		return "common/com_scheduleCheck";
+	}
+	
 	// 성적확인
 	@RequestMapping(value = "/std_gradesCheck")
 	public String std_gradesCheck(Model model) {
