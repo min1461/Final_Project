@@ -141,12 +141,5 @@ public class HomeController {
 	public String prof_attendance(Model model) {
 	    return "professor/prof_attendance";
 	}
-			
-
-	// 학생관리(상태 변경)
-	@RequestMapping(value = "/std_infoUpdate")
-	public String std_infoUpdate(Model model) {
-		return "student/std_infoUpdate";
-	}
 
 }
