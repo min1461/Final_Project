@@ -8,9 +8,11 @@
 <link href="./resources/css/std_infoUpdate.css" rel="stylesheet">
 </head>
 <body>
-	<table border="1">
+	
+	<br><div id="mypage">마이 페이지</div><br />
+	<table>
 		<tr>
-			<td id="picture" rowspan="5">ddddddddddd<br>ddddddddddd<br>ddddddddddd<br>ddddddddddd<br>ddddddddddd<br>ddddddddddd<br>ddddddddddd<br></td>
+			<td id="profile" rowspan="5"></td>
 			<td id="infomenu">학번</td>
 			<td id="infovalue"></td>
 			<td id="infomenu">성명(한글)</td>
@@ -27,28 +29,37 @@
 			<td id="infovalue"></td>
 			<td id="infomenu">국적</td>
 			<td id="infovalue"></td>
-			<td id="infomenu">입학일</td>
+			<td id="infomenu">신청학점/이수학점</td>
 			<td id="infovalue"></td>
 		</tr>
 		<tr>
-			<!-- <td id="infomenu">신청학점</td>
+			<td id="infomenu">주소</td>
+			<td id="infovalue" colspan="3"></td>
+			<td id="infomenu">전화번호</td>
 			<td id="infovalue"></td>
-			<td id="infomenu">이수학점</td>
+			<td id="infomenu">이메일</td>
 			<td id="infovalue"></td>
+		</tr>
+		<tr>
+			<td id="infomenu">계좌번호</td>
+			<td id="infovalue" colspan="3"></td>
 			<td id="infomenu">총평점</td>
 			<td id="infovalue"></td>
 			<td id="infomenu">총평점평균</td>
-			<td id="infovalue"></td> -->
-			<td></td>
+			<td id="infovalue"></td>
 		</tr>
 		<tr>
-			<td></td>
+			<td id="infomenu">입학일</td>
+			<td id="infovalue"></td>
+			<td id="infomenu">졸업일</td>
+			<td id="infovalue"></td>
+			<td id="infomenu">석차</td>
+			<td id="infovalue"></td>
+			<td id="infomenu">상태</td>
+			<td id="infovalue"></td>
 		</tr>
 		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td align="center">프로필 사진</td>
+			<td id="profiletext">프로필 사진</td>
 		</tr>
 	</table>
 </body>

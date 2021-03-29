@@ -1,6 +1,6 @@
 table {
-	table-layout: fixed; /* 테이블 길이 고정 */
-	height: 300px;
+	width: 100%;
+	border: 1px solid gray;
 }
 
 /* td {
@@ -9,14 +9,37 @@ table {
 	text-overflow: ellipsis; 넘치는거 ....으로 표시
 } */
 
-#infomenu{
-	background-color: rgb(184,215,255);
-	width: 100px;
-	height:22px;
+#infomenu {
+	background-color: rgb(184, 215, 255);
+	width: 140px;
+	height: 22px;
 	text-align: center;
+	border: 1px solid gray;
+	font-weight: bold;
 }
 
-#infovalue{
+#infovalue {
 	width: 200px;
-	height:22px;
+	height: 22px;
+	border-bottom: 1px solid gray;
+}
+
+#profile{
+	width: 143px;
+	height: 173px;
+	border: 1px solid gray;
+}
+
+#profiletext {
+	width: 143px;
+	height: 22px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#mypage{
+	font-weight:bold;
+	font-size:30px;
+	font-style: italic;
+	text-align: center;
 }
