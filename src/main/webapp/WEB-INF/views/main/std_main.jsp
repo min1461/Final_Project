@@ -60,7 +60,7 @@
          <button onclick="myFunction5()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 기숙사시스템</button>
          <div id="myDropdown5" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 입사신청</a>
-            <a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 벌점조회</a>
+            <a href="javascript:void(0);" onclick="btnclick('std_infoUpdate')"><img src="./resources/img/arrow_red.png"> 벌점조회</a>
          </div>
       </div>
 

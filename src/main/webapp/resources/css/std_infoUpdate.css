@@ -1,0 +1,22 @@
+table {
+	table-layout: fixed; /* 테이블 길이 고정 */
+	height: 300px;
+}
+
+/* td {
+	overflow: hidden; 넘치면 안보이게
+	white-space : nowrap; 줄바꿈 안되게
+	text-overflow: ellipsis; 넘치는거 ....으로 표시
+} */
+
+#infomenu{
+	background-color: rgb(184,215,255);
+	width: 100px;
+	height:22px;
+	text-align: center;
+}
+
+#infovalue{
+	width: 200px;
+	height:22px;
+}

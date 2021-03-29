@@ -134,4 +134,10 @@ public class HomeController {
 	public String std_state(Model model) {
 		return "std_state";
 	}
+	
+	// 학생관리(상태 변경)
+		@RequestMapping(value ="/std_infoUpdate")
+		public String std_infoUpdate(Model model) {
+			return "student/std_infoUpdate";
+		}
 }
