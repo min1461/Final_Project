@@ -6,9 +6,11 @@
 }
 
  .gradesCheck {
+      width:100%;
       border-collapse: collapse;
       border-top: 3px solid #168;
       margin-top:20px;
+      text-align: center;
     }  
     .gradesCheck th {
       color: #168;
@@ -25,7 +27,5 @@
     .gradesCheck th:last-child, .gradesChecke td:last-child {
       border-right: 0;
     }
-    .gradesCheck tr td:first-child{
-      text-align: center;
-    }
+    
     .gradesCheck caption{caption-side: bottom; display: none;}
