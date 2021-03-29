@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KGUniversity_student</title>
-<script src="http://false9.wckorea.gethompy.com/js/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link href="./resources/css/main.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
@@ -60,7 +60,7 @@
          <button onclick="myFunction5()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 기숙사시스템</button>
          <div id="myDropdown5" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 입사신청</a>
-            <a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 벌점조회</a>
+            <a href="javascript:void(0);" onclick="btnclick('std_infoUpdate')"><img src="./resources/img/arrow_red.png"> 벌점조회</a>
          </div>
       </div>
 
