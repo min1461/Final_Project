@@ -56,9 +56,9 @@ public class HomeController {
 	}
 
 	// index=>관리자로그인페이지
-	@RequestMapping(value = "/login_admin")
-	public String login_admin(Model model) {
-		return "main_admin";
+	@RequestMapping(value = "/login_adm")
+	public String login_adm(Model model) {
+		return "main_adm";
 	}
 
 	// 학생로그인페이지=>학생메인
@@ -80,11 +80,11 @@ public class HomeController {
 	}
 
 	// 관리자로그인페이지=>관리자메인
-	@RequestMapping(value = "/main_admin")
-	public String main_admin(Model model, int id, String pw) {
+	@RequestMapping(value = "/main_adm")
+	public String main_adm(Model model, int id, String pw) {
 		admin_VO av = new admin_VO(id, pw);
 		model.addAttribute("admin_VO", av);
-		return "main_admin";
+		return "main_adm";
 	}
 
 	// 공지사항(전체)
