@@ -22,9 +22,12 @@
 	width : 20%;
 }
 
-/* #header11{
-	padding-left : 45%;
-} */
+#header11{
+	width : 10%;
+	height : 28px;
+	background : white;
+	padding : 0;
+}
 
 
 .attendance_section table{

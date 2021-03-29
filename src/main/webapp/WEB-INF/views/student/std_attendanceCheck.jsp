@@ -28,7 +28,9 @@
 <td id="header7">학기</td><td id="header8"><select name="semester">
 <option value="1">1</option>
 <option value="2">2</option>
-</select></td></tr>
+</select></td>
+<td colspan="2" id="header11"><input type="submit" name="okokokok" id="btn" value="조회"></td>
+</tr>
 <tr>
 <td id="header9">과목명</td><td id="header10">
 <%-- <c:forEach var="?" items ="${}"> --%>
@@ -36,7 +38,6 @@
 <option value="subject1"></option>
 </select>
 <%-- </c:forEach> --%>
-<td colspan="2" id="header11"><input type="submit" name="okokokok" id="btn" value="조회"></td>
 </tr>
 </table>
 </div>
@@ -44,11 +45,9 @@
 <br>
 
 
-
-
 <div class="attendance_section">
 <%-- <c:forEach var="?" items ="${}"> --%>
-<table border=1>
+<table>
 <tr><th>날짜</th><th>수강과목</th><th>담당교수</th><th>출석</th><th>지각</th><th>결석</th></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
