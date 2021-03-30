@@ -64,7 +64,6 @@
 			<tr>
 				<td id="profiletext">프로필 사진</td>
 			</tr>
-			<%-- </c:forEach> --%>
 	</table>
 </body>
 </html>
