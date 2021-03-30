@@ -36,7 +36,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<a href="javascript:void(0);" onclick="btnclick('com_schedulelist')">목록</a>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('com_schedulelist')">목록</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleUpdate')">수정</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleDelete')">삭제</button>
 	</div>
 </div>
 

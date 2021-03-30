@@ -166,6 +166,31 @@ public class HomeController {
 	@RequestMapping(value ="/std_attendanceCheck")
 	public String std_attendanceCheck(Model model) {
         return "student/std_attendanceCheck";
-		}
+	}
+	
+	//공지사항 수정
+	@RequestMapping(value ="/adm_noticeUpdate")
+	public String adm_noticeUpdate(Model model) {
+        return "admin/adm_noticeUpdate";
+	}
+	
+	//공지사항 입력
+	@RequestMapping(value ="/adm_noticeInsert")
+	public String adm_noticeInsert(Model model) {
+        return "admin/adm_noticeInsert";
+	}
+	
+	//주요일정 수정
+	@RequestMapping(value ="/adm_scheduleUpdate")
+	public String adm_scheduleUpdate(Model model) {
+        return "admin/adm_scheduleUpdate";
+	}
+	
+	//주요일정 입력
+	@RequestMapping(value ="/adm_scheduleInsert")
+	public String schedule(Model model) {
+        return "admin/adm_scheduleInsert";
+	}
+	
 
 }
