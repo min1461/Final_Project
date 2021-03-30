@@ -50,9 +50,9 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 수강시스템
 			</button>
 			<div id="myDropdown3" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img
+				<a href="javascript:void(0);" onclick="btnclick('std_registerInsert')"><img
 					src="./resources/img/arrow_red.png"> 수강신청</a> <a
-					href="javascript:void(0);" onclick="btnclick('C.jsp')"><img
+					href="javascript:void(0);" onclick="btnclick('std_registerCheck')"><img
 					src="./resources/img/arrow_red.png"> 수강신청내역</a>
 			</div>
 		</div>

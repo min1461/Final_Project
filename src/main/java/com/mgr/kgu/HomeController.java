@@ -192,5 +192,16 @@ public class HomeController {
         return "admin/adm_scheduleInsert";
 	}
 	
+	//수강신청 입력
+	@RequestMapping(value = "/std_registerInsert")
+	public String std_registerInsert(Model model) {
+		return "student/std_registerInsert";
+	}
+	
+	//수강신청 입력
+	@RequestMapping(value = "/std_registerCheck")
+	public String std_registerCheck(Model model) {
+		return "student/std_registerCheck";
+	}
 
 }
