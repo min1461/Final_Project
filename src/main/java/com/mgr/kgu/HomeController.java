@@ -210,5 +210,9 @@ public class HomeController {
 		return "student/std_tuitionCheck";
 	}
 	
-
+	//입사신청
+	@RequestMapping(value = "/std_joinInsert")
+    public String std_joinInsert(Model model) {
+		return "student/std_joinInsert";
+	}
 }
