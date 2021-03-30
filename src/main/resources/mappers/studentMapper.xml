@@ -16,7 +16,7 @@
 	<!-- 데이터 삽입 -->
 	
 	<!--데이터 조회 -->
-	<select id="selectMember" resultType="test.StudentVO">
+	<select id="selectMember" resultType="com.mgr.kgu.VO.std_VO">
 		SELECT * from STUDENT
 	</select>
 	
