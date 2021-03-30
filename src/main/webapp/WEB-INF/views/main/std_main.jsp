@@ -62,7 +62,7 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 등록시스템
 			</button>
 			<div id="myDropdown4" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img
+				<a href="javascript:void(0);" onclick="btnclick('std_tuitionCheck')"><img
 					src="./resources/img/arrow_red.png"> 등록금조회</a> <a
 					href="javascript:void(0);" onclick="btnclick('C.jsp')"><img
 					src="./resources/img/arrow_red.png"> 장학금 신청 및 조회</a> <a

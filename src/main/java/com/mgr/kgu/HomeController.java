@@ -203,5 +203,12 @@ public class HomeController {
 	public String std_registerCheck(Model model) {
 		return "student/std_registerCheck";
 	}
+	
+	//등록금 조회
+	@RequestMapping(value = "/std_tuitionCheck")
+	public String std_tuitionCheck(Model model) {
+		return "student/std_tuitionCheck";
+	}
+	
 
 }
