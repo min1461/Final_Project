@@ -37,6 +37,8 @@
 			</tbody>
 		</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticelist')">목록</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticeUpdate')">수정</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticeDelete')">삭제</button>
 	</div>
 </div>
 
