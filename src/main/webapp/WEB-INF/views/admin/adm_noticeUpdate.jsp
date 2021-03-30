@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="./resources/css/n_contents.css" rel="stylesheet">
+<link href="./resources/css/n_contents.css" rel="stylesheet"
+	type="text/css">
 </head>
 <body>
 	<div class="container">
@@ -16,37 +17,28 @@
 					<thead>
 						<tr>
 							<th colspan="2"
-								style="background-color: #eeeeee; text-align: center;">주요일정
-								쓰기</th>
+								style="background-color: #eeeeee; text-align: center;">공지사항
+								수정</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td style="width: 20%; border: 1px solid #dddddd;">제목</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert"></td>
-						</tr>
-						<tr>
-							<td style="border: 1px solid #dddddd;">작성자</td>
-							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert"></td>
-						</tr>
-						<tr>
-							<td style="border: 1px solid #dddddd;">작성일</td>
-							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert"></td>
+								type="text" class="textupdate" value="<%--${}--%>"></td>
 						</tr>
 						<tr>
 							<td style="border: 1px solid #dddddd;">내용</td>
 							<td colspan="2"
 								style="height: 400px; border: 1px solid #dddddd; text-align: left;"><textarea
-									class="textinsert"></textarea></td>
+									class="textupdate" value="<%--${}--%>"></textarea></td>
 						</tr>
 					</tbody>
 				</table>
-				<input type="submit" value="글쓰기 완료">
+				<input type="submit" value="수정완료">
 			</form>
 		</div>
 	</div>
+
 </body>
 </html>
