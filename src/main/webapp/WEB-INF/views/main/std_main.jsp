@@ -27,8 +27,8 @@
       </div>
 
       <div class="dropdown">
-         <button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 수업시스템</button>
-         <div id="myDropdown1" class="dropdown-content">
+         <button onclick="myFunction2()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 수업시스템</button>
+         <div id="myDropdown2" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('std_gradesCheck')"><img src="./resources/img/arrow_red.png"> 성적확인</a>
             <a href="javascript:void(0);" onclick="btnclick('n_contents')"><img src="./resources/img/arrow_red.png"> 강의평가</a>
             <a href="javascript:void(0);" onclick="btnclick('std_attendanceCheck')"><img src="./resources/img/arrow_red.png"> 출석조회</a>
@@ -36,16 +36,16 @@
       </div>
 
       <div class="dropdown">
-         <button onclick="myFunction2()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 수강시스템</button>
-         <div id="myDropdown2" class="dropdown-content">
+         <button onclick="myFunction3()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 수강시스템</button>
+         <div id="myDropdown3" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 수강신청</a>
             <a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 수강신청내역</a>
          </div>
       </div>
 
       <div class="dropdown">
-         <button onclick="myFunction3()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 등록시스템</button>
-         <div id="myDropdown3" class="dropdown-content">
+         <button onclick="myFunction4()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 등록시스템</button>
+         <div id="myDropdown4" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 등록금조회</a>
             <a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 장학금 신청 및 조회</a> 
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 결제</a>
@@ -53,16 +53,16 @@
       </div>
 
       <div class="dropdown">
-         <button onclick="myFunction4()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 학적시스템</button>
-         <div id="myDropdown4" class="dropdown-content">
+         <button onclick="myFunction5()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 학적시스템</button>
+         <div id="myDropdown5" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 개인정보 변경</a>
             <a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 휴복학 신청 및 조회</a>
          </div>
       </div>
 
       <div class="dropdown">
-         <button onclick="myFunction5()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 기숙사시스템</button>
-         <div id="myDropdown5" class="dropdown-content">
+         <button onclick="myFunction6()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 기숙사시스템</button>
+         <div id="myDropdown6" class="dropdown-content">
             <a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 입사신청</a>
             <a href="javascript:void(0);" onclick="btnclick('std_infoUpdate')"><img src="./resources/img/arrow_red.png"> 벌점조회</a>
          </div>
@@ -112,6 +112,10 @@
       function myFunction5() {
          document.getElementById("myDropdown5").classList.toggle("show");
       }
+      
+      function myFunction6() {
+          document.getElementById("myDropdown6").classList.toggle("show");
+       }
    </script>
 
    <div id="logout">

@@ -36,7 +36,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<a href="javascript:void(0);" onclick="btnclick('com_noticelist')">목록</a>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticelist')">목록</button>
 	</div>
 </div>
 
