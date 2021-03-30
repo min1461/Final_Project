@@ -27,8 +27,9 @@
 		</tr>
 		<%-- </c:forEach> --%>
 	</table>
+	<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticeInsert')">글쓰기</button>
 </div>
-<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticeInsert')">글쓰기</button>
+
 
    <!-- ajax 페이지 불러오는 부분 -->
    <script type="text/javascript">
