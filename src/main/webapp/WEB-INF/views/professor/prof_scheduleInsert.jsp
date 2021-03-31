@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주요일정 수정</title>
-<link href="./resources/css/n_contents.css" rel="stylesheet"
-	type="text/css">
+<title>시험일정 입력</title>
+<link href="./resources/css/n_contents.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -17,28 +16,37 @@
 					<thead>
 						<tr>
 							<th colspan="2"
-								style="background-color: #eeeeee; text-align: center;">주요일정
-								수정</th>
+								style="background-color: #eeeeee; text-align: center;">시험일정
+								쓰기</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td style="width: 20%; border: 1px solid #dddddd;">제목</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textupdate" value="<%--${}--%>"></td>
+								type="text" class="textinsert"></td>
+						</tr>
+						<tr>
+							<td style="border: 1px solid #dddddd;">작성자</td>
+							<td colspan="2" style="border: 1px solid #dddddd;"><input
+								type="text" class="textinsert"></td>
+						</tr>
+						<tr>
+							<td style="border: 1px solid #dddddd;">작성일</td>
+							<td colspan="2" style="border: 1px solid #dddddd;"><input
+								type="text" class="textinsert"></td>
 						</tr>
 						<tr>
 							<td style="border: 1px solid #dddddd;">내용</td>
 							<td colspan="2"
 								style="height: 400px; border: 1px solid #dddddd; text-align: left;"><textarea
-									class="textupdate" value="<%--${}--%>"></textarea></td>
+									class="textinsert"></textarea></td>
 						</tr>
 					</tbody>
 				</table>
-				<input type="submit" value="수정완료">
+				<input type="submit" value="글쓰기 완료">
 			</form>
 		</div>
 	</div>
-
 </body>
 </html>

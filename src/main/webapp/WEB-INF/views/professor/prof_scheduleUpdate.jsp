@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주요일정 수정</title>
+<title>시험일정 수정</title>
 <link href="./resources/css/n_contents.css" rel="stylesheet"
 	type="text/css">
 </head>
@@ -17,7 +17,7 @@
 					<thead>
 						<tr>
 							<th colspan="2"
-								style="background-color: #eeeeee; text-align: center;">주요일정
+								style="background-color: #eeeeee; text-align: center;">시험일정
 								수정</th>
 						</tr>
 					</thead>

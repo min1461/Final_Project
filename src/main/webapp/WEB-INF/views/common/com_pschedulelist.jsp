@@ -1,34 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KG대학교-공지사항</title>
+<title>학생 시험일정 리스트</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
 <link href="./resources/css/notice.css" rel="stylesheet">
 </head>
 <body>
-<div class="center_page1">
-	<table class="tabletool1">
-		<caption class="notice"><img class="LS_img" src="./resources/img/LS.png"> 공지사항</caption>
-		<tr class="tablecategory1">
-			<th width="15%">번호</th>
+<div class="center_page2">
+	<table class="tabletool2">
+		<caption class="calendar"><img class="LS_img" src="./resources/img/CL.png"> 시험일정</caption>
+		<tr class="tablecategory2">
+			<th width="15%">날짜</th>
 			<th width="55%">제목</th>
 			<th width="15%">작성자</th>
 			<th width="15%">작성일</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
 		<tr>
-			<td>1</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">KG대학교 공지사항</a></td>
+			<td>2021-04-25</td>
+			<td><a href="javascript:void(0);" onclick="btnclick('com_pscheduleCheck')">000과 시험일정@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a></td>
 			<td>김민석</td>
 			<td>2021-03-25</td>
 		</tr>
 		<%-- </c:forEach> --%>
 	</table>
 </div>
-
 
    <!-- ajax 페이지 불러오는 부분 -->
    <script type="text/javascript">

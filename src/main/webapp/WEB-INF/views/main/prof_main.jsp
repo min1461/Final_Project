@@ -11,8 +11,9 @@
 <body>
 
 	<!-- 로고 이미지 부분 -->
-	<div id="logo">
-	</div>
+	<a onClick="window.location.reload()" style="cursor: pointer;">
+		<div id="logo"></div>
+	</a>
 	
 	<!-- 사이드 메뉴 부분 -->
 	<div id="side_page">
@@ -21,7 +22,8 @@
 			<button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 공지사항 및 일정</button>
 			<div id="myDropdown1" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('com_noticelist')"><img src="./resources/img/arrow_red.png"> 공지사항</a>
-				<a href="javascript:void(0);" onclick="btnclick('com_schedulelist')"><img src="./resources/img/arrow_red.png"> 주요일정</a>
+				<a href="javascript:void(0);" onclick="btnclick('com_uschedulelist')"><img src="./resources/img/arrow_red.png"> 학교 주요일정</a>
+				<a href="javascript:void(0);" onclick="btnclick('prof_schedulelist')"><img src="./resources/img/arrow_red.png"> 시험일정</a>
 			</div>
 		</div>
 			

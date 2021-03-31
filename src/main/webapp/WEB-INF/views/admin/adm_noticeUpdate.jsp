@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항 수정</title>
 <link href="./resources/css/n_contents.css" rel="stylesheet"
 	type="text/css">
 </head>
