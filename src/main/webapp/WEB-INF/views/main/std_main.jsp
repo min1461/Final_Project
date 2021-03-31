@@ -25,8 +25,10 @@
 			<div id="myDropdown1" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('com_noticelist')"><img
 					src="./resources/img/arrow_red.png"> 공지사항</a> <a
-					href="javascript:void(0);" onclick="btnclick('com_schedulelist')"><img
-					src="./resources/img/arrow_red.png"> 주요일정</a>
+					href="javascript:void(0);" onclick="btnclick('com_uschedulelist')"><img
+					src="./resources/img/arrow_red.png"> 학교 주요일정</a> <a
+					href="javascript:void(0);" onclick="btnclick('com_pschedulelist')"><img
+					src="./resources/img/arrow_red.png"> 시험일정</a>
 			</div>
 		</div>
 

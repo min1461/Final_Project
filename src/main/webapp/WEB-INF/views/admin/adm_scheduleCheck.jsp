@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항 내용</title>
+<title>주요일정 입력</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
 <link href="./resources/css/n_contents.css" rel="stylesheet" type="text/css" >
 </head>
@@ -14,7 +14,7 @@
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
 				<tr>
-					<th colspan="2" style="background-color: #eeeeee; text-align:center;">공지사항 보기</th>
+					<th colspan="2" style="background-color: #eeeeee; text-align:center;">주요일정 보기</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,7 +36,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticelist')">목록</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_schedulelist')">목록</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleUpdate')">수정</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleDelete')">삭제</button>
 	</div>
 </div>
 

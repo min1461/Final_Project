@@ -99,16 +99,64 @@ public class HomeController {
 		return "common/com_noticeCheck";
 	}
 	
-	//주요일정 리스트
-	@RequestMapping(value = "/com_schedulelist")
-	public String com_schedulelist(Model model) {
-		return "common/com_schedulelist";
+	// 학교 주요일정 리스트
+	@RequestMapping(value = "/com_uschedulelist")
+	public String com_uschedulelist(Model model) {
+		return "common/com_uschedulelist";
 	}
 	
-	//세부주요일정
-	@RequestMapping(value = "/com_scheduleCheck")
-	public String com_scheduleCheck(Model model) {
-		return "common/com_scheduleCheck";
+	// 학교 세부주요일정
+	@RequestMapping(value = "/com_uscheduleCheck")
+	public String com_uscheduleCheck(Model model) {
+		return "common/com_uscheduleCheck";
+	}
+	
+	// 시험일정 리스트
+	@RequestMapping(value = "/com_pschedulelist")
+	public String com_pschedulelist(Model model) {
+		return "common/com_pschedulelist";
+	}
+	
+	// 세부 시험일정
+	@RequestMapping(value = "/com_pscheduleCheck")
+	public String com_pscheduleCheck(Model model) {
+		return "common/com_pscheduleCheck";
+	}
+	
+	// 교수용 시험일정 리스트
+	@RequestMapping(value = "/prof_schedulelist")
+	public String prof_schedulelist(Model model) {
+		return "professor/prof_schedulelist";
+	}
+	
+	// 교수용 세부 시험일정
+	@RequestMapping(value = "/prof_scheduleCheck")
+	public String prof_scheduleCheck(Model model) {
+		return "professor/prof_scheduleCheck";
+	}
+	
+	// 관리자용 공지사항 리스트
+	@RequestMapping(value = "/adm_noticelist")
+	public String adm_noticelist(Model model) {
+		return "admin/adm_noticelist";
+	}
+	
+	// 관리자용 세부 공지사항일정
+	@RequestMapping(value = "/adm_scheduleCheck")
+	public String adm_scheduleCheck(Model model) {
+		return "admin/adm_scheduleCheck";
+	}
+	
+	// 관리자용 주요일정 리스트
+	@RequestMapping(value = "/adm_schedulelist")
+	public String adm_schedulelist(Model model) {
+		return "admin/adm_schedulelist";
+	}
+	
+	// 관리자용 세부 주요일정
+	@RequestMapping(value = "/adm_noticeCheck")
+	public String adm_noticeCheck(Model model) {
+		return "admin/adm_noticeCheck";
 	}
 	
 	// 성적확인
@@ -168,28 +216,40 @@ public class HomeController {
         return "student/std_attendanceCheck";
 	}
 	
-	//공지사항 수정
+	//관리자 공지사항 수정
 	@RequestMapping(value ="/adm_noticeUpdate")
 	public String adm_noticeUpdate(Model model) {
         return "admin/adm_noticeUpdate";
 	}
 	
-	//공지사항 입력
+	//관리자 공지사항 입력
 	@RequestMapping(value ="/adm_noticeInsert")
 	public String adm_noticeInsert(Model model) {
         return "admin/adm_noticeInsert";
 	}
 	
-	//주요일정 수정
+	//관리자 주요일정 수정
 	@RequestMapping(value ="/adm_scheduleUpdate")
 	public String adm_scheduleUpdate(Model model) {
         return "admin/adm_scheduleUpdate";
 	}
 	
-	//주요일정 입력
+	//관리자 주요일정 입력
 	@RequestMapping(value ="/adm_scheduleInsert")
-	public String schedule(Model model) {
+	public String adm_scheduleInsert(Model model) {
         return "admin/adm_scheduleInsert";
+	}
+	
+	//교수 시험일정 수정
+	@RequestMapping(value ="/prof_scheduleUpdate")
+	public String prof_scheduleUpdate(Model model) {
+        return "professor/prof_scheduleUpdate";
+	}
+	
+	//교수 시험일정 입력
+	@RequestMapping(value ="/prof_scheduleInsert")
+	public String prof_scheduleInsert(Model model) {
+        return "professor/prof_scheduleInsert";
 	}
 	
 	//수강신청 입력

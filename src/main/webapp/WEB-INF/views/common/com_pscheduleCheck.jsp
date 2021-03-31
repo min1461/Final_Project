@@ -4,31 +4,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KG대학교-공지사항</title>
+<title>학생 시험일정 내용</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
-<link href="./resources/css/notice.css" rel="stylesheet">
+<link href="./resources/css/n_contents.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-<div class="center_page1">
-	<table class="tabletool1">
-		<caption class="notice"><img class="LS_img" src="./resources/img/LS.png"> 공지사항</caption>
-		<tr class="tablecategory1">
-			<th width="15%">번호</th>
-			<th width="55%">제목</th>
-			<th width="15%">작성자</th>
-			<th width="15%">작성일</th>
-		</tr>
-		<%-- <c:forEach var="i" items="${}"> --%>
-		<tr>
-			<td>1</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">KG대학교 공지사항</a></td>
-			<td>김민석</td>
-			<td>2021-03-25</td>
-		</tr>
-		<%-- </c:forEach> --%>
-	</table>
+<div class="container">
+	<div class="row">
+		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
+			<thead>
+				<tr>
+					<th colspan="2" style="background-color: #eeeeee; text-align:center;">시험일정 보기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="width: 20%; border:1px solid #dddddd;">제목</td>
+					<td colspan="2" style="border:1px solid #dddddd;">get</td>
+				</tr>
+				<tr>
+					<td style="border:1px solid #dddddd;">작성자</td>
+					<td colspan="2" style="border:1px solid #dddddd;">get</td>
+				</tr>
+				<tr>
+					<td style="border:1px solid #dddddd;">작성일</td>
+					<td colspan="2" style="border:1px solid #dddddd;">get</td>
+				</tr>
+				<tr>
+					<td style="border:1px solid #dddddd;">내용</td>
+					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">get</td>
+				</tr>
+			</tbody>
+		</table>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('com_pschedulelist')">목록</button>
+	</div>
 </div>
-
 
    <!-- ajax 페이지 불러오는 부분 -->
    <script type="text/javascript">
@@ -46,5 +56,6 @@
          });
       }
 	</script>
+
 </body>
 </html>
