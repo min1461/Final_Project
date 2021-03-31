@@ -215,4 +215,10 @@ public class HomeController {
     public String std_joinInsert(Model model) {
 		return "student/std_joinInsert";
 	}
+	
+	//기숙사배정
+	@RequestMapping(value ="/adm_roomCheck")
+	public String adm_roomCheck(Model model) {
+		return "admin/adm_roomCheck";
+	}
 }
