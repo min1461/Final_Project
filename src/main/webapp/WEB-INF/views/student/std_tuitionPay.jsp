@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<!-- 결제 넘겨받을 곳 -->
 </body>
 </html>
