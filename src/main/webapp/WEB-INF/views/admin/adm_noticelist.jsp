@@ -21,12 +21,13 @@
 		<%-- <c:forEach var="i" items="${}"> --%>
 		<tr>
 			<td>1</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">KG대학교 공지사항</a></td>
+			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck')">KG대학교 공지사항</a></td>
 			<td>김민석</td>
 			<td>2021-03-25</td>
 		</tr>
 		<%-- </c:forEach> --%>
 	</table>
+	<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeInsert')">글쓰기</button>
 </div>
 
 

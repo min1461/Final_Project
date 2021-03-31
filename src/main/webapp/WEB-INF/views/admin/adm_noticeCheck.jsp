@@ -14,7 +14,7 @@
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
 				<tr>
-					<th colspan="2" style="background-color: #eeeeee; text-align:center;">주요일정 보기</th>
+					<th colspan="2" style="background-color: #eeeeee; text-align:center;">공지사항 보기</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,9 +36,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<button class="button" href="javascript:void(0);" onclick="btnclick('com_schedulelist')">목록</button>
-		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleUpdate')">수정</button>
-		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleDelete')">삭제</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticelist')">목록</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeUpdate')">수정</button>
+		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeDelete')">삭제</button>
 	</div>
 </div>
 

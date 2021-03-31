@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>학생 학교 주요일정 리스트</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
 <link href="./resources/css/notice.css" rel="stylesheet">
 </head>
 <body>
 <div class="center_page2">
 	<table class="tabletool2">
-		<caption class="calendar"><img class="LS_img" src="./resources/img/CL.png"> 주요일정</caption>
+		<caption class="calendar"><img class="LS_img" src="./resources/img/CL.png"> 학교 주요일정</caption>
 		<tr class="tablecategory2">
 			<th width="15%">날짜</th>
 			<th width="55%">제목</th>
@@ -21,7 +21,7 @@
 		<%-- <c:forEach var="i" items="${}"> --%>
 		<tr>
 			<td>2021-04-25</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_scheduleCheck')">KG대학교 주요일정@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a></td>
+			<td><a href="javascript:void(0);" onclick="btnclick('com_uscheduleCheck')">KG대학교 주요일정@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a></td>
 			<td>김민석</td>
 			<td>2021-03-25</td>
 		</tr>

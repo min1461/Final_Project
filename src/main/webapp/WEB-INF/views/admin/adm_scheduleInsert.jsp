@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>주요일정 입력</title>
 <link href="./resources/css/n_contents.css" rel="stylesheet">
 </head>
 <body>
