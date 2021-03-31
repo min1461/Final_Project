@@ -1,57 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="./resources/css/tui.css" rel="stylesheet"
-	type="text/css">
+<link rel="stylesheet" href="./resources/css/scholarship.css">
+<title>등록금 조회 및 결제</title>
 </head>
+<!-- <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+<script>
+//결제 넣을 곳
+</script> -->
+
 <body>
-	<div class="container">
-		<table style="border:1px solid; width:100%;">		
-			<caption class="maintitle">등록금 조회</caption>
-				<tr>
-					<td class="title">성명</td>
-					<td class="sub"></td>
-					<td class="title">주민등록번호</td>
-					<td colspan="2" class="sub"></td>
-					<td class="title">주소</td>
-					<td colspan="4" class="sub"></td>
+<h2 class="title1"> |등록금 조회 및 결제</h2>
+		
+		<table class="apply">
+		<tr>
+		<th>성명</th> <th>학번</th> <th>학과</th> <th>주소</th>
+		</tr>
 
-				</tr>
-				<tr>
-					<td class="title">학교명</td>
-					<td class="sub"></td>
-					<td class="title">년도</td>
-					<td class="sub"></td>
-					<td class="title">학기</td>
-					<td class="sub"></td>
-					<td class="title">학과</td>
-					<td class="sub"></td>
-					<td class="title">학년</td>
-					<td class="sub"></td>
-				</tr>
-				<tr>
-					<td colspan="2" class="title">입학금</td>
-					<td colspan="3" class="sub"></td>
-					<td colspan="2" class="title">수업료</td>
-					<td colspan="3" class="sub"></td>
-				</tr>
-				<tr>
-					<td colspan="10" class="title2">총 등록금</td>
-				</tr>
-				<tr>
-					<td colspan="10" class="sub2"></td>
-				</tr>
+		<tr>
+		<td>가져오기</td>
+	    <td>가져오기</td> 
+		<td>가져오기</td> 
+		<td>가져오기</td> 
+	
+		</tr>
+			
 		</table>
-	</div>
-	
-	
-
-
-		<h2 class="title1"> |등록금 결제</h2>
+		
+<br><br><br><br><br>
 		
 		<table class="apply">
 		<tr>
@@ -62,10 +43,7 @@
 		<td><select name="year_check">
     <option value="">학년도</option>
     <option value="year">2018년도</option>
-    <option value="year">2018년도</option>
     <option value="year">2019년도</option>
-    <option value="year">2019년도</option>
-    <option value="year">2020년도</option>
     <option value="year">2020년도</option>
     <option value="year">2021년도</option>
 	</select></td> 
@@ -88,7 +66,6 @@
 		</tr>
 			
 		</table>
-
 
 </body>
 </html>

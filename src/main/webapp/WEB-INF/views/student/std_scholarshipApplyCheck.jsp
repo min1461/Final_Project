@@ -21,10 +21,7 @@
 		<td><select name="year_check">
     <option value="">학년도</option>
     <option value="year">2018년도</option>
-    <option value="year">2018년도</option>
     <option value="year">2019년도</option>
-    <option value="year">2019년도</option>
-    <option value="year">2020년도</option>
     <option value="year">2020년도</option>
     <option value="year">2021년도</option>
 	</select></td> 
