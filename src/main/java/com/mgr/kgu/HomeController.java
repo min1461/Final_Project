@@ -276,9 +276,16 @@ public class HomeController {
 		return "student/std_joinInsert";
 	}
 	
+<<<<<<< HEAD
 	//장학금신청
 	@RequestMapping(value = "/std_scholarshipApplyCheck")
 	public String std_scholarshipApplyCheck(Model model) {
 		return "student/std_scholarshipApplyCheck";
+=======
+	//기숙사배정
+	@RequestMapping(value ="/adm_roomCheck")
+	public String adm_roomCheck(Model model) {
+		return "admin/adm_roomCheck";
+>>>>>>> 7291a7945a62ec78ea5045db2ff9221ccdd7ceb4
 	}
 }
