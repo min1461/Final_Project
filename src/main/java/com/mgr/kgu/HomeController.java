@@ -215,4 +215,10 @@ public class HomeController {
     public String std_joinInsert(Model model) {
 		return "student/std_joinInsert";
 	}
+	
+	//장학금신청
+	@RequestMapping(value = "/std_scholarshipApplyCheck")
+	public String std_scholarshipApplyCheck(Model model) {
+		return "student/std_scholarshipApplyCheck";
+	}
 }
