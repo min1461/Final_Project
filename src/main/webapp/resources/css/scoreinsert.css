@@ -38,5 +38,9 @@ table.scoreinsert td {
 	margin-left:93%;
 }
 
-
+.scoreinsert th {
+	color: #168;
+	background: #f0f6f9;
+	text-align: center;
+}
   
