@@ -327,5 +327,14 @@ public class HomeController {
 		return "admin/adm_tuitiondepositCheck";
 		
 	}
+<<<<<<< HEAD
 
+=======
+	
+	// 장학금 승인
+	@RequestMapping(value = "/adm_tuitiondepositApproval")
+	public String adm_tuitiondepositApproval(Model model) {
+		return "admin/adm_tuitiondepositApproval";
+	} 
+>>>>>>> 42a9eb18d95e4c7fa41483736a68452cf29f088e
 }

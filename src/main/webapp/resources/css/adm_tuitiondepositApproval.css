@@ -1,0 +1,31 @@
+@charset "UTF-8";
+.approval {
+	font-size:30px;
+	color:#A4A4A4;
+	margin-left:6px;
+}
+
+ .tuitiondepositApproval {
+      width:100%;
+      border-collapse: collapse;
+      border-top: 3px solid #168;
+      margin-top:20px;
+      text-align: center;
+    }  
+    .tuitiondepositApproval th {
+      color: #168;
+      background: #f0f6f9;
+      text-align: center;
+    }
+    .tuitiondepositApproval th, .tuitiondepositApproval td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    .tuitiondepositApproval th:first-child, .tuitiondepositApproval td:first-child {
+      border-left: 0;
+    }
+    .tuitiondepositApproval th:last-child, .tuitiondepositApproval td:last-child {
+      border-right: 0;
+    }
+    
+    .tuitiondepositApproval caption{caption-side: bottom; display: none;}
