@@ -42,20 +42,26 @@
 				<td id="infovalue">/</td>
 			</tr>
 			<tr>
-				<td id="infomenu">주소<br />
-				<input type="button" id="btn_add" value="변경" onclick="" /></td>
-				<td id="infovalue" colspan="3"></td>
-				<td id="infomenu">전화번호<br />
-				<input type="button" id="btn_pn" value="변경" onclick="" /></td>
-				<td id="infovalue"></td>
-				<td id="infomenu">이메일<br />
-				<input type="button" id="btn_email" value="변경" onclick="" /></td>
-				<td id="infovalue"></td>
+				<td id="infomenu">주소</td>
+				<td id="infovalue" colspan="3"><input type="text"
+					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 500px; height: 30px; text-align: center"
+					value="경기도 김포시 풍무로 41-41 B02호" required /></td>
+				<td id="infomenu">전화번호</td>
+				<td id="infovalue"><input type="text"
+					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
+					value="010-8882-5155" required /></td>
+				<td id="infomenu">이메일</td>
+				<td id="infovalue"><input type="text"
+					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
+					value="min1461@naver.com" required /></td>
 			</tr>
 			<tr>
-				<td id="infomenu">계좌번호<br />
-				<input type="button" id="btn_bank" value="변경" onclick="" /></td>
-				<td id="infovalue" colspan="3"></td>
+				<td id="infomenu">계좌번호</td>
+				<td id="infovalue" colspan="3"><input type="text"
+					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
+					value="카카오뱅크" required /><input type="text"
+					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 300px; height: 30px; text-align: center"
+					value="3333-0540-89-014" required /></td>
 				<td id="infomenu">총평점</td>
 				<td id="infovalue"></td>
 				<td id="infomenu">총평점평균</td>
