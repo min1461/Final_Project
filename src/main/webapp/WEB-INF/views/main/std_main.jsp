@@ -78,7 +78,7 @@
 			<div id="myDropdown5" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img
 					src="./resources/img/arrow_red.png"> 개인정보 변경</a> <a
-					href="javascript:void(0);" onclick="btnclick('C.jsp')"><img
+					href="javascript:void(0);" onclick="btnclick('std_stateInsert')"><img
 					src="./resources/img/arrow_red.png"> 휴복학 신청 및 조회</a>
 			</div>
 		</div>

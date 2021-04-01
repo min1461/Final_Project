@@ -287,6 +287,12 @@ public class HomeController {
 	@RequestMapping(value ="/adm_roomCheck")
 	public String adm_roomCheck(Model model) {
 		return "admin/adm_roomCheck";
-
 	}
+	
+	//휴복학신청
+	@RequestMapping(value ="/std_stateInsert")
+	public String std_stateInsert(Model model) {
+		return "student/std_stateInsert";
+	}
+	
 }
