@@ -8,8 +8,8 @@
 
 <title>강의평가</title>
 
-<script> //강의평가 팝업창 열기
-function popup() { window.open("std_popupInsert.jsp", "popup", "width=900, height=800, left=80%, top=5%"); }
+<script> //강의평가 팝업창 열기        //controller mapping이름
+function popup() { window.open("std_popupInsert", "popup", "width=900, height=800, left=80%, top=5%"); }
 </script>
 
 </head>
