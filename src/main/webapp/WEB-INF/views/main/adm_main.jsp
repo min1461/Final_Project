@@ -30,8 +30,6 @@
 			<button onclick="myFunction2()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 관리자</button>
 			<div id="myDropdown2" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('std_call')"><img src="./resources/img/arrow_red.png"> 학생 관리</a> 
-				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 교수 관리</a> 
-				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 강의 관리</a>
 				<a href="javascript:void(0);" onclick="btnclick('adm_roomCheck')"><img src="./resources/img/arrow_red.png"> 기숙사 배정</a>
 				<a href="javascript:void(0);" onclick="btnclick('C.jsp')"><img src="./resources/img/arrow_red.png"> 휴복학 승인</a>
 				<a href="javascript:void(0);" onclick="btnclick('B.jsp')"><img src="./resources/img/arrow_red.png"> 등록금 및 장학금 등록</a>
