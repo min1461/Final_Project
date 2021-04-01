@@ -315,9 +315,10 @@ public class HomeController {
 			return "student/std_evaluationInsert";
 		}
 		
-	//강의평가 팝업
-		@RequestMapping(value = "/std_popupInsert")
+	//강의평가
+	    @RequestMapping(value = "/std_popupInsert")
 		public String std_popupInsert(Model model) {
 			return "student/std_popupInsert";
-		}	
+		}		
+
 }

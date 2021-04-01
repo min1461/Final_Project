@@ -8,9 +8,9 @@
 
 <title>강의평가</title>
 
-<script> //강의평가 팝업창 열기
+<!-- <script> //강의평가 팝업창 열기
 function popup() { window.open("std_popupInsert.jsp", "popup", "width=900, height=800, left=80%, top=5%"); }
-</script>
+</script> -->
 </head>
 <body>
 
@@ -58,7 +58,7 @@ function popup() { window.open("std_popupInsert.jsp", "popup", "width=900, heigh
 		<td>가져오기</td> 
 		<td>가져오기</td> 
 
-	<td><input type="button" name="ok" value="평가하기" onclick="popup();"></td> 
+	<td><input type="button" name="ok" value="평가하기" onclick="btnclick('std_popupInsert')"></td> 
 		</tr>
 			
 		</table>
