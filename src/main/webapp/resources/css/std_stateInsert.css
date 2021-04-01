@@ -34,7 +34,16 @@ table.std_stateinsert td {
   border-bottom: 1px solid #ccc;
 }
 
-#req {
-	margin-left: 1070px;
+.btn {
+	
 }
 
+table {
+	width:100%;
+}
+
+.text {
+	border:none;
+	width:100%;
+	height:100%;
+}

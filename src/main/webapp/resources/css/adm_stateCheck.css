@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.state_check {
+	font-size:30px;
+	color:#A4A4A4;
+	margin-left:6px;
+}
+
+.stateCheck {
+      width:100%;
+      border-collapse: collapse;
+      border-top: 3px solid #168;
+      margin-top:20px;
+      text-align: center;
+    }  
+    .stateCheck th {
+      color: #168;
+      background: #f0f6f9;
+      text-align: center;
+    }
+    .stateCheck th, .stateCheck td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    .stateCheck th:first-child, .stateCheck td:first-child {
+      border-left: 0;
+    }
+    .stateCheck th:last-child, .stateCheck td:last-child {
+      border-right: 0;
+    }
+    
+    .stateCheck caption{caption-side: bottom; display: none;}
