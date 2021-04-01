@@ -4,6 +4,8 @@ table {
 	border-top: 3px solid #168;
 	position: absolute;
 	top: 100px;
+	border-collapse: collapse;
+	border-spacing: 0
 }
 
 /* td {
@@ -11,11 +13,10 @@ table {
 	white-space : nowrap; 줄바꿈 안되게
 	text-overflow: ellipsis; 넘치는거 ....으로 표시
 } */
-
 #infomenu {
 	background-color: #f0f6f9;
 	width: 100px;
-	height: 50px;
+	height: 40px;
 	text-align: center;
 	border-right: 1px solid gray;
 	font-weight: bold;
@@ -23,11 +24,11 @@ table {
 
 #infovalue {
 	width: 200px;
-	height: 50px;
+	height: 40px;
 	text-align: center;
 }
 
-#profile{
+#profile {
 	width: 180px;
 	border: 1px solid gray;
 }
@@ -39,18 +40,23 @@ table {
 	font-size: 12px;
 }
 
-#mypage{
-	font-weight:bold;
-	font-size:30px;
-	font-style: italic;
-	text-align: center;
+#mypage {
+	font-size: 30px;
+	color: #A4A4A4;
+	margin-left: 6px;
+	font-weight: bold;
 }
 
-#guide{
+#guide {
 	color: red;
 }
 
 #btn_add, #btn_email, #btn_pn, #btn_bank, #btn_profile {
 	width: 80px;
 	margin-top: 3px;
+}
+
+table tr, table td {
+	padding: 10px;
+	border: 1px solid #ddd;
 }

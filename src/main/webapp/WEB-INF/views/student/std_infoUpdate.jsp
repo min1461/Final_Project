@@ -10,7 +10,7 @@
 </head>
 <body>
 	<br>
-	<div id="mypage">마이 페이지</div>
+	<div id="mypage">|마이 페이지</div>
 	<br />
 	<form action="">
 		<table>
@@ -18,10 +18,7 @@
 			<tr>
 				<td id="profile" rowspan="5"></td>
 				<td id="infomenu">학번</td>
-				<td id="infovalue">
-					<%-- ${sv.stu_NUM} --%>
-
-				</td>
+				<td id="infovalue"> <%-- ${sv.stu_NUM} --%>	</td>
 				<td id="infomenu">성명(한글)</td>
 				<td id="infovalue"></td>
 				<td id="infomenu">성명(영문)</td>
@@ -84,9 +81,10 @@
 			<tr>
 				<td id="profiletext">프로필 사진<br /> <input type="button"
 					id="btn_profile" value="변경" onclick="" /></td>
-				<td colspan="3" id="guide" style="text-align: center;">※고유정보변경은 학사사무실로 문의주세요.</td>
-				<td colspan="4" id="guide" style="text-align: center;">※프로필사진, 계좌번호, 전화번호, 이메일, 주소, 비밀번호변경이
-					가능합니다.</td>
+				<td colspan="3" id="guide" style="text-align: center;">※고유정보변경은
+					학사사무실로 문의주세요.</td>
+				<td colspan="4" id="guide" style="text-align: center;">※프로필사진,
+					계좌번호, 전화번호, 이메일, 주소, 비밀번호변경이 가능합니다.</td>
 				<td align="right"><div>
 						<input type="submit" value="정보변경"
 							style="width: 100%; height: 30px;" />
