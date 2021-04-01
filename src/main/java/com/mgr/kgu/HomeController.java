@@ -295,4 +295,17 @@ public class HomeController {
 		return "student/std_stateInsert";
 	}
 	
+	//벌점등록
+		@RequestMapping(value ="/adm_penaltyInsert")
+		public String adm_penaltyInsert(Model model) {
+			return "admin/adm_penaltyInsert";
+
+		}
+		
+	//벌점조회
+		@RequestMapping(value ="/std_penaltyCheck")
+		public String std_penaltyCheck(Model model) {
+			return "student/std_penaltyCheck";
+
+		}
 }
