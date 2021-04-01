@@ -289,4 +289,18 @@ public class HomeController {
 		return "admin/adm_roomCheck";
 
 	}
+	
+	//벌점등록
+		@RequestMapping(value ="/adm_penaltyInsert")
+		public String adm_penaltyInsert(Model model) {
+			return "admin/adm_penaltyInsert";
+
+		}
+		
+	//벌점조회
+		@RequestMapping(value ="/std_penaltyCheck")
+		public String std_penaltyCheck(Model model) {
+			return "student/std_penaltyCheck";
+
+		}
 }

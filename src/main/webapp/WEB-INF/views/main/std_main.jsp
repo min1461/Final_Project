@@ -90,7 +90,7 @@
 			<div id="myDropdown6" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('std_joinInsert')"><img
 					src="./resources/img/arrow_red.png"> 입사신청</a> <a
-					href="javascript:void(0);" onclick="btnclick('std_infoUpdate')"><img
+					href="javascript:void(0);" onclick="btnclick('std_penaltyCheck')"><img
 					src="./resources/img/arrow_red.png"> 벌점조회</a>
 			</div>
 		</div>
