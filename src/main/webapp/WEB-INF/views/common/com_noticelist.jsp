@@ -9,10 +9,9 @@
 <link href="./resources/css/notice.css" rel="stylesheet">
 </head>
 <body>
-<div class="center_page1">
+<h2 class="title1"> |공지사항</h2>
 	<table class="tabletool1">
-		<caption class="notice"><img class="LS_img" src="./resources/img/LS.png"> 공지사항</caption>
-		<tr class="tablecategory1">
+		<tr>
 			<th width="15%">번호</th>
 			<th width="55%">제목</th>
 			<th width="15%">작성자</th>
@@ -27,7 +26,6 @@
 		</tr>
 		<%-- </c:forEach> --%>
 	</table>
-</div>
 
 
    <!-- ajax 페이지 불러오는 부분 -->

@@ -9,10 +9,9 @@
 <link href="./resources/css/notice.css" rel="stylesheet">
 </head>
 <body>
-<div class="center_page2">
-	<table class="tabletool2">
-		<caption class="calendar"><img class="LS_img" src="./resources/img/CL.png"> 주요일정</caption>
-		<tr class="tablecategory2">
+<h2 class="title1"> |시험일정</h2>
+	<table class="tabletool1">
+		<tr>
 			<th width="15%">날짜</th>
 			<th width="55%">제목</th>
 			<th width="15%">작성자</th>
@@ -28,7 +27,6 @@
 		<%-- </c:forEach> --%>
 	</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_scheduleInsert')">글쓰기</button>
-</div>
 
    <!-- ajax 페이지 불러오는 부분 -->
    <script type="text/javascript">
