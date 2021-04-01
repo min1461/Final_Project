@@ -8,8 +8,8 @@
 
 
 table.std_joininsert {
+  width:100%;
   border-collapse: collapse;
-  
   text-align: left;
   line-height: 1.5;
   border-top: 1px solid #ccc;
@@ -35,6 +35,6 @@ table.std_joininsert td {
 }
 
 #req {
-	margin-left: 1070px;
+	margin-left: 97%;
 }
 
