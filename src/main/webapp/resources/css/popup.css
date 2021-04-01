@@ -25,24 +25,28 @@
 	border: 1px solid #ddd;
 }
 
-/* .apply th:first-child, .apply td:first-child {
+.apply th:first-child, .apply td:first-child {
 	border-left: 0;
 }
 
 .apply th:last-child, .apply td:last-child {
 	border-right: 0;
-} */
+}
 
 
 /* 강의평가 */
+#mm{
+	width : 50px;
+}
+
 #hh{
-	width : 50%;
-	background : pink;
+width : 500px;
+
 }
 
 #ww {
-width : 5%;
-background : yellow;
+width : 50px;
+
 }
 
 .footer {

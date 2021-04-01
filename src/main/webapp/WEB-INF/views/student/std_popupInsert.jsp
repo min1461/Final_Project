@@ -10,10 +10,10 @@
 <body>
 
 <h2 class="title1"> | 강의평가 문항 입력</h2>
-<br>
+
 <table class="apply">
 		<tr>
-		<th>문항</th> <th id="hh">평가항목</th> <th id="ww">매우그렇다</th> <th id="ww">그렇다</th> <th id="ww">보통이다</th> <th id="ww">그렇지않다</th> <th id="ww">매우그렇지않다</th></tr>
+		<th id="mm">문항</th> <th id="hh">평가항목</th> <th id="ww">매우그렇다</th> <th id="ww">그렇다</th> <th id="ww">보통이다</th> <th id="ww">그렇지않다</th> <th id="ww">매우그렇지않다</th></tr>
 
 		<tr>
 		<td>1</td> 
@@ -108,7 +108,7 @@
 		<tr>
 		<td>10</td> 
 		<td id="hh">이 강의에서 좋았던 점이나 개선할 점이 있다면 자유롭게 적어주십시오</td>
-		<td colspan=5><textarea rows=5 cols=100 onFocus="this.select()"></textarea></td>
+		<td colspan=5><textarea rows=5 cols=50 onFocus="this.select()"></textarea></td>
 		</tr>		
 		</table>
 		<br><br><br>
