@@ -9,9 +9,8 @@
 <link href="./resources/css/notice.css" rel="stylesheet">
 </head>
 <body>
-<div class="center_page2">
-	<table class="tabletool2">
-		<caption class="calendar"><img class="LS_img" src="./resources/img/CL.png"> 학교 주요일정</caption>
+<h2 class="title1"> |학교 주요일정</h2>
+	<table class="tabletool1">
 		<tr class="tablecategory2">
 			<th width="15%">날짜</th>
 			<th width="55%">제목</th>
@@ -27,7 +26,6 @@
 		</tr>
 		<%-- </c:forEach> --%>
 	</table>
-</div>
 
    <!-- ajax 페이지 불러오는 부분 -->
    <script type="text/javascript">
