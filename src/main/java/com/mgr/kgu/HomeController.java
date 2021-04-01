@@ -307,4 +307,10 @@ public class HomeController {
 		return "student/std_penaltyCheck";
 
 	}
+	// 장학금 조회
+	@RequestMapping(value = "/adm_tuitiondepositCheck")
+	public String adm_tuitiondepositCheck(Model model) {
+		return "admin/adm_tuitiondepositCheck";
+		
+	}
 }
