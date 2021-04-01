@@ -8,6 +8,7 @@
 
 
 table.scoreinsert {
+  width:100%;
   border-collapse: collapse;
   text-align: left;
   line-height: 1.5;
@@ -34,7 +35,7 @@ table.scoreinsert td {
 }
   
 #check {
-	margin-left:24%;
+	margin-left:93%;
 }
 
 
