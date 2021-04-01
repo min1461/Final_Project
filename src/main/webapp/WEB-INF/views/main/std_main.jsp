@@ -39,7 +39,7 @@
 			<div id="myDropdown2" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('std_gradesCheck')"><img
 					src="./resources/img/arrow_red.png"> 성적확인</a> <a
-					href="javascript:void(0);" onclick="btnclick('n_contents')"><img
+					href="javascript:void(0);" onclick="btnclick('std_evaluationInsert')"><img
 					src="./resources/img/arrow_red.png"> 강의평가</a> <a
 					href="javascript:void(0);"
 					onclick="btnclick('std_attendanceCheck')"><img

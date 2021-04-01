@@ -1,36 +1,49 @@
 @charset "UTF-8";
+
 .title1 {
-	font-size:30px;
-	color:#A4A4A4;
-	margin-left:6px;
+	font-size: 30px;
+	color: #A4A4A4;
+	margin-left: 6px;
 }
 
- .apply {
-      width:100%;
-      border-collapse: collapse;
-      border-top: 3px solid #168;
-      margin-top:20px;
-      text-align: center;
-    }  
-    .apply th {
-      color: #168;
-      background: #f0f6f9;
-      text-align: center;
-    }
-    .apply th, .apply td {
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
-    .apply th:first-child, .apply td:first-child {
-      border-left: 0;
-    }
-    .apply th:last-child, .apply td:last-child {
-      border-right: 0;
-    }
-    
-    
-    #except{
-	border : 0px;
-	width : 10%;
+.apply {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 3px solid #168;
+	margin-top: 20px;
+	text-align: center;
 }
-    
+
+.apply th {
+	color: #168;
+	background: #f0f6f9;
+	text-align: center;
+}
+
+.apply th, .apply td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.apply th:first-child, .apply td:first-child {
+	border-left: 0;
+}
+
+.apply th:last-child, .apply td:last-child {
+	border-right: 0;
+}
+
+
+/* 강의평가 */
+#ww {
+	width: 10%;
+}
+
+.footer {
+	text-align: center;
+}
+
+.btn {
+	width: 50px;
+	height: 30px;
+}
