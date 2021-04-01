@@ -13,24 +13,22 @@ table {
 } */
 
 #infomenu {
-	background-color: rgb(184, 215, 255);
-	width: 140px;
-	height: 22px;
+	background-color: #f0f6f9;
+	width: 100px;
+	height: 50px;
 	text-align: center;
-	border: 1px solid gray;
+	border-right: 1px solid gray;
 	font-weight: bold;
 }
 
 #infovalue {
 	width: 200px;
-	height: 22px;
-	border-bottom: 1px solid gray;
+	height: 50px;
 	text-align: center;
 }
 
 #profile{
-	width: 143px;
-	height: 173px;
+	width: 180px;
 	border: 1px solid gray;
 }
 
@@ -46,4 +44,13 @@ table {
 	font-size:30px;
 	font-style: italic;
 	text-align: center;
+}
+
+#guide{
+	color: red;
+}
+
+#btn_add, #btn_email, #btn_pn, #btn_bank, #btn_profile {
+	width: 80px;
+	margin-top: 3px;
 }
