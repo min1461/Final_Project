@@ -298,20 +298,19 @@ public class HomeController {
 	@RequestMapping(value = "/adm_penaltyInsert")
 	public String adm_penaltyInsert(Model model) {
 		return "admin/adm_penaltyInsert";
-		}
-		
-	//강의평가
-		@RequestMapping(value = "/std_evaluationInsert")
-		public String std_evaluationInsert(Model model) {
-			return "student/std_evaluationInsert";
-		}
-		
-	//강의평가 팝업
-	    @RequestMapping(value = "/std_popupInsert")
-		public String std_popupInsert(Model model) {
-			return "student/std_popupInsert";
-		}		
+	}
 
+	// 강의평가
+	@RequestMapping(value = "/std_evaluationInsert")
+	public String std_evaluationInsert(Model model) {
+		return "student/std_evaluationInsert";
+	}
+
+	// 강의평가 팝업
+	@RequestMapping(value = "/std_popupInsert")
+	public String std_popupInsert(Model model) {
+		return "student/std_popupInsert";
+	}
 
 	// 벌점조회
 	@RequestMapping(value = "/std_penaltyCheck")
@@ -320,21 +319,16 @@ public class HomeController {
 
 	}
 
-	
 	// 장학금 조회
 	@RequestMapping(value = "/adm_tuitiondepositCheck")
 	public String adm_tuitiondepositCheck(Model model) {
 		return "admin/adm_tuitiondepositCheck";
-		
-	}
-<<<<<<< HEAD
 
-=======
-	
+	}
+
 	// 장학금 승인
 	@RequestMapping(value = "/adm_tuitiondepositApproval")
 	public String adm_tuitiondepositApproval(Model model) {
 		return "admin/adm_tuitiondepositApproval";
-	} 
->>>>>>> 42a9eb18d95e4c7fa41483736a68452cf29f088e
+	}
 }
