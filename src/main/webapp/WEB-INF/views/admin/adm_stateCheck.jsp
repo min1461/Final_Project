@@ -12,10 +12,10 @@
 <table class="stateCheck">
 		 <caption>표 제목</caption>
 		<tr>
-		<th>NO.</th> <th>학과</th> <th>학번</th> <th>이름</th>  <th>휴복학</th> <th>서류 제출상태</th> <th>처리</th> 
+		<th>NO.</th> <th>학과</th> <th>학번</th> <th>이름</th>  <th>휴복학</th> <th>서류 제출상태</th> <th>승인</th> 
 		</tr>
 		<tr>
-		<td>1</td> <td>경영과</td> <td>201516107</td> <td>김민석</td>  <td>군휴학</td> <td>미제출</td> <td>보류</td> 
+		<td>1</td> <td>경영과</td> <td>201516107</td> <td>김민석</td>  <td>군휴학</td> <td>미제출</td> <td><input type="submit" name="app1" value="승인"></td> 
 		</tr>
 			
 		</table>
