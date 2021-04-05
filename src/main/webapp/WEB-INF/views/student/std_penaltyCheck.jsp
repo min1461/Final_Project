@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +18,11 @@
 		<tr>
 		<th>벌점코드</th> <th>날짜</th> <th>벌점</th> <th>벌점사유</th>  
 		</tr>
+		<c:forEach var="bul" items="${bul1}">
 		<tr>
-		<td>1</td> <td>2021/04/01</td> <td>3</td> <td>실내 흡연</td> 
+		<td>${bul.PEN_NUM}</td> <td>${bul.DATE}</td> <td>${bul.PEN_POI}</td> <td>${bul.PEN_COM}</td> 
 		</tr>
-			
+		</c:forEach>
 		</table>
 	
 </body>

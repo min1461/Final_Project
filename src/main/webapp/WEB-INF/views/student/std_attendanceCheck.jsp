@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +82,11 @@
 <%-- <c:forEach var="?" items ="${}"> --%>
 <table class="apply">
 <tr><th>날짜</th><th>수강과목</th><th>담당교수</th><th>출석</th><th>지각</th><th>결석</th></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<c:forEach var="chul" items="${chul1}">
+<tr>
+<td>${chul.DATE}</td><td>${chul.SUB_NAME}</td><td>${chul.PROF_NAME}</td><td>${chul.ATT_TOCUR}</td><td>${chul.ATT_jikak}</td><td>${chul.ATT_ABSENT}</td>
+</tr>
+</c:forEach>
 </table>
 <%-- </c:forEach> --%>
 </div>

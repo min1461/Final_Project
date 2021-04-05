@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,17 +61,17 @@
 		<tr>
 		<th>학년도</th> <th>학기</th> <th>학년</th> <th>장학금명</th> <th>신청일자</th> <th>처리상태</th>  
 		</tr>
-
+<c:forEach var="jang" items="${jang1}">
 		<tr>
-		<td>가져오기</td> 
+		<td>${jang.YEAR}</td> 
 	
-	<td>가져오기</td> 
-	<td>가져오기</td> 
-	<td>가져오기</td> 
-	<td>가져오기</td> 
-	<td>관리자 승인 가져오기</td> 
+	<td>${jang.SEM_COUNT}</td> 
+	<td>${jang.GRADES}</td> 
+	<td>${jang.JANGNAME}</td> 
+	<td>${jang.DATE}</td> 
+	<td>${jang.SCH_STATE}</td> 
 		</tr>
-			
+</c:forEach>
 		</table>
 	
 </body>

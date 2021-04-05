@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,10 +27,11 @@
 		<tr>
 		<th>연도</th> <th>학년</th> <th>학기</th> <th>구분</th> <th colspan="4">과목명</th> <th>성적</th> <th>학점</th> 
 		</tr>
+		<c:forEach var="sung" items="${sung1}">
 		<tr>
-		<td>2019</td> <td>1</td> <td>1</td> <td>전공</td> <td colspan="4">프로그래밍로직</td> <td>B+</td> <td>2</td> 
+		<td>${sung.YEAR}</td> <td>${sung.GRADES}</td> <td>${sung.SEM_COUNT}</td> <td>${sung.SUB_STATE}</td> <td colspan="4">${sung.SUB_NAME}</td> <td>${sung.GRA_RAN}</td> <td>${sung.GRA_HAK}</td> 
 		</tr>
-			
+		</c:forEach>
 		</table>
 	
 </body>

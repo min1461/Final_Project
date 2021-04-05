@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +19,14 @@
 			<th width="15%">작성일</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
+		<c:forEach var="gongji" items="${gongji1}">
 		<tr>
-			<td>1</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck')">KG대학교 공지사항</a></td>
-			<td>김민석</td>
-			<td>2021-03-25</td>
+			<td>${gongji1.BUNHO}</td>
+			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck')">${gongji1.TITLE}</a></td>
+			<td>${gongji1.WRITER}</td>
+			<td>${gongji1.WRITERDAY}</td>
 		</tr>
+		</c:forEach>
 		<%-- </c:forEach> --%>
 	</table>
 	<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeInsert')">글쓰기</button>

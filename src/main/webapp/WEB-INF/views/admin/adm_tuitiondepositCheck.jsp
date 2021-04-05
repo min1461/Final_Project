@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,15 +22,17 @@
 			<th width="28%">비고</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
+		<c:forEach var="ipgeum" items="${ipgeum1}">
 		<tr>
-			<td>2021-04-01</td>
-			<td>60101952</td>
-			<td>강민규</td>
-			<td>카카오</td>
-			<td>3333054089014</td>
-			<td>2,400,000원</td>
-			<td></td>
+			<td>${ipgeum.DATE}</td>
+			<td>${ipgeum.STU_NUM}</td>
+			<td>${ipgeum.STU_NAME}</td>
+			<td>${ipgeum.BANK}</td>
+			<td>${ipgeum.STU_BANKACC}</td>
+			<td>${ipgeum.TUI_FEE}</td>
+			<td>${ipgeum.BIGO}</td>
 		</tr>
+		</c:forEach>
 		<%-- </c:forEach> --%>
 	</table>
 </body>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +19,14 @@
 			<th width="15%">작성일</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
+		<c:forEach var="sihum" items="${sihum1}">
 		<tr>
-			<td>2021-04-25</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_pscheduleCheck')">000과 시험일정@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a></td>
-			<td>김민석</td>
-			<td>2021-03-25</td>
+			<td>${sihum.DATE}</td>
+			<td><a href="javascript:void(0);" onclick="btnclick('com_pscheduleCheck')">${sihum.TITLE}</a></td>
+			<td>${sihum.WRITER}</td>
+			<td>${sihum.WRITERDAY}</td>
 		</tr>
+		</c:forEach>
 		<%-- </c:forEach> --%>
 	</table>
 

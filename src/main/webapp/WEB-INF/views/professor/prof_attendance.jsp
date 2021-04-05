@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,8 @@
 <%-- <c:forEach var="?" items ="${}"> --%>
 <table class="apply">
 <tr><th>학번</th><th>학과</th><th>이름</th><th>출석여부</th><th>출석구분</th></tr>
-<tr><td>2014110561</td><td>예시</td><td>예시</td><td>예시</td>
+<c:forEach var="chul2" items="${chul2}">
+<tr><td>${chul2.STU_NUM}</td><td>${chul2.STU_MAJOR}</td><td>${chul2.STU_NAME}</td><td>${chul2.YEOBU}</td>
 <td><input type="radio" name="A" value="출석">출석
 <input type="radio" name="A" value="지각">지각
 <input type="radio" name="A" value="결석">결석</td></tr>
@@ -48,6 +50,7 @@
 <td><input type="radio" name="A" value="출석">출석
 <input type="radio" name="A" value="지각">지각
 <input type="radio" name="A" value="결석">결석</td></tr>
+</c:forEach>
 </table>
 <%-- </c:forEach> --%>
 <br>

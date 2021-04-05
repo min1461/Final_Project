@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,16 +53,16 @@ function popup() { window.open("std_popupInsert", "popup", "width=900, height=80
 		<tr>
 		<th>학년도</th> <th>학기</th> <th>교수명</th> <th>과목명</th> <th>강의평가</th>  
 		</tr>
-
+<c:forEach var="kang" items="${kang1}">
 		<tr>
-		<td>가져오기</td> 
-		<td>가져오기</td> 
-		<td>가져오기</td> 
-		<td>가져오기</td> 
+		<td>${kang.YEAR}</td> 
+		<td>${kang.SEM_COUNT}</td> 
+		<td>${kang.PROF_NAME}</td> 
+		<td>${kang.SUB_NAME}</td> 
 
 	<td><input type="button" name="ok" value="평가하기" onclick="popup();"></td> 
 		</tr>
-			
+</c:forEach>	
 		</table>
 
 

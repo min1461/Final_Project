@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,15 +22,15 @@
 		<tr>
 		<th>성명</th> <th>학번</th> <th>학과</th> <th>주소</th>
 		</tr>
-
+<c:forEach var="joe" items="${joe1}">
 		<tr>
-		<td>가져오기</td>
-	    <td>가져오기</td> 
-		<td>가져오기</td> 
-		<td>가져오기</td> 
+		<td>${joe.STU_NAME}</td>
+	    <td>${joe.STU_NUM}</td> 
+		<td>${joe.STU_MAJOR}</td> 
+		<td>${joe.STU_ADDRESS}</td> 
 	
 		</tr>
-			
+</c:forEach>			
 		</table>
 		
 <br><br><br><br><br>
@@ -38,7 +39,7 @@
 		<tr>
 		<th>학년도</th> <th>학기</th> <th>학년</th> <th>등록금액</th> <th>장학금액</th> <th>결제</th>  
 		</tr>
-
+<c:forEach var="Kyeol" items="${Kyeol1}">
 		<tr>
 		<td><select name="year_check">
     <option value="">학년도</option>
@@ -60,11 +61,11 @@
     <option value="grade">3</option>
     <option value="grade">4</option>
 	</select></td> 
-	<td>얼마</td> <td>얼마</td> 
+	<td>${Kyeol.TUI_FEE}</td> <td>${Kyeol.SCH_PRICE}</td> 
 	<td><input type="submit" name="ok" value="결제">
 	</td> 
 		</tr>
-			
+</c:forEach>
 		</table>
 
 </body>
