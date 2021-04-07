@@ -1,10 +1,11 @@
-package com.mgr.kgu.Service.Impl;
+package com.mgr.kgu.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
-import com.mgr.kgu.Service.myService;
-import com.mgr.kgu.Service.DAO.StudentDAO;
+import com.mgr.kgu.service.myService;
+import com.mgr.kgu.service.DAO.StudentDAO;
 import com.mgr.kgu.VO.StudentVO;
 
 @Service

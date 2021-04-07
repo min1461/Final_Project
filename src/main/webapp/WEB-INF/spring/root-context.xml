@@ -25,7 +25,7 @@
 
 	<!-- Define Scan Base Package -->
 	<context:component-scan
-		base-package="com.mgr.kgu3" />
+		base-package="com.mgr.kgu" />
 
 	<!-- DataSource -->
 	<beans:bean id="dataSource"

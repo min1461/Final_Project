@@ -1,4 +1,4 @@
-package com.mgr.kgu.Service.DAO;
+package com.mgr.kgu.service.DAO;
 
 import com.mgr.kgu.VO.StudentVO;
 
