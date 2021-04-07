@@ -25,13 +25,13 @@
 						<tr>
 							<td style="width: 20%; border: 1px solid #dddddd;">제목</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textupdate" value="<%--${}--%>"></td>
+								type="text" class="textupdate" value="${admingongbo.TITLE}"></td>
 						</tr>
 						<tr>
 							<td style="border: 1px solid #dddddd;">내용</td>
 							<td colspan="2"
 								style="height: 400px; border: 1px solid #dddddd; text-align: left;"><textarea
-									class="textupdate" value="<%--${}--%>"></textarea></td>
+									class="textupdate" value="${admingongbo.CONTENT}"></textarea></td>
 						</tr>
 					</tbody>
 				</table>

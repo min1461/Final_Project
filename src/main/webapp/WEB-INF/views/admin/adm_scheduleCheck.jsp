@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,22 +19,24 @@
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach var="adminjubo" items="${adminjubo1}">
 				<tr>
 					<td style="width: 20%; border:1px solid #dddddd;">제목</td>
-					<td colspan="2" style="border:1px solid #dddddd;">get</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${adminjubo.TITLE}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성자</td>
-					<td colspan="2" style="border:1px solid #dddddd;">get</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${adminjubo.WRITER}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성일</td>
-					<td colspan="2" style="border:1px solid #dddddd;">get</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${adminjubo.WRITERDAY}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">내용</td>
-					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">get</td>
+					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${adminjubo.CONTENT}</td>
 				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_schedulelist')">목록</button>
