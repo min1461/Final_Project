@@ -1,4 +1,4 @@
-package com.mgr.kgu.service;
+package com.mgr.kgu.Service;
 
 import com.mgr.kgu.VO.StudentVO;
 
