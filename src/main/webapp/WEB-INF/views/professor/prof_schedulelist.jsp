@@ -29,6 +29,7 @@
 		</c:forEach>
 		<%-- </c:forEach> --%>
 	</table>
+	<br>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('prof_scheduleInsert')">글쓰기</button>
 
    <!-- ajax 페이지 불러오는 부분 -->

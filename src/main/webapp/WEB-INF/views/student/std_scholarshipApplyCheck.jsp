@@ -12,7 +12,7 @@
 
 
 		<h2 class="title1"> |장학금 신청</h2>
-		
+		<br>
 		<table class="apply">
 		<tr>
 		<th>학년도</th> <th>학기</th> <th>학년</th> <th>장학금명</th> <th>신청일자</th> <th>신청</th>  
@@ -56,7 +56,7 @@
 		
 		
 		<h2 class="title1"> |장학금 조회</h2>
-		
+		<br>
 		<table class="apply">
 		<tr>
 		<th>학년도</th> <th>학기</th> <th>학년</th> <th>장학금명</th> <th>신청일자</th> <th>처리상태</th>  

@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" href="./resources/css/adm_penaltyInsert.css">
 <body>
-<h1 class="register"> |벌점 등록</h1>
+<h2 class="register"> |벌점 등록</h2>
  <table class="penaltyInsert">
        <tr>
           <th scope="row">벌점코드</th>
@@ -50,7 +50,7 @@
           <th scope="row">벌점사유</th>
           <td><input type="text" name="stu_name" id="stu_name"></td>
         </tr>
-    </table>
+    </table><br>
 <input type="submit" id="penalty_reg" value="등록" />
 <input type="button" id="btn" value="취소" />
 </body>

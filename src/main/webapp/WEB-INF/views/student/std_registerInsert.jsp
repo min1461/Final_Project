@@ -52,7 +52,7 @@
 	<br>
 
 	<div class="register_section">
-		<h3>개설과목 목록</h3>
+		<h3>개설과목 목록</h3><br>
 		<table class="apply">
 			<tr>
 				<th>수강신청</th>
@@ -83,7 +83,7 @@
 		</table>
 		<br>
 
-		<h3>신청내역</h3>
+		<h3>신청내역</h3><br>
 		<table id="except">
 		<c:forEach var="shin" items="${shin1}">
 			<tr>

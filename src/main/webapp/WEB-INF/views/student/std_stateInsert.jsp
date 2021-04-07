@@ -60,6 +60,7 @@
 				<th scope="row">세부사유</th>
 				<td><input type="text" class="text"></td>
 		</table>
+		<br>
 		<input type="submit" class="btn" value="신청" />
 	</form>
 

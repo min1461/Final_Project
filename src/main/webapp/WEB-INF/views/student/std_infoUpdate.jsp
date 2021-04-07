@@ -9,9 +9,9 @@
 <link href="resources/css/std_infoUpdate.css" rel="stylesheet">
 </head>
 <body>
+	
+	<h2>|마이 페이지</h2>
 	<br>
-	<div id="mypage">|마이 페이지</div>
-	<br />
 	<form action="">
 		<table>
 			<%-- <c:forEach var="sv" items="${sv}"> --%>

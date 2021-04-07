@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" href="./resources/css/std_joinInsert.css">
 <body>
-<h1 class="join"> |입사 신청</h1>
+<h2 class="join"> |입사 신청</h2>
  <table class="std_joininsert">
          
         <tr>
@@ -62,6 +62,7 @@
 	</select></td>
      
     </table>
+    <br>
     <input type="submit" id="req" value="신청" />
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>

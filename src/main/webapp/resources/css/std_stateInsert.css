@@ -12,9 +12,11 @@ table.std_stateinsert {
   
   text-align: left;
   line-height: 1.5;
-  border-top: 1px solid #ccc;
-  border-left: 3px solid #369;
-  margin : 20px 10px;
+/*   border-top: 1px solid #ccc;
+  border-left: 3px solid #369; */
+  	border-collapse: collapse;
+	border-top: 3px solid #168;
+  margin-top : 30px;
 }
 table.std_stateinsert th {
   width: 147px;
@@ -35,7 +37,9 @@ table.std_stateinsert td {
 }
 
 .btn {
-	
+	margin-left: 45%;
+	width: 80px;
+	height: 30px;
 }
 
 table {

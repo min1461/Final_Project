@@ -10,7 +10,7 @@
 	width: 100%;
 	border-collapse: collapse;
 	border-top: 3px solid #168;
-	margin-top: 20px;
+	margin-top: -18px;
 	text-align: center;
 }
 
@@ -33,6 +33,13 @@
 	border-right: 0;
 }
 
+h3{
+	color: #A4A4A4;
+}
+
+.except{
+	margin-bottom : 20px;
+}
 
 /* 강의평가 */
 #hh{
@@ -48,6 +55,7 @@
 }
 
 .btn {
-	width: 50px;
+	margin-left: 45%;
+	width: 80px;
 	height: 30px;
 }

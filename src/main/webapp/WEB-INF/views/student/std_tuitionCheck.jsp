@@ -17,7 +17,7 @@
 
 <body>
 <h2 class="title1"> |등록금 조회 및 결제</h2>
-		
+		<br>
 		<table class="apply">
 		<tr>
 		<th>성명</th> <th>학번</th> <th>학과</th> <th>주소</th>

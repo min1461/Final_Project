@@ -9,12 +9,11 @@
 
 table.penaltyInsert {
   width:100%;
-  border-collapse: collapse;
   text-align: left;
   line-height: 1.5;
-  border-top: 1px solid #ccc;
-  border-left: 3px solid #369;
-  margin : 20px 10px;
+	border-collapse: collapse;
+	border-top: 3px solid #168;
+	margin-top : 28px;
 }
 table.penaltyInsert th {
   width: 147px;
@@ -35,7 +34,15 @@ table.penaltyInsert td {
 }
   
 #penalty_reg {
-	margin-left:93%;
+	margin-left: 45%;
+	width: 80px;
+	height: 30px;
+}
+
+#btn{
+	margin-left: 1%;
+	width: 80px;
+	height: 30px;
 }
 
 .penaltyInsert th {

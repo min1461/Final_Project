@@ -5,7 +5,9 @@ table {
 	position: absolute;
 	top: 100px;
 	border-collapse: collapse;
-	border-spacing: 0
+	border-spacing: 0;
+	margin-top : -10px;
+	
 }
 
 /* td {
@@ -40,11 +42,10 @@ table {
 	font-size: 12px;
 }
 
-#mypage {
+h2 {
 	font-size: 30px;
 	color: #A4A4A4;
 	margin-left: 6px;
-	font-weight: bold;
 }
 
 #guide {

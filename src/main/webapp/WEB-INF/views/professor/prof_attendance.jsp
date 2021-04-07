@@ -12,7 +12,7 @@
 
 <div class="attendance_header">
 <h2 class="title1"> |수강신청</h2>
-<br><br>
+<br>
 <%-- <c:forEach var="?" items ="${}"> --%>
 <table class="apply">
 <tr>
@@ -54,8 +54,7 @@
 </table>
 <%-- </c:forEach> --%>
 <br>
-<input type="submit" name="submit2" value="저장">
-<input type="reset" id="btn"  value="취소">
+<input type="submit" class="btn" name="submit2" value="저장">
 <!-- <input type="submit" name="">저장 -->
 </div>
 

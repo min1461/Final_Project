@@ -29,6 +29,7 @@
 		</c:forEach>
 		<%-- </c:forEach> --%>
 	</table>
+	<br>
 	<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeInsert')">글쓰기</button>
 
 

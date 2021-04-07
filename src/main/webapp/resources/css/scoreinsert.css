@@ -9,12 +9,11 @@
 
 table.scoreinsert {
   width:100%;
-  border-collapse: collapse;
+ 	border-collapse: collapse;
+	border-top: 3px solid #168;
   text-align: left;
   line-height: 1.5;
-  border-top: 1px solid #ccc;
-  border-left: 3px solid #369;
-  margin : 20px 10px;
+margin-top : 33px;
 }
 table.scoreinsert th {
   width: 147px;
@@ -35,7 +34,15 @@ table.scoreinsert td {
 }
   
 #check {
-	margin-left:93%;
+	margin-left: 45%;
+	width: 80px;
+	height: 30px;
+}
+
+#btn {
+	margin-left: 1%;
+	width: 80px;
+	height: 30px;
 }
 
 .scoreinsert th {
