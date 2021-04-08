@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mgr.kgu.ServiceImpl.STD_ServiceImpl;
+import com.mgr.kgu.ServiceImpl.STU_ServiceImpl;
 import com.mgr.kgu.VO.*;
 
 /**
@@ -17,7 +17,7 @@ import com.mgr.kgu.VO.*;
 @Controller
 public class HomeController {
 	@Autowired
-	private STD_ServiceImpl STD_Service;
+	private STU_ServiceImpl STU_Service;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -25,19 +25,19 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		System.out.println("테스트를 시작합니다^^");
-		STD_VO STD_VO = STD_Service.getTelinfo();
+		STU_VO STU_VO = STU_Service.getTelinfo();
 		System.out.println("생성완료");
-		model.addAttribute("STD_NAME", STD_VO.getSTD_NAME());
+		model.addAttribute("STU_NAME", STU_VO.getSTU_NAME());
 		System.out.println("모델에 이름 추가 완료");
-		System.out.println(STD_VO.getSTD_NAME());
+		System.out.println(STU_VO.getSTU_NAME());
 		System.out.println("테스트 종료");
 		return "home";
 	}
 
 	// index=>학생로그인페이지
-	@RequestMapping(value = "/std_login")
-	public String std_login(Model model) {
-		return "main/std_main";
+	@RequestMapping(value = "/STU_login")
+	public String STU_login(Model model) {
+		return "main/STU_main";
 	}
 
 	// index=>교수로그인페이지
@@ -53,13 +53,13 @@ public class HomeController {
 	}
 
 	// 학생로그인페이지=>학생메인
-	@RequestMapping(value = "/std_main")
-	public String std_main(Model model, HttpServletRequest request) {
+	@RequestMapping(value = "/STU_main")
+	public String STU_main(Model model, HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
-		STD_VO sv = new STD_VO(id, pw);
-		model.addAttribute("std_VO", sv);
-		return "main/std_main";
+		STU_VO sv = new STU_VO(id, pw);
+		model.addAttribute("STU_VO", sv);
+		return "main/STU_main";
 	}
 
 	// 교수로그인페이지=>교수메인
@@ -151,9 +151,9 @@ public class HomeController {
 	}
 
 	// 성적확인
-	@RequestMapping(value = "/std_gradesCheck")
-	public String std_gradesCheck(Model model) {
-		return "student/std_gradesCheck";
+	@RequestMapping(value = "/STU_gradesCheck")
+	public String STU_gradesCheck(Model model) {
+		return "student/STU_gradesCheck";
 	}
 
 	// 학점
@@ -164,27 +164,27 @@ public class HomeController {
 
 	// ----------- 아직 안만진곳 ------------
 	// 학생관리(호출페이지)
-	@RequestMapping(value = "/std_call")
-	public String std_call(Model model) {
-		return "std_call";
+	@RequestMapping(value = "/STU_call")
+	public String STU_call(Model model) {
+		return "STU_call";
 	}
 
 	// 학생관리(추가)
-	@RequestMapping(value = "/std_insert")
-	public String std_insert(Model model) {
-		return "std_insert";
+	@RequestMapping(value = "/STU_insert")
+	public String STU_insert(Model model) {
+		return "STU_insert";
 	}
 
 	// 학생관리(수정)
-	@RequestMapping(value = "/std_update")
-	public String std_update(Model model) {
-		return "std_update";
+	@RequestMapping(value = "/STU_update")
+	public String STU_update(Model model) {
+		return "STU_update";
 	}
 
 	// 학생관리(상태 변경)
-	@RequestMapping(value = "/std_state")
-	public String std_state(Model model) {
-		return "std_state";
+	@RequestMapping(value = "/STU_state")
+	public String STU_state(Model model) {
+		return "STU_state";
 	}
 
 	// 교수출석 (입력)
@@ -194,17 +194,17 @@ public class HomeController {
 	}
 
 	// 학생관리(상태 변경)
-	@RequestMapping(value = "/std_infoUpdate")
-	public String std_infoUpdate(Model model) {
-//		std_VO sv = new std_VO(111, "12345");
+	@RequestMapping(value = "/STU_infoUpdate")
+	public String STU_infoUpdate(Model model) {
+//		STU_VO sv = new STU_VO(111, "12345");
 //		model.addAttribute("sv",sv);
-		return "student/std_infoUpdate";
+		return "student/STU_infoUpdate";
 	}
 
 	// 학생출석 (조회)
-	@RequestMapping(value = "/std_attendanceCheck")
-	public String std_attendanceCheck(Model model) {
-		return "student/std_attendanceCheck";
+	@RequestMapping(value = "/STU_attendanceCheck")
+	public String STU_attendanceCheck(Model model) {
+		return "student/STU_attendanceCheck";
 	}
 
 	// 관리자 공지사항 수정
@@ -244,33 +244,33 @@ public class HomeController {
 	}
 
 	// 수강신청 입력
-	@RequestMapping(value = "/std_registerInsert")
-	public String std_registerInsert(Model model) {
-		return "student/std_registerInsert";
+	@RequestMapping(value = "/STU_registerInsert")
+	public String STU_registerInsert(Model model) {
+		return "student/STU_registerInsert";
 	}
 
 	// 수강신청 입력
-	@RequestMapping(value = "/std_registerCheck")
-	public String std_registerCheck(Model model) {
-		return "student/std_registerCheck";
+	@RequestMapping(value = "/STU_registerCheck")
+	public String STU_registerCheck(Model model) {
+		return "student/STU_registerCheck";
 	}
 
 	// 등록금 조회
-	@RequestMapping(value = "/std_tuitionCheck")
-	public String std_tuitionCheck(Model model) {
-		return "student/std_tuitionCheck";
+	@RequestMapping(value = "/STU_tuitionCheck")
+	public String STU_tuitionCheck(Model model) {
+		return "student/STU_tuitionCheck";
 	}
 
 	// 입사신청
-	@RequestMapping(value = "/std_joinInsert")
-	public String std_joinInsert(Model model) {
-		return "student/std_joinInsert";
+	@RequestMapping(value = "/STU_joinInsert")
+	public String STU_joinInsert(Model model) {
+		return "student/STU_joinInsert";
 	}
 
 	// 장학금신청
-	@RequestMapping(value = "/std_scholarshipApplyCheck")
-	public String std_scholarshipApplyCheck(Model model) {
-		return "student/std_scholarshipApplyCheck";
+	@RequestMapping(value = "/STU_scholarshipApplyCheck")
+	public String STU_scholarshipApplyCheck(Model model) {
+		return "student/STU_scholarshipApplyCheck";
 	}
 
 	// 기숙사배정
@@ -280,9 +280,9 @@ public class HomeController {
 	}
 
 	// 휴복학신청
-	@RequestMapping(value = "/std_stateInsert")
-	public String std_stateInsert(Model model) {
-		return "student/std_stateInsert";
+	@RequestMapping(value = "/STU_stateInsert")
+	public String STU_stateInsert(Model model) {
+		return "student/STU_stateInsert";
 	}
 	
 	//휴복학 승인
@@ -298,21 +298,21 @@ public class HomeController {
 	}
 
 	// 강의평가
-	@RequestMapping(value = "/std_evaluationInsert")
-	public String std_evaluationInsert(Model model) {
-		return "student/std_evaluationInsert";
+	@RequestMapping(value = "/STU_evaluationInsert")
+	public String STU_evaluationInsert(Model model) {
+		return "student/STU_evaluationInsert";
 	}
 
 	// 강의평가 팝업
-	@RequestMapping(value = "/std_popupInsert")
-	public String std_popupInsert(Model model) {
-		return "student/std_popupInsert";
+	@RequestMapping(value = "/STU_popupInsert")
+	public String STU_popupInsert(Model model) {
+		return "student/STU_popupInsert";
 	}
 
 	// 벌점조회
-	@RequestMapping(value = "/std_penaltyCheck")
-	public String std_penaltyCheck(Model model) {
-		return "student/std_penaltyCheck";
+	@RequestMapping(value = "/STU_penaltyCheck")
+	public String STU_penaltyCheck(Model model) {
+		return "student/STU_penaltyCheck";
 
 	}
 
