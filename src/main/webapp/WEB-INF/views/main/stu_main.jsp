@@ -37,12 +37,12 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 수업시스템
 			</button>
 			<div id="myDropdown2" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('std_gradesCheck')"><img
+				<a href="javascript:void(0);" onclick="btnclick('stu_gradesCheck')"><img
 					src="./resources/img/arrow_red.png"> 성적확인</a> <a
-					href="javascript:void(0);" onclick="btnclick('std_evaluationInsert')"><img
+					href="javascript:void(0);" onclick="btnclick('stu_evaluationInsert')"><img
 					src="./resources/img/arrow_red.png"> 강의평가</a> <a
 					href="javascript:void(0);"
-					onclick="btnclick('std_attendanceCheck')"><img
+					onclick="btnclick('stu_attendanceCheck')"><img
 					src="./resources/img/arrow_red.png"> 출석조회</a>
 			</div>
 		</div>
@@ -52,9 +52,9 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 수강시스템
 			</button>
 			<div id="myDropdown3" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('std_registerInsert')"><img
+				<a href="javascript:void(0);" onclick="btnclick('stu_registerInsert')"><img
 					src="./resources/img/arrow_red.png"> 수강신청</a> <a
-					href="javascript:void(0);" onclick="btnclick('std_registerCheck')"><img
+					href="javascript:void(0);" onclick="btnclick('stu_registerCheck')"><img
 					src="./resources/img/arrow_red.png"> 수강신청내역</a>
 			</div>
 		</div>
@@ -64,9 +64,9 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 등록시스템
 			</button>
 			<div id="myDropdown4" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('std_tuitionCheck')"><img
+				<a href="javascript:void(0);" onclick="btnclick('stu_tuitionCheck')"><img
 					src="./resources/img/arrow_red.png"> 등록금 조회 및 결제</a> <a
-					href="javascript:void(0);" onclick="btnclick('std_scholarshipApplyCheck')"><img
+					href="javascript:void(0);" onclick="btnclick('stu_scholarshipApplyCheck')"><img
 					src="./resources/img/arrow_red.png"> 장학금 신청 및 조회</a>
 			</div>
 		</div>
@@ -76,9 +76,9 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 학적시스템
 			</button>
 			<div id="myDropdown5" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('std_infoUpdate')"><img
+				<a href="javascript:void(0);" onclick="btnclick('stu_infoUpdate')"><img
 					src="./resources/img/arrow_red.png"> 개인정보 변경</a> <a
-					href="javascript:void(0);" onclick="btnclick('std_stateInsert')"><img
+					href="javascript:void(0);" onclick="btnclick('stu_stateInsert')"><img
 					src="./resources/img/arrow_red.png"> 휴복학 신청 및 조회</a>
 			</div>
 		</div>
@@ -88,9 +88,9 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 기숙사시스템
 			</button>
 			<div id="myDropdown6" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('std_joinInsert')"><img
+				<a href="javascript:void(0);" onclick="btnclick('stu_joinInsert')"><img
 					src="./resources/img/arrow_red.png"> 입사신청</a> <a
-					href="javascript:void(0);" onclick="btnclick('std_penaltyCheck')"><img
+					href="javascript:void(0);" onclick="btnclick('stu_penaltyCheck')"><img
 					src="./resources/img/arrow_red.png"> 벌점조회</a>
 			</div>
 		</div>
@@ -147,7 +147,7 @@
 <!-- 	<div id="mypage">
 	</div>
  -->	<div id="logout">
-		<input type="button" value="마이페이지" class="upbutton" onclick="btnclick('std_infoUpdate')" />
+		<input type="button" value="마이페이지" class="upbutton" onclick="btnclick('stu_infoUpdate')" />
 		<input type="button" value="로그아웃" class="upbutton" onclick="" />
 	</div>
 
