@@ -1,7 +1,6 @@
 package com.mgr.kgu.ServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 import com.mgr.kgu.DAO.STU_DAO;
@@ -16,16 +15,16 @@ public class STU_ServiceImpl implements STU_DAO {
 
 	@Override
 	public STU_VO getTelinfo() {
-		return this.STU_Service.getTelinfo();
+		return STU_Service.getTelinfo();
 	}
 	
 	@Override
-	public STU_VO getSTDNUM() {
-		return this.STU_Service.getSTDNUM();
+	public STU_VO getSTU_NUM() {
+		return STU_Service.getSTU_NUM();
 	}
 	
 	@Override
-	public STU_VO getSTDPW() {
-		return this.STU_Service.getSTDPW();
+	public STU_VO getSTU_PW() {
+		return this.STU_Service.getSTU_PW();
 	}
 }

@@ -14,7 +14,6 @@
 	<br>
 	<form action="">
 		<table>
-			<%-- <c:forEach var="sv" items="${sv}"> --%>
 			<tr>
 				<td id="profile" rowspan="5"><c:out value="${std_VO.STU_PHOTO}" /></td>
 				<td id="infomenu">학번</td>
@@ -40,25 +39,26 @@
 			</tr>
 			<tr>
 				<td id="infomenu">주소</td>
-				<td id="infovalue" colspan="3"><c:out value="${std_VO.STU_ADDRESS}" /><input type="text"
+				<td id="infovalue" colspan="3"><input
+					type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 500px; height: 30px; text-align: center"
-					value="경기도 김포시 풍무로 41-41 B02호" required /></td>
+					value="<c:out value="${std_VO.STU_ADDRESS}" />" required /></td>
 				<td id="infomenu">전화번호</td>
-				<td id="infovalue"><c:out value="${std_VO.STU_PHONENUM}" /><input type="text"
+				<td id="infovalue"><input type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
-					value="010-8882-5155" required /></td>
+					value="<c:out value="${std_VO.STU_PHONENUM}" />" required /></td>
 				<td id="infomenu">이메일</td>
-				<td id="infovalue"><c:out value="${std_VO.STU_EMAIL}" /><input type="text"
+				<td id="infovalue"><input type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
-					value="min1461@naver.com" required /></td>
+					value="<c:out value="${std_VO.STU_EMAIL}" />" required /></td>
 			</tr>
 			<tr>
 				<td id="infomenu">계좌번호</td>
-				<td id="infovalue" colspan="3"><c:out value="${std_VO.STU_BANKACC}" /><c:out value="${std_VO.STU_BANKACC}" /><input type="text"
+				<td id="infovalue" colspan="3"><input type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
-					value="카카오뱅크" required /><input type="text"
+					value="<c:out value="${std_VO.STU_BANKACC}" />" required /><input type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 300px; height: 30px; text-align: center"
-					value="3333-0540-89-014" required /></td>
+					value="<c:out value="${std_VO.STU_BANKACC}" />" required /></td>
 				<td id="infomenu">총평점</td>
 				<td id="infovalue"><c:out value="${std_VO.STU_TOTALGPA}" /></td>
 				<td id="infomenu">총평점평균</td>

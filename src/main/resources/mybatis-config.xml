@@ -26,7 +26,7 @@
       -->
       
       <typeAliases>
-            <typeAlias alias="STD_VO" type="com.mgr.kgu.VO.STD_VO"></typeAlias>
+            <typeAlias alias="STU_VO" type="com.mgr.kgu.VO.STU_VO"></typeAlias>
             <typeAlias alias="TES_VO" type="com.mgr.kgu.VO.TES_VO"></typeAlias>
             <typeAlias alias="TSCD_VO" type="com.mgr.kgu.VO.TSCD_VO"></typeAlias>
             <typeAlias alias="SCD_VO" type="com.mgr.kgu.VO.SCD_VO"></typeAlias>
