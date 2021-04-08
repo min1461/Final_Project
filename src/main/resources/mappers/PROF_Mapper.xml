@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD 선언 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mgr.kgu.Service.STD_Service">
+	<select id="testSTD" resultType="com.mgr.kgu.VO.STD_VO">
+		SELECT * FROM STUDENT;
+	</select>
+	
+	<!-- 해당 아이디가 테이블에 존재하는지 확인하는 쿼리 NULL일 경우 없음 -->
+	<select id="searchSTD" resultType="com.mgr.kgu.VO.STD_VO">
+		SELECT * FROM STUDENT WHERE STU_NUM=#{id};
+	</select>
+</mapper>

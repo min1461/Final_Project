@@ -26,7 +26,23 @@
       -->
       
       <typeAliases>
-            <typeAlias alias="TestVO" type="com.mgr.kgu.VO.TestVO"></typeAlias>
+            <typeAlias alias="STD_VO" type="com.mgr.kgu.VO.STD_VO"></typeAlias>
+            <typeAlias alias="TES_VO" type="com.mgr.kgu.VO.TES_VO"></typeAlias>
+            <typeAlias alias="TSCD_VO" type="com.mgr.kgu.VO.TSCD_VO"></typeAlias>
+            <typeAlias alias="SCD_VO" type="com.mgr.kgu.VO.SCD_VO"></typeAlias>
+            <typeAlias alias="SEM_VO" type="com.mgr.kgu.VO.SEM_VO"></typeAlias>
+            <typeAlias alias="TUI_VO" type="com.mgr.kgu.VO.TUI_VO"></typeAlias>
+            <typeAlias alias="ADM_VO" type="com.mgr.kgu.VO.ADM_VO"></typeAlias>
+            <typeAlias alias="VAC_VO" type="com.mgr.kgu.VO.VAC_VO"></typeAlias>
+            <typeAlias alias="SUB_VO" type="com.mgr.kgu.VO.SUB_VO"></typeAlias>
+            <typeAlias alias="DOM_VO" type="com.mgr.kgu.VO.DOM_VO"></typeAlias>
+            <typeAlias alias="PROF_VO" type="com.mgr.kgu.VO.PROF_VO"></typeAlias>
+            <typeAlias alias="SCH_VO" type="com.mgr.kgu.VO.SCH_VO"></typeAlias>
+            <typeAlias alias="ATT_VO" type="com.mgr.kgu.VO.ATT_VO"></typeAlias>
+            <typeAlias alias="GRA_VO" type="com.mgr.kgu.VO.GRA_VO"></typeAlias>
+            <typeAlias alias="REV_VO" type="com.mgr.kgu.VO.REV_VO"></typeAlias>
+            <typeAlias alias="ANN_VO" type="com.mgr.kgu.VO.ANN_VO"></typeAlias>
+            <typeAlias alias="PEN_VO" type="com.mgr.kgu.VO.PEN_VO"></typeAlias>
       </typeAliases>
  
  
