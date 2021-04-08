@@ -13,8 +13,9 @@ table.std_joininsert {
   line-height: 1.5;
   border-collapse: collapse;
   border-top: 3px solid #168;
-  margin-top : 28px;
+  margin-top : 28px; 
 }
+
 table.std_joininsert th {
   width: 147px;
   padding: 10px;
@@ -25,6 +26,7 @@ table.std_joininsert th {
   border-bottom: 1px solid #ccc;
 
 }
+
 table.std_joininsert td {
   width: 360px;
   padding: 10px;
