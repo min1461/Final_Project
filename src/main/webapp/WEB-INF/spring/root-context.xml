@@ -65,7 +65,6 @@
 	<!-- Define Mapper Scanner Configurer Class -->
 	<beans:bean
 		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<beans:property name="basePackage"
-			value="com.mgr.kgu.Service" />
+		<beans:property name="basePackage" value="com.mgr.kgu.Service" />
 	</beans:bean>
 </beans:beans>

@@ -1,45 +1,36 @@
-
 package com.mgr.kgu;
-
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mgr.kgu.VO.admin_VO;
-import com.mgr.kgu.VO.prof_VO;
-import com.mgr.kgu.VO.std_VO;
+import com.mgr.kgu.ServiceImpl.STD_ServiceImpl;
+import com.mgr.kgu.VO.*;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	@Autowired
+	private STD_ServiceImpl STD_Service;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate);
-
+	public String home(Model model) {
+		System.out.println("테스트를 시작합니다^^");
+		STD_VO STD_VO = STD_Service.getTelinfo();
+		System.out.println("생성완료");
+		model.addAttribute("STD_NAME", STD_VO.getSTD_NAME());
+		System.out.println("모델에 이름 추가 완료");
+		System.out.println(STD_VO.getSTD_NAME());
+		System.out.println("테스트 종료");
 		return "home";
 	}
 
@@ -66,7 +57,7 @@ public class HomeController {
 	public String std_main(Model model, HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
-		std_VO sv = new std_VO(id, pw);
+		STD_VO sv = new STD_VO(id, pw);
 		model.addAttribute("std_VO", sv);
 		return "main/std_main";
 	}
@@ -74,15 +65,15 @@ public class HomeController {
 	// 교수로그인페이지=>교수메인
 	@RequestMapping(value = "/prof_main")
 	public String prof_main(Model model, int id, String pw) {
-		prof_VO pv = new prof_VO(id, pw);
-		model.addAttribute("prof_VO", pw);
+		PROF_VO pv = new PROF_VO(id, pw);
+		model.addAttribute("prof_VO", pv.getProf_PW());
 		return "main/prof_main";
 	}
 
 	// 관리자로그인페이지=>관리자메인
 	@RequestMapping(value = "/adm_main")
 	public String adm_main(Model model, int id, String pw) {
-		admin_VO av = new admin_VO(id, pw);
+		ADM_VO av = new ADM_VO(id, pw);
 		model.addAttribute("admin_VO", av);
 		return "main/adm_main";
 	}
