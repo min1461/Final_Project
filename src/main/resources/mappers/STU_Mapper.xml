@@ -5,7 +5,7 @@
 	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mgr.kgu.Service.STD_Service">
+<mapper namespace="com.mgr.kgu.DAO.STU_DAO">
 	<select id="STU_logininfo" resultType="com.mgr.kgu.VO.STU_VO">
 		SELECT STD_NUM, STD_PW FROM STUDENT WHERE STD_NUM = ${STD_NUM} AND STD_PW = ${STD_PW};
 	</select>
