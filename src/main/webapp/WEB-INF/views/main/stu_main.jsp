@@ -142,7 +142,7 @@
 
 		function myFunction6() {
 			document.getElementById("myDropdown6").classList.toggle("show");
-		}
+		}	
 	</script>
 <!-- 	<div id="mypage">
 	</div>

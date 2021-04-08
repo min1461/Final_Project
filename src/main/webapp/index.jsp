@@ -16,7 +16,7 @@
 
 	<!-- 학생 -->
 	<div class="main">
-		<a href="std_login">
+		<a href="stu_login">
 			<div class="banner">
 				<img src="./resources/img/stu.png" id="loginimg">
 				<span class="text">STUDENT</span>
