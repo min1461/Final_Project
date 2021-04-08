@@ -1,7 +1,5 @@
 package com.mgr.kgu.DAO;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.mgr.kgu.VO.STU_VO;
 
 // 인터페이스

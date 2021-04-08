@@ -45,7 +45,7 @@ public class HomeController {
 	// 학생로그인페이지=>학생메인
 	@RequestMapping(value = "/stu_main")
 	public String stu_main(Model model, HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("HAKBUN"));
+		Integer id = Integer.parseInt(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
 		STU_VO stu_vo = stu_Service.getAllinfo(id);
 		model.addAttribute("stu_vo", stu_vo);

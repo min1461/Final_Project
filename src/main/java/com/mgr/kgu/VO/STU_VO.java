@@ -51,14 +51,6 @@ public class STU_VO {
 		STU_NUM = id;
 		STU_PW = pw;
 	}
-	
-	public Integer getSTU_NUM() {
-		return STU_NUM;
-	}
-
-	public void setSTU_NUM(Integer sTU_NUM) {
-		STU_NUM = sTU_NUM;
-	}
 
 	public Date getSTU_ADMDAY() {
 		return STU_ADMDAY;
@@ -218,5 +210,13 @@ public class STU_VO {
 
 	public void setSTU_PHOTO(String sTU_PHOTO) {
 		STU_PHOTO = sTU_PHOTO;
+	}
+
+	public Integer getSTU_NUM() {
+		return STU_NUM;
+	}
+
+	public void setSTU_NUM(Integer sTU_NUM) {
+		STU_NUM = sTU_NUM;
 	}
 }
