@@ -16,7 +16,7 @@ public class STD_ServiceImpl implements STD_DAO {
 
 	@Override
 	public STD_VO getTelinfo() {
-		return this.STD_Service.getTelinfo();
+		return this.STD_Service.getTelinfo(null, null);
 	}
 	
 	@Override

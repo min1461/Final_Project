@@ -6,8 +6,8 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mgr.kgu.Service.STD_Service">
-	<select id="testSTD" resultType="com.mgr.kgu.VO.STD_VO">
-		SELECT * FROM STUDENT;
+	<select id="std_logininfo" resultType="com.mgr.kgu.VO.STD_VO">
+		SELECT STD_NUM, STD_PW FROM STUDENT WHERE STD_NUM = ${STD_NUM} AND STD_PW = ${STD_PW};
 	</select>
 	
 	<!-- 해당 아이디가 테이블에 존재하는지 확인하는 쿼리 NULL일 경우 없음 -->
