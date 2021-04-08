@@ -147,6 +147,7 @@
 <!-- 	<div id="mypage">
 	</div>
  -->	<div id="logout">
+ <input type="text" value="${stu_vo.STU_NAME }" readonly/>
 		<input type="button" value="마이페이지" class="upbutton" onclick="btnclick('stu_infoUpdate')" />
 		<input type="button" value="로그아웃" class="upbutton" onclick="" />
 	</div>

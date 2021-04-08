@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD 선언 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mgr.kgu.Service.ADM_Service">
+	<select id="prof_logininfo" resultType="com.mgr.kgu.VO.PROF_VO">
+		SELECT PROF_NUM, PROF_PW FROM PROFESSOR WHERE PROF_NUM = ${PROF_NUM} AND PROF_PW = ${PROF_PW};
+	</select>
+	
+	<!-- 해당 아이디가 테이블에 존재하는지 확인하는 쿼리 NULL일 경우 없음 -->
+	<select id="searchPROF" resultType="com.mgr.kgu.VO.PROF_VO">
+		SELECT * FROM PROFESSOR WHERE PROF_NUM=#{id};
+	</select>
+</mapper>

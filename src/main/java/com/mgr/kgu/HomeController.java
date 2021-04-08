@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mgr.kgu.ServiceImpl.STU_ServiceImpl;
 import com.mgr.kgu.VO.ADM_VO;
@@ -24,22 +23,11 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
-		System.out.println("테스트를 시작합니다^^");
-		STU_VO stu_VO = stu_Service.getTelinfo();
-		System.out.println("생성완료");
-		model.addAttribute("stu_NAME", stu_VO.getSTU_NAME());
-		System.out.println("모델에 이름 추가 완료");
-		System.out.println(stu_VO.getSTU_NAME());
-		System.out.println("테스트 종료");
-		return "home";
-	}
 
 	// index=>학생로그인페이지
 	@RequestMapping(value = "/stu_login")
 	public String stu_login(Model model) {
-		return "main/stu_main";
+		return "login/stu_login";
 	}
 
 	// index=>교수로그인페이지
@@ -59,8 +47,8 @@ public class HomeController {
 	public String stu_main(Model model, HttpServletRequest request) {
 		int id = Integer.parseInt(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
-		STU_VO sv = new STU_VO(id, pw);
-		model.addAttribute("stu_VO", sv);
+		STU_VO stu_vo = stu_Service.getAllinfo(id);
+		model.addAttribute("stu_vo", stu_vo);
 		return "main/stu_main";
 	}
 

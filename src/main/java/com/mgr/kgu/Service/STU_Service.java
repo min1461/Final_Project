@@ -1,9 +1,10 @@
 package com.mgr.kgu.Service;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.mgr.kgu.VO.STU_VO;
 
 public interface STU_Service {
-	STU_VO getTelinfo();
-	STU_VO getSTU_NUM();
-	STU_VO getSTU_PW();
+	boolean getlogininfo(@Param("STU_NUM") Integer STU_NUM, @Param("STU_PW") String STU_PW);
+	STU_VO getAllinfo(@Param("STU_NUM")Integer STU_NUM);
 }
