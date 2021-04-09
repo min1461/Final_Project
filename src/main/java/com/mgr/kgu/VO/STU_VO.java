@@ -47,6 +47,8 @@ public class STU_VO {
 	// 사진?
 	private String STU_PHOTO;
 	
+	private String STU_BANKNAME;
+	
 	public STU_VO() {
 	}
 	
@@ -221,5 +223,13 @@ public class STU_VO {
 
 	public void setSTU_PHOTO(String STU_PHOTO) {
 		this.STU_PHOTO = STU_PHOTO;
+	}
+
+	public String getSTU_BANKNAME() {
+		return STU_BANKNAME;
+	}
+
+	public void setSTU_BANKNAME(String STU_BANKNAME) {
+		this.STU_BANKNAME = STU_BANKNAME;
 	}
 }
