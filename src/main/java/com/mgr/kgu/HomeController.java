@@ -333,6 +333,12 @@ public class HomeController {
 			System.out.println(after_address);
 			System.out.println(stu_vo.getSTU_ADDRESS());
 		}
-		return "main/stu_main";
+		return "student/stu_infoUpdate";
+	}
+	
+	// 학생관리
+	@RequestMapping(value = "/adm_studentCheck")
+	public String adm_studentCheck(Model model) {
+		return "admin/adm_studentCheck";
 	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mgr.kgu.DAO.ADM_ANN_DAO">
+	<insert id="insertinfo">
+		INSERT INTO ANNOUNCE VALUES (#{ANN_TITLE}, #{ANN_HEAD}, #{ANN_DATE}, #{ANN_CONT})
+	</insert>
+	
+	<select id="getAllinfo">
+		SELECT ANN_NUM, ANN_TITLE, ANN_HEAD, ANN_DATE, ANN_CONT FROM ANNOUNCE
+	</select>
+	
+	<delete id="deleteinfo">
+		DELETE FROM ANNOUNCE WHERE
+	</delete>
+</mapper>
