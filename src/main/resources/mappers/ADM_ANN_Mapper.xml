@@ -2,14 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mgr.kgu.DAO.ADM_ANN_DAO">
 	<insert id="insertinfo">
-		INSERT INTO ANNOUNCE VALUES (#{ANN_TITLE}, #{ANN_HEAD}, #{ANN_DATE}, #{ANN_CONT})
+		INSERT INTO ANNOUNCE(ANN_TITLE, ANN_HEAD, ANN_CONT) VALUES (#{ANN_TITLE}, #{ANN_HEAD}, #{ANN_CONT})
 	</insert>
 	
 	<select id="getAllinfo" resultType="ANN_VO">
 		SELECT * FROM ANNOUNCE
 	</select>
+
+	<select id="getTelinfo" resultType="ANN_VO">
+		SELECT ANN_TITLE, ANN_HEAD, ANN_DATE, ANN_CONT
+		FROM ANNOUNCE WHERE ANN_TITLE=#{ANN_TITLE}
+	</select>
+
+	<update id="updateinfo">
+		UPDATE ANNOUNCE SET ANN_HEAD=#{ANN_HEAD}, ANN_DATE=#{ANN_DATE}, ANN_CONT=#{ANN_CONT}, ANN_TITLE=#{ANN_TITLE} WHERE ANN_NUM=#{ANN_NUM}
+	</update>
 	
 	<delete id="deleteinfo">
-		DELETE FROM ANNOUNCE WHERE
+		DELETE FROM ANNOUNCE WHERE ANN_TITLE=#{ANN_TITLE}
 	</delete>
 </mapper>

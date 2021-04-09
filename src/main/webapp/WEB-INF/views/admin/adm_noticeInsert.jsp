@@ -23,23 +23,18 @@
 						<tr>
 							<td style="width: 20%; border: 1px solid #dddddd;">제목</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert"></td>
+								type="text" class="textinsert" name="ANN_TITLE"></td>
 						</tr>
-<!-- 						<tr>
+ 						<tr>
 							<td style="border: 1px solid #dddddd;">작성자</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert"></td>
+								type="text" class="textinsert" name="ANN_HEAD"></td>
 						</tr>
-						<tr>
-							<td style="border: 1px solid #dddddd;">작성일</td>
-							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert"></td>
-						</tr> -->
 						<tr>
 							<td style="border: 1px solid #dddddd;">내용</td>
 							<td colspan="2"
 								style="height: 400px; border: 1px solid #dddddd; text-align: left;"><input
-								type="text" class="textinsert"></td>
+								type="text" class="textinsert" name="ANN_CONT"></td>
 						</tr>
 					</tbody>
 				</table>

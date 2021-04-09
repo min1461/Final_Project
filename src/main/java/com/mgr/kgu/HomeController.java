@@ -8,7 +8,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.STU_Service;
@@ -129,7 +133,9 @@ public class HomeController {
 
 	// 관리자용 공지사항 리스트
 	@RequestMapping(value = "/adm_noticelist")
-	public String adm_noticelist(Model model) {
+	public String adm_noticelist(HttpSession session, Model model, HttpServletRequest request) {
+		ArrayList<ANN_VO> nlist1 = adm_ann_Service.getAllinfo();
+		session.setAttribute("nlist1", nlist1);
 		return "admin/adm_noticelist";
 	}
 
@@ -216,9 +222,10 @@ public class HomeController {
 
 	// 관리자 공지사항 입력 폼
 	@RequestMapping(value = "/adm_noticeInsertForm")
-	public String adm_noticeInsertForm(HttpSession session, Model model, HttpServletRequest request) {
-
-		return "admin/adm_noticelist";
+	public String adm_noticeInsertForm(ANN_VO ann_VO, Model model) {
+		System.out.println(ann_VO.getANN_CONT());
+		adm_ann_Service.insertinfo(ann_VO);
+		return "main/adm_main";
 	}
 
 	// 관리자 공지사항 입력
@@ -353,7 +360,7 @@ public class HomeController {
 			if (after_pw.equals("")) {
 				stu_service.changedInfo(stu_num, after_address, after_number, after_email, after_bankname,
 						after_bankacc);
-			}else {
+			} else {
 				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email, after_bankname,
 						after_bankacc);
 			}
