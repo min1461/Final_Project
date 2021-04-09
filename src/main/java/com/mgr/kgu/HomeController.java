@@ -1,5 +1,8 @@
 package com.mgr.kgu;
 
+import java.util.ArrayList;
+
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,8 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mgr.kgu.DAO.ADM_ANN_DAO;
 import com.mgr.kgu.DAO.STU_DAO;
+import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.VO.ADM_VO;
+import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.STU_VO;
 
@@ -21,6 +27,8 @@ public class HomeController {
 
 	@Autowired
 	private STU_DAO stu_dao;
+	
+	private ADM_ANN_DAO adm_ann_dao;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -72,7 +80,9 @@ public class HomeController {
 
 	// 공지사항 리스트
 	@RequestMapping(value = "/com_noticelist")
-	public String com_noticelist(Model model) {
+	public String com_noticelist(HttpSession session, Model model, HttpServletRequest request) {
+	    ArrayList <ANN_VO> nlist = ADM_ANN_Service.getAllinfo();
+		session.setAttribute("nlist", nlist);
 		return "common/com_noticelist";
 	}
 
@@ -204,7 +214,14 @@ public class HomeController {
 	public String adm_noticeUpdate(Model model) {
 		return "admin/adm_noticeUpdate";
 	}
-
+	
+	//관리자 공지사항 입력 폼
+	@RequestMapping(value = "/adm_noticeInsertForm")
+	public String adm_noticeInsertForm(HttpSession session, Model model, HttpServletRequest request) {
+		
+		
+		return "admin/adm_noticelist";
+	}
 	// 관리자 공지사항 입력
 	@RequestMapping(value = "/adm_noticeInsert")
 	public String adm_noticeInsert(Model model) {

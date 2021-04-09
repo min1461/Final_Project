@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<form action="" method="post">
+			<form action="adm_noticeInsertForm" method="post">
 				<table class="table table-striped"
 					style="text-align: center; border: 1px solid #dddddd; width: 100%;">
 					<thead>
@@ -25,7 +25,7 @@
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
 								type="text" class="textinsert"></td>
 						</tr>
-						<tr>
+<!-- 						<tr>
 							<td style="border: 1px solid #dddddd;">작성자</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
 								type="text" class="textinsert"></td>
@@ -34,7 +34,7 @@
 							<td style="border: 1px solid #dddddd;">작성일</td>
 							<td colspan="2" style="border: 1px solid #dddddd;"><input
 								type="text" class="textinsert"></td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td style="border: 1px solid #dddddd;">내용</td>
 							<td colspan="2"
