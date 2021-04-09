@@ -325,4 +325,10 @@ public class HomeController {
 	public String adm_tuitiondepositApproval(Model model) {
 		return "admin/adm_tuitiondepositApproval";
 	}
+	
+	// 학생관리
+	@RequestMapping(value = "/adm_studentCheck")
+	public String adm_studentCheck(Model model) {
+		return "admin/adm_studentCheck";
+	}
 }
