@@ -11,9 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mgr.kgu.DAO.ADM_ANN_DAO;
-import com.mgr.kgu.DAO.STU_DAO;
 import com.mgr.kgu.Service.ADM_ANN_Service;
+import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.PROF_VO;
@@ -26,9 +25,10 @@ import com.mgr.kgu.VO.STU_VO;
 public class HomeController {
 
 	@Autowired
-	private STU_DAO stu_dao;
+	private STU_Service stu_service;
 	
-	private ADM_ANN_DAO adm_ann_dao;
+	@Autowired
+	private ADM_ANN_Service adm_ann_Service;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -57,7 +57,7 @@ public class HomeController {
 	public String stu_main(HttpSession session, Model model, HttpServletRequest request) {
 		int id = Integer.valueOf(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
-		STU_VO stu_vo = stu_dao.getAllinfo(id);
+		STU_VO stu_vo = stu_service.getAllinfo(id);
 		session.setAttribute("stu_VO", stu_vo);
 		return "main/stu_main";
 	}
@@ -81,7 +81,8 @@ public class HomeController {
 	// 공지사항 리스트
 	@RequestMapping(value = "/com_noticelist")
 	public String com_noticelist(HttpSession session, Model model, HttpServletRequest request) {
-	    ArrayList <ANN_VO> nlist = adm_ann_dao.getAllinfo();
+	    ArrayList <ANN_VO> nlist = adm_ann_Service.getAllinfo();
+	    System.out.println(nlist);
 		session.setAttribute("nlist", nlist);
 		return "common/com_noticelist";
 	}
@@ -346,7 +347,7 @@ public class HomeController {
 		if (!before_address.equals(after_address) || !after_address.equals("")) {
 			int stu_num = stu_vo.getSTU_NUM();
 			System.out.println(stu_vo.getSTU_ADDRESS());
-			stu_dao.changedAddress(after_address, stu_num);
+			stu_service.changedAddress(after_address, stu_num);
 			System.out.println(after_address);
 			System.out.println(stu_vo.getSTU_ADDRESS());
 		}

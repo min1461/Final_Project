@@ -16,7 +16,8 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 	private ADM_ANN_DAO annkaja; // new SawonDAO()개념
 
 	@Override
-	public ArrayList<ANN_VO> getAllinfo() throws Exception {
+	public ArrayList<ANN_VO> getAllinfo(){
+		System.out.println("여기는서비스");
 		return annkaja.getAllinfo();
 	}
 	

@@ -8,7 +8,7 @@ import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.STU_VO;
 
 
-@Service
+@Service("STU_Service")
 public class STU_ServiceImpl implements STU_Service {
 
 	@Autowired
@@ -25,7 +25,7 @@ public class STU_ServiceImpl implements STU_Service {
 	}
 
 	@Override
-	public String changeAddress(String STU_ADDRESS, int STU_NUM) {
+	public String changedAddress(String STU_ADDRESS, int STU_NUM) {
 		return STU_DAO.changedAddress(STU_ADDRESS, STU_NUM);
 	}
 }
