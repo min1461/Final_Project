@@ -17,8 +17,7 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 
 	@Override
 	public ArrayList<ANN_VO> getAllinfo() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return annkaja.getAllinfo();
 	}
 	
 	@Override

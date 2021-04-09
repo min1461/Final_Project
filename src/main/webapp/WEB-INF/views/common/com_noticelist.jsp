@@ -19,12 +19,12 @@
 			<th width="15%">작성일</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
-		<c:forEach var="comgong" items="${comgong1}">
+		<c:forEach var="nl" items="${nlist}">
 		<tr>
-			<td>${comgong.BUNHO}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">${comgong.TITLE}</a></td>
-			<td>${comgong.WRITER}</td>
-			<td>${comgong.WRITERDAY}</td>
+			<td>${nl.ANN_NUM}</td>
+			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">${nl.ANN_TITLE}</a></td>
+			<td>${nl.ANN_HEAD}</td>
+			<td>${nl.ANN_DATE}</td>
 		</tr>
 		</c:forEach>
 		<%-- </c:forEach> --%>

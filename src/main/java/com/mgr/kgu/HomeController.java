@@ -81,7 +81,7 @@ public class HomeController {
 	// 공지사항 리스트
 	@RequestMapping(value = "/com_noticelist")
 	public String com_noticelist(HttpSession session, Model model, HttpServletRequest request) {
-	    ArrayList <ANN_VO> nlist = ADM_ANN_Service.getAllinfo();
+	    ArrayList <ANN_VO> nlist = adm_ann_dao.getAllinfo();
 		session.setAttribute("nlist", nlist);
 		return "common/com_noticelist";
 	}
