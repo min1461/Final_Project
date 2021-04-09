@@ -14,5 +14,4 @@ public interface ADM_ANN_DAO {
 	ANN_VO updateinfo(ANN_VO ann_VO);
 
 	ANN_VO deleteinfo(ANN_VO ann_VO);
-
 }

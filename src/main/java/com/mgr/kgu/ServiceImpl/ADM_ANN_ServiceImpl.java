@@ -17,7 +17,6 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 
 	@Override
 	public ArrayList<ANN_VO> getAllinfo(){
-		System.out.println("여기는서비스");
 		return annkaja.getAllinfo();
 	}
 	

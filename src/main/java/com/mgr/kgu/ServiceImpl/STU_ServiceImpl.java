@@ -7,7 +7,6 @@ import com.mgr.kgu.DAO.STU_DAO;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.STU_VO;
 
-
 @Service("STU_Service")
 public class STU_ServiceImpl implements STU_Service {
 
@@ -25,7 +24,16 @@ public class STU_ServiceImpl implements STU_Service {
 	}
 
 	@Override
-	public String changedAddress(String STU_ADDRESS, int STU_NUM) {
-		return STU_DAO.changedAddress(STU_ADDRESS, STU_NUM);
+	public void changedInfo(int STU_NUM, String after_address, String after_number, String after_email,
+			String after_bankname, String after_bankacc) {
+		STU_DAO.changedInfo(STU_NUM, after_address, after_number, after_email, after_bankname, after_bankacc);
+	}
+
+	@Override
+	public void changedInfoPW(int STU_NUM, String after_pw, String after_address, String after_number,
+			String after_email, String after_bankname, String after_bankacc) {
+		STU_DAO.changedInfoPW(STU_NUM, after_pw, after_address, after_number, after_email, after_bankname,
+				after_bankacc);
+
 	}
 }

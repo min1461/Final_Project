@@ -148,7 +148,7 @@
 	</div>
  -->	<div id="logout">
 		<input type="button" value="마이페이지" class="upbutton" onclick="btnclick('stu_infoUpdate')" />
-		<input type="button" value="로그아웃" class="upbutton" onclick="" />
+		<input type="button" value="로그아웃" class="upbutton" onclick="btnclick('stu_login')" />
 	</div>
 
 	<!-- 불러온 페이지 띄우는 부분 -->

@@ -2,7 +2,6 @@ package com.mgr.kgu;
 
 import java.util.ArrayList;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -26,7 +25,7 @@ public class HomeController {
 
 	@Autowired
 	private STU_Service stu_service;
-	
+
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
 
@@ -81,8 +80,7 @@ public class HomeController {
 	// 공지사항 리스트
 	@RequestMapping(value = "/com_noticelist")
 	public String com_noticelist(HttpSession session, Model model, HttpServletRequest request) {
-	    ArrayList <ANN_VO> nlist = adm_ann_Service.getAllinfo();
-	    System.out.println(nlist);
+		ArrayList<ANN_VO> nlist = adm_ann_Service.getAllinfo();
 		session.setAttribute("nlist", nlist);
 		return "common/com_noticelist";
 	}
@@ -215,14 +213,14 @@ public class HomeController {
 	public String adm_noticeUpdate(Model model) {
 		return "admin/adm_noticeUpdate";
 	}
-	
-	//관리자 공지사항 입력 폼
+
+	// 관리자 공지사항 입력 폼
 	@RequestMapping(value = "/adm_noticeInsertForm")
 	public String adm_noticeInsertForm(HttpSession session, Model model, HttpServletRequest request) {
-		
-		
+
 		return "admin/adm_noticelist";
 	}
+
 	// 관리자 공지사항 입력
 	@RequestMapping(value = "/adm_noticeInsert")
 	public String adm_noticeInsert(Model model) {
@@ -342,16 +340,27 @@ public class HomeController {
 	@RequestMapping(value = "/changeinfo")
 	public String changeinfo(HttpSession session, Model model, HttpServletRequest request) {
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
-		String before_address = stu_vo.getSTU_ADDRESS();
+		int stu_num = stu_vo.getSTU_NUM();
+		String before_pw = request.getParameter("before_pw");
+		String after_pw = request.getParameter("after_pw");
+
 		String after_address = request.getParameter("address");
-		if (!before_address.equals(after_address) || !after_address.equals("")) {
-			int stu_num = stu_vo.getSTU_NUM();
-			System.out.println(stu_vo.getSTU_ADDRESS());
-			stu_service.changedAddress(after_address, stu_num);
-			System.out.println(after_address);
-			System.out.println(stu_vo.getSTU_ADDRESS());
+		String after_number = request.getParameter("phonenumber");
+		String after_email = request.getParameter("email");
+		String after_bankname = request.getParameter("bankname");
+		String after_bankacc = request.getParameter("bankacc");
+		if (before_pw.equals(stu_vo.getSTU_PW())) {
+			if (after_pw.equals("")) {
+				stu_service.changedInfo(stu_num, after_address, after_number, after_email, after_bankname,
+						after_bankacc);
+			}else {
+				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email, after_bankname,
+						after_bankacc);
+			}
 		}
-		return "student/stu_infoUpdate";
+		STU_VO stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM());
+		session.setAttribute("stu_VO", stu_vo2);
+		return "main/stu_main";
 	}
 
 	// 학생관리

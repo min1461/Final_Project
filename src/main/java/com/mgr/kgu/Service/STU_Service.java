@@ -1,7 +1,5 @@
 package com.mgr.kgu.Service;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.mgr.kgu.VO.STU_VO;
 
 public interface STU_Service {
@@ -10,6 +8,8 @@ public interface STU_Service {
 
 	STU_VO getAllinfo(int STU_NUM);
 
-	String changedAddress(String STU_ADDRESS, int STU_NUM);
+	void changedInfo(int STU_NUM, String after_address, String after_number, String after_email, String after_bankname, String after_bankacc);
+	
+	void changedInfoPW(int STU_NUM, String after_pw, String after_address, String after_number, String after_email, String after_bankname, String after_bankacc);
 
 }
