@@ -71,7 +71,7 @@
 				<td id="infomenu">현재비밀번호</td>
 				<td id="infovalue"><input type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
-					placeholder="정보변경시 비밀번호를 입력" required /></td>
+					placeholder="정보변경시 비밀번호를 입력" /></td>
 				<td id="infomenu">변경비밀번호</td>
 				<td id="infovalue"><input type="text"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
@@ -79,8 +79,8 @@
 			</tr>
 			<tr>
 				<td id="profiletext">프로필 사진<br /> <input type="button"
-					id="btn_profile" value="변경"
-					onclick=""/> </td>
+					id="btn_profile" value="변경" onclick="" />
+				</td>
 				<td colspan="3" id="guide" style="text-align: center;">※고유정보변경은
 					학사사무실로 문의주세요.</td>
 				<td colspan="4" id="guide" style="text-align: center;">※프로필사진,

@@ -321,12 +321,12 @@ public class HomeController {
 		return "admin/adm_tuitiondepositApproval";
 	}
 
-	@RequestMapping(value = "/stu_main")
+	@RequestMapping(value = "/changeinfo")
 	public String changeinfo(HttpSession session, Model model, HttpServletRequest request) {
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
 		String before_address = stu_vo.getSTU_ADDRESS();
 		String after_address = request.getParameter("address");
-		if (!before_address.equals(after_address)||!after_address.equals("")) {
+		if (!before_address.equals(after_address) || !after_address.equals("")) {
 			int stu_num = stu_vo.getSTU_NUM();
 			System.out.println(stu_vo.getSTU_ADDRESS());
 			stu_dao.changedAddress(after_address, stu_num);
@@ -335,7 +335,7 @@ public class HomeController {
 		}
 		return "student/stu_infoUpdate";
 	}
-	
+
 	// 학생관리
 	@RequestMapping(value = "/adm_studentCheck")
 	public String adm_studentCheck(Model model) {
