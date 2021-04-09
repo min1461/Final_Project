@@ -1,13 +1,14 @@
 package com.mgr.kgu;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mgr.kgu.ServiceImpl.STU_ServiceImpl;
+import com.mgr.kgu.DAO.STU_DAO;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.STU_VO;
@@ -17,8 +18,9 @@ import com.mgr.kgu.VO.STU_VO;
  */
 @Controller
 public class HomeController {
+	
 	@Autowired
-	private STU_ServiceImpl stu_Service;
+	private STU_DAO stu_dao;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -44,11 +46,16 @@ public class HomeController {
 
 	// 학생로그인페이지=>학생메인
 	@RequestMapping(value = "/stu_main")
-	public String stu_main(Model model, HttpServletRequest request) {
-		Integer id = Integer.parseInt(request.getParameter("HAKBUN"));
+	public String stu_main(HttpSession session, Model model, HttpServletRequest request) {
+
+		int id = Integer.valueOf(request.getParameter("HAKBUN"));
+		System.out.println(id);
 		String pw = request.getParameter("HAK_PW");
-		STU_VO stu_vo = stu_Service.getAllinfo(id);
-		model.addAttribute("stu_vo", stu_vo);
+		System.out.println(pw);
+		STU_VO stu_vo = stu_dao.getAllinfo(id);
+		System.out.println(stu_vo.getSTU_NAME());
+		System.out.println(stu_vo);
+		session.setAttribute("stu_vo", stu_vo);
 		return "main/stu_main";
 	}
 
@@ -186,8 +193,8 @@ public class HomeController {
 	// 학생관리(상태 변경)
 	@RequestMapping(value = "/stu_infoUpdate")
 	public String stu_infoUpdate(Model model) {
-//		stu_VO sv = new stu_VO(111, "12345");
-//		model.addAttribute("sv",sv);
+		STU_VO sv = new STU_VO(111, "12345");
+		model.addAttribute("sv",sv);
 		return "student/stu_infoUpdate";
 	}
 
