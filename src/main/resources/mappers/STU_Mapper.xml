@@ -16,6 +16,6 @@
 	</select>
 	
 	<update id="changedAddress" parameterType="String">
-		UPDATE STU_VO SET STU_ADDRESS=#{STU_ADDRESS} WHERE STU_NUM=#{STU_NUM};
+		UPDATE STUDENT SET STU_ADDRESS=#{STU_ADDRESS} WHERE STU_NUM=#{STU_NUM};
 	</update>
 </mapper>
