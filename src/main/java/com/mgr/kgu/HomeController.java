@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
@@ -131,7 +132,10 @@ public class HomeController {
 
 	// 관리자용 공지사항 리스트
 	@RequestMapping(value = "/adm_noticelist")
-	public String adm_noticelist(Model model) {
+	public String adm_noticelist(HttpSession session, Model model, HttpServletRequest request) {
+	    ArrayList <ANN_VO> nlist1 = adm_ann_Service.getAllinfo();
+	    System.out.println(nlist1);
+		session.setAttribute("nlist1", nlist1);
 		return "admin/adm_noticelist";
 	}
 
@@ -218,10 +222,11 @@ public class HomeController {
 	
 	//관리자 공지사항 입력 폼
 	@RequestMapping(value = "/adm_noticeInsertForm")
-	public String adm_noticeInsertForm(HttpSession session, Model model, HttpServletRequest request) {
+	public String adm_noticeInsertForm(ANN_VO ann_VO, Model model) {
+		System.out.println(ann_VO.getANN_CONT());
+		adm_ann_Service.insertinfo(ann_VO);
 		
-		
-		return "admin/adm_noticelist";
+		return "main/adm_main";
 	}
 	// 관리자 공지사항 입력
 	@RequestMapping(value = "/adm_noticeInsert")

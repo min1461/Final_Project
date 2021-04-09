@@ -9,10 +9,10 @@ public interface ADM_ANN_DAO {
 	
 	ANN_VO getTelinfo(ANN_VO ann_VO);
 
-	ANN_VO insertinfo(ANN_VO ann_VO);
+	void insertinfo(ANN_VO ann_VO);
 
-	ANN_VO updateinfo(ANN_VO ann_VO);
+	void updateinfo(ANN_VO ann_VO);
 
-	ANN_VO deleteinfo(ANN_VO ann_VO);
+	void deleteinfo(ANN_VO ann_VO);
 
 }

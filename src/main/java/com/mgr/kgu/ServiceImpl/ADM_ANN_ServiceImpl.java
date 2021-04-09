@@ -17,31 +17,30 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 
 	@Override
 	public ArrayList<ANN_VO> getAllinfo(){
-		System.out.println("여기는서비스");
 		return annkaja.getAllinfo();
 	}
 	
 	@Override
 	public ANN_VO getTelinfo(ANN_VO ann_VO) {
 		// TODO Auto-generated method stub
-		return null;
+		return annkaja.getTelinfo(ann_VO);
 	}
 
 	@Override
-	public ANN_VO insertinfo(ANN_VO ann_VO) {
+	public void insertinfo(ANN_VO ann_VO) {
 		// TODO Auto-generated method stub
-		return null;
+		annkaja.insertinfo(ann_VO);
 	}
 	
 	@Override
-	public ANN_VO updateinfo(ANN_VO ann_VO) {
+	public void updateinfo(ANN_VO ann_VO) {
 		// TODO Auto-generated method stub
-		return null;
+		annkaja.updateinfo(ann_VO);
 	}
 	
 	@Override
-	public ANN_VO deleteinfo(ANN_VO ann_VO) {
+	public void deleteinfo(ANN_VO ann_VO) {
 		// TODO Auto-generated method stub
-		return null;
+		annkaja.deleteinfo(ann_VO);
 	}
 }

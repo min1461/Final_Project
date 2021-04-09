@@ -19,12 +19,12 @@
 			<th width="15%">작성일</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
-		<c:forEach var="gongji" items="${gongji1}">
+		<c:forEach var="nl" items="${nlist1}">
 		<tr>
-			<td>${gongji1.BUNHO}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck')">${gongji1.TITLE}</a></td>
-			<td>${gongji1.WRITER}</td>
-			<td>${gongji1.WRITERDAY}</td>
+			<td>${nl.ANN_NUM}</td>
+			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck')">${nl.ANN_TITLE}</a></td>
+			<td>${nl.ANN_HEAD}</td>
+			<td>${nl.ANN_DATE}</td>
 		</tr>
 		</c:forEach>
 		<%-- </c:forEach> --%>
