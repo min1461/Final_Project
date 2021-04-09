@@ -83,7 +83,6 @@ public class HomeController {
 	@RequestMapping(value = "/com_noticelist")
 	public String com_noticelist(HttpSession session, Model model, HttpServletRequest request) {
 	    ArrayList <ANN_VO> nlist = adm_ann_Service.getAllinfo();
-	    System.out.println(nlist);
 		session.setAttribute("nlist", nlist);
 		return "common/com_noticelist";
 	}
@@ -134,7 +133,6 @@ public class HomeController {
 	@RequestMapping(value = "/adm_noticelist")
 	public String adm_noticelist(HttpSession session, Model model, HttpServletRequest request) {
 	    ArrayList <ANN_VO> nlist1 = adm_ann_Service.getAllinfo();
-	    System.out.println(nlist1);
 		session.setAttribute("nlist1", nlist1);
 		return "admin/adm_noticelist";
 	}
