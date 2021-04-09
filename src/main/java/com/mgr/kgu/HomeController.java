@@ -24,7 +24,7 @@ import com.mgr.kgu.VO.STU_VO;
  */
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	private STU_DAO stu_dao;
 	
@@ -55,15 +55,10 @@ public class HomeController {
 	// 학생로그인페이지=>학생메인
 	@RequestMapping(value = "/stu_main")
 	public String stu_main(HttpSession session, Model model, HttpServletRequest request) {
-
 		int id = Integer.valueOf(request.getParameter("HAKBUN"));
-		System.out.println(id);
 		String pw = request.getParameter("HAK_PW");
-		System.out.println(pw);
 		STU_VO stu_vo = stu_dao.getAllinfo(id);
-		System.out.println(stu_vo.getSTU_NAME());
-		System.out.println(stu_vo);
-		session.setAttribute("stu_vo", stu_vo);
+		session.setAttribute("stu_VO", stu_vo);
 		return "main/stu_main";
 	}
 
@@ -204,7 +199,7 @@ public class HomeController {
 	@RequestMapping(value = "/stu_infoUpdate")
 	public String stu_infoUpdate(Model model) {
 		STU_VO sv = new STU_VO(111, "12345");
-		model.addAttribute("sv",sv);
+		model.addAttribute("sv", sv);
 		return "student/stu_infoUpdate";
 	}
 
@@ -298,9 +293,9 @@ public class HomeController {
 	public String stu_stateInsert(Model model) {
 		return "student/stu_stateInsert";
 	}
-	
-	//휴복학 승인
-	@RequestMapping(value ="/adm_stateCheck")
+
+	// 휴복학 승인
+	@RequestMapping(value = "/adm_stateCheck")
 	public String adm_stateCheck(Model model) {
 		return "admin/adm_stateCheck";
 	}
@@ -341,5 +336,26 @@ public class HomeController {
 	@RequestMapping(value = "/adm_tuitiondepositApproval")
 	public String adm_tuitiondepositApproval(Model model) {
 		return "admin/adm_tuitiondepositApproval";
+	}
+
+	@RequestMapping(value = "/stu_main")
+	public String changeinfo(HttpSession session, Model model, HttpServletRequest request) {
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		String before_address = stu_vo.getSTU_ADDRESS();
+		String after_address = request.getParameter("address");
+		if (!before_address.equals(after_address)||!after_address.equals("")) {
+			int stu_num = stu_vo.getSTU_NUM();
+			System.out.println(stu_vo.getSTU_ADDRESS());
+			stu_dao.changedAddress(after_address, stu_num);
+			System.out.println(after_address);
+			System.out.println(stu_vo.getSTU_ADDRESS());
+		}
+		return "student/stu_infoUpdate";
+	}
+	
+	// 학생관리
+	@RequestMapping(value = "/adm_studentCheck")
+	public String adm_studentCheck(Model model) {
+		return "admin/adm_studentCheck";
 	}
 }

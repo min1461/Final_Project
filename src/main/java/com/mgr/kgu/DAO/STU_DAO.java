@@ -6,5 +6,6 @@ import com.mgr.kgu.VO.STU_VO;
 public interface STU_DAO {
 	boolean getlogininfo(Integer STU_NUM, String STU_PW);
 	STU_VO getAllinfo(int STU_NUM);
+	String changedAddress(String STU_ADDRESS, int STU_NUM);
 
 }
