@@ -6,15 +6,10 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mgr.kgu.DAO.STU_DAO">
-	<select id="getlogininfo" resultType="com.mgr.kgu.VO.STU_VO">
-		SELECT STU_NUM, STU_PW FROM
-		STUDENT WHERE STU_NUM = #{STU_NUM} AND STU_PW = #{STU_PW};
-	</select>
-
 	<!-- 해당 아이디가 테이블에 존재하는지 확인하는 쿼리 NULL일 경우 없음 -->
 	<select id="getAllinfo" resultType="com.mgr.kgu.VO.STU_VO">
 		SELECT * FROM STUDENT WHERE
-		STU_NUM = #{STU_NUM};
+		STU_NUM = #{STU_NUM} AND STU_PW = #{STU_PW};
 	</select>
 
 	<update id="changedInfo">
@@ -23,11 +18,20 @@
 		,STU_EMAIL=#{after_email} ,STU_BANKNAME=#{after_bankname}
 		,STU_BANKACC=#{after_bankacc} WHERE STU_NUM=#{STU_NUM};
 	</update>
+
 	<update id="changedInfoPW">
 		UPDATE STUDENT SET
-		STU_ADDRESS=#{after_address}, STU_PHONENUM=#{after_number}
-		,STU_EMAIL=#{after_email}, STU_BANKNAME=#{after_bankname}
-		,STU_BANKACC=#{after_bankacc}, STU_PW=#{after_pw}WHERE
+		STU_ADDRESS=#{after_address},
+		STU_PHONENUM=#{after_number}
+		,STU_EMAIL=#{after_email},
+		STU_BANKNAME=#{after_bankname}
+		,STU_BANKACC=#{after_bankacc},
+		STU_PW=#{after_pw}WHERE
 		STU_NUM=#{STU_NUM};
 	</update>
+
+	<select id="callMyallscholar" resultType="com.mgr.kgu.VO.SCO_VO">
+		SELECT * FROM SCORE
+		WHERE STU_NUM = #{STU_NUM};
+	</select>
 </mapper>

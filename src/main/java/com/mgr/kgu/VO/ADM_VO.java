@@ -7,6 +7,9 @@ public class ADM_VO {
 	private String ADM_NAME;
 	// 관리자 비밀번호
 	private String ADM_PW;
+	
+	public ADM_VO() {
+	}
 
 	public ADM_VO(int id, String pw) {
 		ADM_NUM = id;

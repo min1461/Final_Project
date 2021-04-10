@@ -24,6 +24,25 @@ setInterval(function(){
 $('#slide3>ul>li:first-child').fadeIn() .next().fadeOut().end(1000) .appendTo('#slide3>ul'); },3000);
 </script>
 
+<script>
+	$(document).ready(function() {
+
+		$("#submit").on("click", function() {
+			if ($("#ADMBUN").val() == "") {
+				alert("아이디를 입력해주세요.");
+				$("#ADMBUN").focus();
+				return false;
+			}
+			if ($("#ADM_PW").val() == "") {
+				alert("비밀번호를 입력해주세요.");
+				$("#ADM_PW").focus();
+				return false;
+			}
+
+		});
+	})
+</script>
+
 <body>
 
 <header> <!-- 빨간색 부분  -->
@@ -59,7 +78,7 @@ $('#slide3>ul>li:first-child').fadeIn() .next().fadeOut().end(1000) .appendTo('#
 
  
 
-<form action="studentLogin.do" method="post"> <!-- 로그인 폼 부분  -->
+<form action="adm_main" method="post"> <!-- 로그인 폼 부분  -->
 
   
 
@@ -77,7 +96,7 @@ $('#slide3>ul>li:first-child').fadeIn() .next().fadeOut().end(1000) .appendTo('#
 
             <span style="font-size:14px;">관리자</span>
 
-            <input type="text" name="HAKBUN" style="width:180px;height:20px; ">
+            <input type="text" name="ADMBUN" style="width:180px;height:20px; ">
 
           </li> <!-- id -->
 
@@ -85,7 +104,7 @@ $('#slide3>ul>li:first-child').fadeIn() .next().fadeOut().end(1000) .appendTo('#
 
             <span style="font-size:14px;">PW</span>
 
-            <input type="password" name="HAK_PW" style="width:180px;height:20px;">            
+            <input type="password" name="ADM_PW" style="width:180px;height:20px;">            
 
           </li> <!-- pass -->
 
