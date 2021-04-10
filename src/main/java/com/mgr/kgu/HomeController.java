@@ -80,14 +80,14 @@ public class HomeController {
 	// 교수로그인페이지=>교수메인
 	@RequestMapping(value = "/prof_main")
 	public String prof_main(HttpSession session, Model model, HttpServletRequest request) {
-		int id = Integer.valueOf(request.getParameter("HAKBUN"));
-		String pw = request.getParameter("HAK_PW");
+		int id = Integer.valueOf(request.getParameter("PROFBUN"));
+		String pw = request.getParameter("PROF_PW");
 		PROF_VO prof_VO = prof_service.getAllinfo(id, pw);
 		if (prof_VO != null) {
 			System.out.println(prof_VO.getProf_NAME());
 			System.out.println(prof_VO.getProf_NUM());
 			System.out.println(prof_VO.getProf_PW());
-			session.setAttribute("stu_VO", prof_VO);
+			session.setAttribute("prof_VO", prof_VO);
 		} else {
 			return "login/prof_login";
 		}
