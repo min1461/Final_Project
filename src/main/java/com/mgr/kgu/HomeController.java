@@ -168,10 +168,12 @@ public class HomeController {
 		return "admin/adm_noticelist";
 	}
 
-	// 관리자용 세부 공지사항일정
-	@RequestMapping(value = "/adm_scheduleCheck")
-	public String adm_scheduleCheck(Model model) {
-		return "admin/adm_scheduleCheck";
+	// 관리자용 세부 공지사항 내용
+	@RequestMapping(value = "/adm_noticeCheck")
+	public String adm_noticeCheck(ANN_VO ann_VO, Model model) {
+		System.out.println(ann_VO.getANN_CONT());
+		adm_ann_Service.getTelinfo(ann_VO);
+		return "admin/adm_noticeCheck";
 	}
 
 	// 관리자용 주요일정 리스트
@@ -181,9 +183,9 @@ public class HomeController {
 	}
 
 	// 관리자용 세부 주요일정
-	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(Model model) {
-		return "admin/adm_noticeCheck";
+	@RequestMapping(value = "/adm_scheduleCheck")
+	public String adm_scheduleCheck(Model model) {
+		return "admin/adm_scheduleCheck";
 	}
 
 	// 성적확인
