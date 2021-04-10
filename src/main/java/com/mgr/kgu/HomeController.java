@@ -402,11 +402,25 @@ public class HomeController {
 		return "admin/adm_studentCheck";
 	}
 
-	// 로그아웃(세선제거)
-	@RequestMapping(value = "/logout")
-	public String logout(HttpSession session) {
+	// 학생 로그아웃(세선제거)
+	@RequestMapping(value = "/stu_logout")
+	public String stu_logout(HttpSession session) {
 		session.removeAttribute("stu_VO");
 		session.removeAttribute("scolist");
 		return "login/stu_login";
+	}
+	// 교수 로그아웃(세선제거)
+	@RequestMapping(value = "/prof_logout")
+	public String prof_logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
+		return "login/prof_login";
+	}
+	// 관리자 로그아웃(세선제거)
+	@RequestMapping(value = "/adm_logout")
+	public String adm_logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
+		return "login/adm_login";
 	}
 }

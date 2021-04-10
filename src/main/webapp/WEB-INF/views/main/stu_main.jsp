@@ -39,7 +39,8 @@
 			<div id="myDropdown2" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('stu_gradesCheck')"><img
 					src="./resources/img/arrow_red.png"> 성적확인</a> <a
-					href="javascript:void(0);" onclick="btnclick('stu_evaluationInsert')"><img
+					href="javascript:void(0);"
+					onclick="btnclick('stu_evaluationInsert')"><img
 					src="./resources/img/arrow_red.png"> 강의평가</a> <a
 					href="javascript:void(0);"
 					onclick="btnclick('stu_attendanceCheck')"><img
@@ -52,7 +53,8 @@
 				<img src="./resources/img/arrow_blue_circle.png"> 수강시스템
 			</button>
 			<div id="myDropdown3" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('stu_registerInsert')"><img
+				<a href="javascript:void(0);"
+					onclick="btnclick('stu_registerInsert')"><img
 					src="./resources/img/arrow_red.png"> 수강신청</a> <a
 					href="javascript:void(0);" onclick="btnclick('stu_registerCheck')"><img
 					src="./resources/img/arrow_red.png"> 수강신청내역</a>
@@ -66,7 +68,8 @@
 			<div id="myDropdown4" class="dropdown-content">
 				<a href="javascript:void(0);" onclick="btnclick('stu_tuitionCheck')"><img
 					src="./resources/img/arrow_red.png"> 등록금 조회 및 결제</a> <a
-					href="javascript:void(0);" onclick="btnclick('stu_scholarshipApplyCheck')"><img
+					href="javascript:void(0);"
+					onclick="btnclick('stu_scholarshipApplyCheck')"><img
 					src="./resources/img/arrow_red.png"> 장학금 신청 및 조회</a>
 			</div>
 		</div>
@@ -142,27 +145,30 @@
 
 		function myFunction6() {
 			document.getElementById("myDropdown6").classList.toggle("show");
-		}	
+		}
 	</script>
 	<script>
-	function btnclick(_url) { //onclick="btnclick(원하는 페이지)"클릭시 ajax 실행
-		$.ajax({
-			url : _url, //호출 url 설정, GET방식일경우 뒤에 파라티터를 붙여서 사용해도됨
-			type : 'post', //전송방식을 지정한다 get, post
-			//datatype : //Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용하면 됨
-			success :  //성공했을때의 처리 부분, 해당부분에서 데이터 핸들링
-			},
-			error : function() { //에러났을때의 처리 부분
-				$('#center_page').text('페이지 점검중 입니다.'); //에러
-			}
-		});
-	}
+		function btnclick(_url) { //onclick="btnclick(원하는 페이지)"클릭시 ajax 실행
+			$.ajax({
+				url : _url, //호출 url 설정, GET방식일경우 뒤에 파라티터를 붙여서 사용해도됨
+				type : 'post', //전송방식을 지정한다 get, post
+				//datatype : //Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용하면 됨
+				success : function(data) { //성공했을때의 처리 부분, 해당부분에서 데이터 핸들링
+					$('#center_page').html(data); //div에 받아온 값을 넣는다
+				},
+				error : function() { //에러났을때의 처리 부분
+					$('#center_page').text('페이지 점검중 입니다.'); //에러
+				}
+			});
+		}
 	</script>
-<!-- 	<div id="mypage">
+	<!-- 	<div id="mypage">
 	</div>
- -->	<div id="logout">
-		<input type="button" value="마이페이지" class="upbutton" onclick="btnclick('stu_infoUpdate')" />
-		<input type="button" value="로그아웃" class="upbutton" onclick="location.href='logout'" />
+ -->
+	<div id="logout">
+		<input type="button" value="마이페이지" class="upbutton"
+			onclick="btnclick('stu_infoUpdate')" /> <input type="button"
+			value="로그아웃" class="upbutton" onclick="location.href='stu_logout'" />
 	</div>
 
 	<!-- 불러온 페이지 띄우는 부분 -->
