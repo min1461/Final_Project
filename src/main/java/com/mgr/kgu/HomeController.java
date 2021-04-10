@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
+import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
@@ -26,6 +27,9 @@ public class HomeController {
 
 	@Autowired
 	private STU_Service stu_service;
+	
+	@Autowired
+	private ADM_Service adm_service;
 
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
@@ -49,7 +53,7 @@ public class HomeController {
 	// index=>관리자로그인페이지
 	@RequestMapping(value = "/adm_login")
 	public String adm_login(Model model) {
-		return "main/adm_main";
+		return "login/adm_login";
 	}
 
 	// 학생로그인페이지=>학생메인
@@ -78,9 +82,17 @@ public class HomeController {
 
 	// 관리자로그인페이지=>관리자메인
 	@RequestMapping(value = "/adm_main")
-	public String adm_main(Model model, int id, String pw) {
-		ADM_VO av = new ADM_VO(id, pw);
-		model.addAttribute("admin_VO", av);
+	public String adm_main(HttpSession session, Model model, HttpServletRequest request) {
+		int id = Integer.valueOf(request.getParameter("ADMBUN"));
+		String pw = request.getParameter("ADM_PW");
+		ADM_VO adm_vo = adm_service.getAllinfo(id, pw);
+		if (adm_vo != null) {
+			/*ArrayList<ADM_VO> admlist= adm_service.callMyallscholar(id);*/
+			session.setAttribute("adm_VO", adm_vo);
+			/*session.setAttribute("admlist", admlist);*/
+		} else {
+			return "login/adm_login";
+		}
 		return "main/adm_main";
 	}
 
