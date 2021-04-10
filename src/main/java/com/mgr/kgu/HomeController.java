@@ -447,27 +447,26 @@ public class HomeController {
 		return "login/stu_login";
 	}
 
-	// 벌점등록
-	@RequestMapping(value = "/insertPenalty", method = RequestMethod.POST)
-	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
-		pen_Service.insertPenalty(PEN_VO);
-		return "main/adm_main";
-	}
 
 
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
-		session.removeAttribute("stu_VO");
-		session.removeAttribute("scolist");
+		session.removeAttribute("prof_VO");
 		return "login/prof_login";
 	}
 
 	// 관리자 로그아웃(세선제거)
 	@RequestMapping(value = "/adm_logout")
 	public String adm_logout(HttpSession session) {
-		session.removeAttribute("stu_VO");
-		session.removeAttribute("scolist");
+		session.removeAttribute("adm_VO");
 		return "login/adm_login";
+	}
+
+	// 벌점등록
+	@RequestMapping(value = "/insertPenalty", method = RequestMethod.POST)
+	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
+		pen_Service.insertPenalty(PEN_VO);
+		return "main/adm_main";
 	}
 }
