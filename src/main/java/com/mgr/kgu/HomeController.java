@@ -375,4 +375,10 @@ public class HomeController {
 	public String adm_studentCheck(Model model) {
 		return "admin/adm_studentCheck";
 	}
+	
+	// 등록금 결제
+	@RequestMapping(value = "/stu_tuitionPay")
+	public String stu_tuitionPay(Model model) {
+		return "stu/stu_tuitionPay";
+	}
 }
