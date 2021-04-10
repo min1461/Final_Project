@@ -414,13 +414,14 @@ public class HomeController {
 	public String adm_studentCheck(Model model) {
 		return "admin/adm_studentCheck";
 	}
-<<<<<<< HEAD
+
 	
 	// 등록금 결제
 	@RequestMapping(value = "/stu_tuitionPay")
 	public String stu_tuitionPay(Model model) {
 		return "stu/stu_tuitionPay";
-=======
+	}
+
 
 	// 학생 로그아웃(세선제거)
 	@RequestMapping(value = "/stu_logout")
@@ -442,6 +443,5 @@ public class HomeController {
 		session.removeAttribute("stu_VO");
 		session.removeAttribute("scolist");
 		return "login/adm_login";
->>>>>>> 1ea618ba0eac62a8081aae833d274bc364b9243e
 	}
 }
