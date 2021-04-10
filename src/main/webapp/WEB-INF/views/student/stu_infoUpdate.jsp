@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>KG대학교-개인정보페이지</title>
 <link href="resources/css/stu_infoUpdate.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 
@@ -39,7 +40,8 @@
 			</tr>
 			<tr>
 				<td id="infomenu">주소</td>
-				<td id="infovalue" colspan="3"><input type="text" name="address"
+				<td id="infovalue" colspan="3"><input type="text"
+					name="address"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 500px; height: 30px; text-align: center"
 					value="${stu_VO.STU_ADDRESS} " required /></td>
 				<td id="infomenu">전화번호</td>
@@ -53,9 +55,11 @@
 			</tr>
 			<tr>
 				<td id="infomenu">계좌번호</td>
-				<td id="infovalue" colspan="3"><input type="text" name="bankname"
+				<td id="infovalue" colspan="3"><input type="text"
+					name="bankname"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
-					value="${stu_VO.STU_BANKNAME} " required /><input type="text" name="bankacc"
+					value="${stu_VO.STU_BANKNAME} " required /><input type="text"
+					name="bankacc"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 300px; height: 30px; text-align: center"
 					value="${stu_VO.STU_BANKACC} " required /></td>
 				<td id="infomenu">총평점</td>
@@ -69,11 +73,13 @@
 				<td id="infomenu">상태</td>
 				<td id="infovalue">${stu_VO.STU_STATE}</td>
 				<td id="infomenu">현재비밀번호</td>
-				<td id="infovalue"><input type="text" name="before_pw"
+				<td id="infovalue"><input type="text" name="before_pw" id="pw"
+					onclick="pwd_star"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
-					placeholder="정보변경시 비밀번호를 입력" / required></td>
+					placeholder="정보변경시 비밀번호를 입력" required /></td>
 				<td id="infomenu">변경비밀번호</td>
-				<td id="infovalue"><input type="text" name="after_pw"
+				<td id="infovalue"><input type="text" name="after_pw" id="pw"
+					onclick="pwd_star"
 					style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; width: 200px; height: 30px; text-align: center"
 					placeholder="변경하실 비밀번호를 입력 " /></td>
 			</tr>
@@ -86,11 +92,22 @@
 				<td colspan="4" id="guide" style="text-align: center;">※프로필사진,
 					계좌번호, 전화번호, 이메일, 주소, 비밀번호변경이 가능합니다.</td>
 				<td align="right"><div>
-						<input type="submit" value="정보변경" 
+						<input type="submit" value="정보변경"
 							style="width: 100%; height: 30px;" />
 					</div></td>
 			</tr>
 		</table>
 	</form>
+
+	<script type="text/javascript">
+		function pwd_star() {
+			var passwordbox = document.getElementsById("pw");
+			if (passwordbox != null) {
+				passwordbox.setAttribute("type", "password");
+			}else{
+				passwordbox.setAttribute("type", "text");
+			}
+		}
+	</script>
 </body>
 </html>

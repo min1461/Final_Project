@@ -14,7 +14,7 @@
 	<!-- 해당 아이디가 테이블에 존재하는지 확인하는 쿼리 NULL일 경우 없음 -->
 	<select id="getAllinfo" resultType="com.mgr.kgu.VO.STU_VO">
 		SELECT * FROM STUDENT WHERE
-		STU_NUM = #{STU_NUM};
+		STU_NUM = #{STU_NUM} AND STU_PW = #{STU_PW};
 	</select>
 
 	<update id="changedInfo">
@@ -23,6 +23,7 @@
 		,STU_EMAIL=#{after_email} ,STU_BANKNAME=#{after_bankname}
 		,STU_BANKACC=#{after_bankacc} WHERE STU_NUM=#{STU_NUM};
 	</update>
+	
 	<update id="changedInfoPW">
 		UPDATE STUDENT SET
 		STU_ADDRESS=#{after_address}, STU_PHONENUM=#{after_number}

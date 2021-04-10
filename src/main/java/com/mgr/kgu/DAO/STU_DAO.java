@@ -8,7 +8,7 @@ import com.mgr.kgu.VO.STU_VO;
 public interface STU_DAO {
 	boolean getlogininfo(@Param("STU_NUM") Integer STU_NUM, @Param("STU_PW") String STU_PW);
 
-	STU_VO getAllinfo(@Param("STU_NUM") int STU_NUM);
+	STU_VO getAllinfo(@Param("STU_NUM") int STU_NUM,  @Param("STU_PW") String STU_PW);
 
 	void changedInfo(@Param("STU_NUM") int STU_NUM, @Param("after_address") String after_address,
 			@Param("after_number") String after_number, @Param("after_email") String after_email,

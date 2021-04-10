@@ -60,8 +60,12 @@ public class HomeController {
 	public String stu_main(HttpSession session, Model model, HttpServletRequest request) {
 		int id = Integer.valueOf(request.getParameter("HAKBUN"));
 		String pw = request.getParameter("HAK_PW");
-		STU_VO stu_vo = stu_service.getAllinfo(id);
-		session.setAttribute("stu_VO", stu_vo);
+		STU_VO stu_vo = stu_service.getAllinfo(id, pw);
+		if (stu_vo != null) {
+			session.setAttribute("stu_VO", stu_vo);
+		} else {
+			return "login/stu_login";
+		}
 		return "main/stu_main";
 	}
 
@@ -344,29 +348,39 @@ public class HomeController {
 		return "admin/adm_tuitiondepositApproval";
 	}
 
+	// 정보변경
 	@RequestMapping(value = "/changeinfo")
 	public String changeinfo(HttpSession session, Model model, HttpServletRequest request) {
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
 		int stu_num = stu_vo.getSTU_NUM();
 		String before_pw = request.getParameter("before_pw");
 		String after_pw = request.getParameter("after_pw");
-
 		String after_address = request.getParameter("address");
 		String after_number = request.getParameter("phonenumber");
 		String after_email = request.getParameter("email");
 		String after_bankname = request.getParameter("bankname");
 		String after_bankacc = request.getParameter("bankacc");
+
+		STU_VO stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM(), stu_vo.getSTU_PW());
+
+		// DB에 저장된 비밀번호와 현재비밀번호가 같을경우 동작(공통동작)
 		if (before_pw.equals(stu_vo.getSTU_PW())) {
-			if (after_pw.equals("")) {
+			// 변경할 비밀번호와 현재비밀번호가 같지 않을경우
+			if (!after_pw.equals(before_pw)) {
+				// 비밀번호와 정보를 바꾸는 메서드 동작
+				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email,
+						after_bankname, after_bankacc);
+				stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM(), after_pw);
+				// 변경할 비밀번호가 비어있을 경우
+			} else if (after_pw.equals("")) {
+				// 정보만 바꾸는 메서드 동작
 				stu_service.changedInfo(stu_num, after_address, after_number, after_email, after_bankname,
 						after_bankacc);
-			} else {
-				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email, after_bankname,
-						after_bankacc);
+				stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM(), stu_vo.getSTU_PW());
+				System.out.println(stu_vo2.getSTU_PW());
 			}
+			session.setAttribute("stu_VO", stu_vo2);
 		}
-		STU_VO stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM());
-		session.setAttribute("stu_VO", stu_vo2);
 		return "main/stu_main";
 	}
 
@@ -374,5 +388,12 @@ public class HomeController {
 	@RequestMapping(value = "/adm_studentCheck")
 	public String adm_studentCheck(Model model) {
 		return "admin/adm_studentCheck";
+	}
+	
+	// 로그아웃(세선제거)
+	@RequestMapping(value = "/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		return "login/stu_login";
 	}
 }
