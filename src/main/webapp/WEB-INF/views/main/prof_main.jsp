@@ -14,24 +14,33 @@
 	<a onClick="window.location.reload()" style="cursor: pointer;">
 		<div id="logo"></div>
 	</a>
-	
+
 	<!-- 사이드 메뉴 부분 -->
 	<div id="side_page">
-		
+
 		<div class="dropdown">
-			<button onclick="myFunction1()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 공지사항 및 일정</button>
+			<button onclick="myFunction1()" class="dropbtn">
+				<img src="./resources/img/arrow_blue_circle.png"> 공지사항 및 일정
+			</button>
 			<div id="myDropdown1" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('com_noticelist')"><img src="./resources/img/arrow_red.png"> 공지사항</a>
-				<a href="javascript:void(0);" onclick="btnclick('com_uschedulelist')"><img src="./resources/img/arrow_red.png"> 학교 주요일정</a>
-				<a href="javascript:void(0);" onclick="btnclick('prof_schedulelist')"><img src="./resources/img/arrow_red.png"> 시험일정</a>
+				<a href="javascript:void(0);" onclick="btnclick('com_noticelist')"><img
+					src="./resources/img/arrow_red.png"> 공지사항</a> <a
+					href="javascript:void(0);" onclick="btnclick('com_uschedulelist')"><img
+					src="./resources/img/arrow_red.png"> 학교 주요일정</a> <a
+					href="javascript:void(0);" onclick="btnclick('prof_schedulelist')"><img
+					src="./resources/img/arrow_red.png"> 시험일정</a>
 			</div>
 		</div>
-			
+
 		<div class="dropdown">
-			<button onclick="myFunction2()" class="dropbtn" ><img src="./resources/img/arrow_blue_circle.png"> 교수</button>
+			<button onclick="myFunction2()" class="dropbtn">
+				<img src="./resources/img/arrow_blue_circle.png"> 교수
+			</button>
 			<div id="myDropdown2" class="dropdown-content">
-				<a href="javascript:void(0);" onclick="btnclick('prof_attendance')"><img src="./resources/img/arrow_red.png"> 출석관리</a>
-				<a href="javascript:void(0);" onclick="btnclick('prof_scoreInsert')"><img src="./resources/img/arrow_red.png"> 성적입력</a>
+				<a href="javascript:void(0);" onclick="btnclick('prof_attendance')"><img
+					src="./resources/img/arrow_red.png"> 출석관리</a> <a
+					href="javascript:void(0);" onclick="btnclick('prof_scoreInsert')"><img
+					src="./resources/img/arrow_red.png"> 성적입력</a>
 			</div>
 		</div>
 
@@ -53,33 +62,29 @@
 			});
 		}
 
-		
 		//div안에 메인페이지 넣어놓음
 		$(document).ready(function() {
 			$("#center_page").load("com_noticelist");
 		});
-			
-		
+
 		/* When the user clicks on the button, 
 		toggle between hiding and showing the dropdown content */
 		function myFunction1() {
 			document.getElementById("myDropdown1").classList.toggle("show");
 		}
-		
+
 		function myFunction2() {
 			document.getElementById("myDropdown2").classList.toggle("show");
 		}
-			 
-	
-		</script>
-		
+	</script>
+
 	<div id="logout">
-	<input type="button" value="로그아웃" onclick="" />
+		<input type="button" value="로그아웃" class="upbutton"
+			onclick="location.href='prof_logout'" />
 	</div>
 
 	<!-- 불러온 페이지 띄우는 부분 -->
-	<div id="center_page">
-	</div>
-	
+	<div id="center_page"></div>
+
 </body>
 </html>

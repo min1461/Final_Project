@@ -36,7 +36,7 @@
 				<td id="infomenu">신청학점/<br />이수학점
 
 				</td>
-				<td id="infovalue">${stu_VO.STU_APPCRE}/${stu_VO.STU_GRACRE}</td>
+				<td id="infovalue">${scolist.size()}/${stu_VO.STU_GRACRE}</td>
 			</tr>
 			<tr>
 				<td id="infomenu">주소</td>

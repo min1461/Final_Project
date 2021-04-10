@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,17 +10,16 @@
 
 <link rel="stylesheet" href="./resources/css/pro_login.css">
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-
-$('#slide3>ul>li').hide(); 
-
-$('#slide3>ul>li:first-child').show(); 
-
-setInterval(function(){ 
-
-$('#slide3>ul>li:first-child').fadeIn() .next().fadeOut().end(1000) .appendTo('#slide3>ul'); },3000);
+	$('#slide3>ul>li').hide();
+	$('#slide3>ul>li:first-child').show();
+	setInterval(function() {
+		$('#slide3>ul>li:first-child').fadeIn().next().fadeOut().end(1000)
+				.appendTo('#slide3>ul');
+	}, 3000);
 </script>
 
 <script>
@@ -44,6 +42,7 @@ $('#slide3>ul>li:first-child').fadeIn() .next().fadeOut().end(1000) .appendTo('#
 </script>
 
 <body>
+
 
 <header> <!-- 빨간색 부분  -->
 

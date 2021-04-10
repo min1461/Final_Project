@@ -2,6 +2,7 @@ package com.mgr.kgu;
 
 import java.util.ArrayList;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
+import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
@@ -32,6 +34,9 @@ public class HomeController {
 	private ADM_Service adm_service;
 
 	@Autowired
+	private PROF_Service prof_service;
+
+	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
 
 	/**
@@ -47,7 +52,7 @@ public class HomeController {
 	// index=>교수로그인페이지
 	@RequestMapping(value = "/prof_login")
 	public String prof_login(Model model) {
-		return "main/prof_main";
+		return "login/prof_login";
 	}
 
 	// index=>관리자로그인페이지
@@ -63,7 +68,7 @@ public class HomeController {
 		String pw = request.getParameter("HAK_PW");
 		STU_VO stu_vo = stu_service.getAllinfo(id, pw);
 		if (stu_vo != null) {
-			ArrayList<SCO_VO> scolist= stu_service.callMyallscholar(id);
+			ArrayList<SCO_VO> scolist = stu_service.callMyallscholar(id);
 			session.setAttribute("stu_VO", stu_vo);
 			session.setAttribute("scolist", scolist);
 		} else {
@@ -74,9 +79,18 @@ public class HomeController {
 
 	// 교수로그인페이지=>교수메인
 	@RequestMapping(value = "/prof_main")
-	public String prof_main(Model model, int id, String pw) {
-		PROF_VO pv = new PROF_VO(id, pw);
-		model.addAttribute("prof_VO", pv.getProf_PW());
+	public String prof_main(HttpSession session, Model model, HttpServletRequest request) {
+		int id = Integer.valueOf(request.getParameter("HAKBUN"));
+		String pw = request.getParameter("HAK_PW");
+		PROF_VO prof_VO = prof_service.getAllinfo(id, pw);
+		if (prof_VO != null) {
+			System.out.println(prof_VO.getProf_NAME());
+			System.out.println(prof_VO.getProf_NUM());
+			System.out.println(prof_VO.getProf_PW());
+			session.setAttribute("stu_VO", prof_VO);
+		} else {
+			return "login/prof_login";
+		}
 		return "main/prof_main";
 	}
 
@@ -401,11 +415,25 @@ public class HomeController {
 		return "admin/adm_studentCheck";
 	}
 
-	// 로그아웃(세선제거)
-	@RequestMapping(value = "/logout")
-	public String logout(HttpSession session) {
+	// 학생 로그아웃(세선제거)
+	@RequestMapping(value = "/stu_logout")
+	public String stu_logout(HttpSession session) {
 		session.removeAttribute("stu_VO");
 		session.removeAttribute("scolist");
 		return "login/stu_login";
+	}
+	// 교수 로그아웃(세선제거)
+	@RequestMapping(value = "/prof_logout")
+	public String prof_logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
+		return "login/prof_login";
+	}
+	// 관리자 로그아웃(세선제거)
+	@RequestMapping(value = "/adm_logout")
+	public String adm_logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
+		return "login/adm_login";
 	}
 }

@@ -39,10 +39,9 @@
 </script>
 
 <body>
-	<header> </header>
+	<header></header>
 	<nav>
 		<img src="./resources/img/logo.png" alt="로고타이틀">
-
 	</nav>
 	<span class="kg">KG대학교</span>
 	<span class="info">종합정보시스템 </span>
@@ -86,8 +85,6 @@
 				</ul>
 			</div>
 		</form>
-		<!-- login_box -->
-
 	</section>
 	<footer>
 		<span class="main_text">개인정보처리방침 | 보안진단의 날</span>

@@ -7,7 +7,6 @@ import com.mgr.kgu.DAO.PROF_DAO;
 import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.VO.PROF_VO;
 
-
 @Service
 public class PROF_ServiceImpl implements PROF_Service {
 
@@ -15,7 +14,8 @@ public class PROF_ServiceImpl implements PROF_Service {
 	private PROF_DAO PROF_DAO;
 
 	@Override
-	public PROF_VO getTelinfo(Integer PROF_NUM, String PROF_PW) {
-		return this.PROF_DAO.getTelinfo(PROF_NUM, PROF_PW);
+	public PROF_VO getAllinfo(Integer prof_NUM, String prof_PW) {
+		return PROF_DAO.getAllinfo(prof_NUM, prof_PW);
 	}
+
 }
