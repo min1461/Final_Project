@@ -2,7 +2,6 @@ package com.mgr.kgu;
 
 import java.util.ArrayList;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
@@ -170,9 +170,14 @@ public class HomeController {
 
 	// 관리자용 세부 공지사항 내용
 	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(ANN_VO ann_VO, Model model) {
-		System.out.println(ann_VO.getANN_CONT());
-		adm_ann_Service.getTelinfo(ann_VO);
+	public String adm_noticeCheck(@RequestParam(value="ANN_NUM") String ANN_NUM2, HttpServletRequest request, Model model) {
+		int ANN_NUM = Integer.valueOf(ANN_NUM2);
+		
+		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
+		ann_VO.getANN_DATE();
+		ann_VO.getANN_CONT();
+		model.addAttribute("ANN_VO", ann_VO);
+		
 		return "admin/adm_noticeCheck";
 	}
 
@@ -254,7 +259,6 @@ public class HomeController {
 	// 관리자 공지사항 입력 폼
 	@RequestMapping(value = "/adm_noticeInsertForm")
 	public String adm_noticeInsertForm(ANN_VO ann_VO, Model model) {
-		System.out.println(ann_VO.getANN_CONT());
 		adm_ann_Service.insertinfo(ann_VO);
 		return "main/adm_main";
 	}

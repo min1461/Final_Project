@@ -21,9 +21,9 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 	}
 	
 	@Override
-	public ANN_VO getTelinfo(ANN_VO ann_VO) {
+	public ANN_VO getTelinfo(int ANN_NUM) {
 		// TODO Auto-generated method stub
-		return annkaja.getTelinfo(ann_VO);
+		return annkaja.getTelinfo(ANN_NUM);
 	}
 
 	@Override
@@ -43,4 +43,8 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 		// TODO Auto-generated method stub
 		annkaja.deleteinfo(ann_VO);
 	}
+
+
+
+
 }

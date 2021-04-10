@@ -7,7 +7,7 @@ import com.mgr.kgu.VO.ANN_VO;
 public interface ADM_ANN_Service {
 	ArrayList<ANN_VO> getAllinfo();
 	
-	ANN_VO getTelinfo(ANN_VO ann_VO);
+	ANN_VO getTelinfo(int ANN_NUM);
 
 	void insertinfo(ANN_VO ann_VO);
 

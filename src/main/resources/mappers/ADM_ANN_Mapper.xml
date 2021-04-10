@@ -6,11 +6,11 @@
 	</insert>
 	
 	<select id="getAllinfo" resultType="ANN_VO">
-		SELECT * FROM ANNOUNCE
+		SELECT ANN_NUM, ANN_TITLE, ANN_HEAD, ANN_DATE ANN_CONT FROM ANNOUNCE
 	</select>
 
 	<select id="getTelinfo" resultType="ANN_VO">
-		SELECT ANN_TITLE, ANN_HEAD, ANN_DATE, ANN_CONT
+		SELECT ANN_NUM, ANN_TITLE, ANN_HEAD, ANN_DATE, ANN_CONT
 		FROM ANNOUNCE WHERE ANN_NUM=#{ANN_NUM}
 	</select>
 
