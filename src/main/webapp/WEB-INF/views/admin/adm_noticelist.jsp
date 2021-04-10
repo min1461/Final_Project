@@ -22,7 +22,7 @@
 		<c:forEach var="nl" items="${nlist1}">
 		<tr>
 			<td>${nl.ANN_NUM}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck')">${nl.ANN_TITLE}</a></td>
+			<td><a href="javascript:void(0);" onclick="btnclick('adm_noticeCheck?name=${nl.ANN_NUM}')">${nl.ANN_TITLE}</a></td>
 			<td>${nl.ANN_HEAD}</td>
 			<td>${nl.ANN_DATE}</td>
 		</tr>

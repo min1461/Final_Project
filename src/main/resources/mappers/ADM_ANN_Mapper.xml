@@ -11,7 +11,7 @@
 
 	<select id="getTelinfo" resultType="ANN_VO">
 		SELECT ANN_TITLE, ANN_HEAD, ANN_DATE, ANN_CONT
-		FROM ANNOUNCE WHERE ANN_TITLE=#{ANN_TITLE}
+		FROM ANNOUNCE WHERE ANN_NUM=#{ANN_NUM}
 	</select>
 
 	<update id="updateinfo">

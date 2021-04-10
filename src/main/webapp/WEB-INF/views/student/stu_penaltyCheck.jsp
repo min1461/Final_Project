@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="./resources/css/std_penaltyCheck.css">
+<link rel="stylesheet" href="./resources/css/stu_penaltyCheck.css">
 <body>
 
 
@@ -16,11 +16,11 @@
 		<table class="penaltyCheck">
 		 <caption>표 제목</caption>
 		<tr>
-		<th>벌점코드</th> <th>날짜</th> <th>벌점</th> <th>벌점사유</th>  
+		<th>벌점코드</th> <th>날짜</th> <th>학번</th> <th>벌점</th> <th>벌점사유</th>  
 		</tr>
 		<c:forEach var="bul" items="${bul1}">
 		<tr>
-		<td>${bul.PEN_NUM}</td> <td>${bul.DATE}</td> <td>${bul.PEN_POI}</td> <td>${bul.PEN_COM}</td> 
+		<td>${bul.PEN_NUM}</td> <td>${bul.PEN_DATE}</td> <td>${bul.STU_NUM}</td> <td>${bul.PEN_POI}</td> <td>${bul.PEN_COM}</td> 
 		</tr>
 		</c:forEach>
 		</table>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mgr.kgu.DAO.PEN_DAO">
+<select id="getAllPenalty" resultType="PEN_VO">
+		SELECT * FROM PENALTY WHERE STU_NUM=#{STU_NUM}
+	</select>
+	
+<insert id="insertPenalty" parameterType="PEN_VO">
+		INSERT INTO PENALTY(STU_NUM,PEN_POI,PEN_COM) VALUES(#{STU_NUM},#{PEN_POI},#{PEN_COM});
+	</insert>
+</mapper>

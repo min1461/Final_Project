@@ -10,13 +10,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mgr.kgu.Service.ADM_ANN_Service;
+import com.mgr.kgu.Service.PEN_Service;
+=======
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.PROF_Service;
+>>>>>>> 67c8af43d09ab851580dddaecc85d771377db433
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
+import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
@@ -39,6 +48,8 @@ public class HomeController {
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
 
+	@Autowired
+	private PEN_Service pen_Service;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -169,10 +180,12 @@ public class HomeController {
 		return "admin/adm_noticelist";
 	}
 
-	// 관리자용 세부 공지사항일정
-	@RequestMapping(value = "/adm_scheduleCheck")
-	public String adm_scheduleCheck(Model model) {
-		return "admin/adm_scheduleCheck";
+	// 관리자용 세부 공지사항 내용
+	@RequestMapping(value = "/adm_noticeCheck")
+	public String adm_noticeCheck(ANN_VO ann_VO, Model model) {
+		System.out.println(ann_VO.getANN_CONT());
+		adm_ann_Service.getTelinfo(ann_VO);
+		return "admin/adm_noticeCheck";
 	}
 
 	// 관리자용 주요일정 리스트
@@ -182,9 +195,9 @@ public class HomeController {
 	}
 
 	// 관리자용 세부 주요일정
-	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(Model model) {
-		return "admin/adm_noticeCheck";
+	@RequestMapping(value = "/adm_scheduleCheck")
+	public String adm_scheduleCheck(Model model) {
+		return "admin/adm_scheduleCheck";
 	}
 
 	// 성적확인
@@ -336,9 +349,9 @@ public class HomeController {
 		return "admin/adm_stateCheck";
 	}
 
-	// 벌점등록
-	@RequestMapping(value = "/adm_penaltyInsert")
-	public String adm_penaltyInsert(Model model) {
+	// 벌점등록 폼
+	@RequestMapping(value = "/adm_penaltyInsert", method=RequestMethod.POST)
+	public String adm_penaltyInsert(@ModelAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
 		return "admin/adm_penaltyInsert";
 	}
 
@@ -356,9 +369,11 @@ public class HomeController {
 
 	// 벌점조회
 	@RequestMapping(value = "/stu_penaltyCheck")
-	public String stu_penaltyCheck(Model model) {
+	String getAllPenalty(HttpSession session, Model model, HttpServletRequest request) {
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		ArrayList<PEN_VO> list2 = pen_Service.getAllPenalty(stu_vo.getSTU_NUM());
+		model.addAttribute("bul1", list2);
 		return "student/stu_penaltyCheck";
-
 	}
 
 	// 장학금 조회
@@ -431,6 +446,16 @@ public class HomeController {
 		session.removeAttribute("scolist");
 		return "login/stu_login";
 	}
+<<<<<<< HEAD
+	//벌점등록
+	@RequestMapping(value ="/insertPenalty", method=RequestMethod.POST)
+	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
+		pen_Service.insertPenalty(PEN_VO);
+		return "main/adm_main";
+	}
+	
+
+=======
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
@@ -445,4 +470,5 @@ public class HomeController {
 		session.removeAttribute("scolist");
 		return "login/adm_login";
 	}
+>>>>>>> 67c8af43d09ab851580dddaecc85d771377db433
 }
