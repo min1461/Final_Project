@@ -42,20 +42,18 @@ merchant_uid: 'merchant_' + new Date().getTime(),
 /*
 merchant_uid에 경우
 https://docs.iamport.kr/implementation/payment
-위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
-참고하세요.
-나중에 포스팅 해볼게요.
+참고
 */
-name: '주문명:결제테스트',
+name: '등록금',
 //결제창에서 보여질 이름
 amount: 1000,
 //가격
 buyer_email: 'iamport@siot.do',
-buyer_name: '구매자이름',
+buyer_name: '학생이름',
 buyer_tel: '010-1234-5678',
 buyer_addr: '서울특별시 종로구',
 buyer_postcode: '123-456',
-m_redirect_url: 'https://www.yourdomain.com/payments/complete'
+m_redirect_url: ''
 /*
 모바일 결제시,
 결제가 끝나고 랜딩되는 URL을 지정
@@ -97,27 +95,24 @@ alert(msg);
 		</tr>
 </c:forEach>			
 		</table>
-		
-		
-<!-- 		
-		<p>아임 서포트 결제 모듈 테스트 해보기</p>
-<button id="check_module" type="button">아임 서포트 결제 모듈 테스트 해보기</button> -->
-
-
-
  
 <br><br><br><br><br>
 		
 		<table class="apply">
 		<tr>
-	<form action="" method="get" name="form1" id="form1" accept-charset='UTF-8' >
+	<form action="" method="get" name="form1" id="form1" accept-charset='UTF-8'>
 	<th>학년도</th> <th>학기</th> <th>학년</th><th>등록금액</th> <th>장학금액</th> <th>결제</th>  
 		</tr>
 		
-		<tr><td>2018</td><td>2</td><td>3</td><td>1000</td><td>0</td>
+		<tr><td><select name="year_check">
+    <option value="">학년도</option>
+    <option value="year">2018년도</option>
+    <option value="year">2019년도</option>
+    <option value="year">2020년도</option>
+    <option value="year">2021년도</option>
+	</select></td><td>2</td><td>3</td><td>1000</td><td>0</td>
 		<td><!-- <input type="submit" value="결제" onclick='pagemove(2)'> -->
 		<input type="submit" id="tuipay" value="결제">
-<!-- <button id="check_module" type="button">결제</button>	 -->	
 		</td>
 
     <c:forEach var="Kyeol" items="${Kyeol1}">

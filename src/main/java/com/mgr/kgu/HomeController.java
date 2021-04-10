@@ -46,7 +46,8 @@ public class HomeController {
 	// index=>학생로그인페이지
 	@RequestMapping(value = "/stu_login")
 	public String stu_login(Model model) {
-		return "login/stu_login";
+		/*return "login/stu_login";*/
+		return "main/stu_main";
 	}
 
 	// index=>교수로그인페이지
