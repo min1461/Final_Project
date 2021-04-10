@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
+import com.mgr.kgu.Service.PEN_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
+import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.STU_VO;
 
@@ -33,6 +36,8 @@ public class HomeController {
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
 
+	@Autowired
+	private PEN_Service pen_Service;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -310,9 +315,9 @@ public class HomeController {
 		return "admin/adm_stateCheck";
 	}
 
-	// 벌점등록
-	@RequestMapping(value = "/adm_penaltyInsert")
-	public String adm_penaltyInsert(Model model) {
+	// 벌점등록 폼
+	@RequestMapping(value = "/adm_penaltyInsert", method=RequestMethod.POST)
+	public String adm_penaltyInsert(@ModelAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
 		return "admin/adm_penaltyInsert";
 	}
 
@@ -330,9 +335,11 @@ public class HomeController {
 
 	// 벌점조회
 	@RequestMapping(value = "/stu_penaltyCheck")
-	public String stu_penaltyCheck(Model model) {
+	String getAllPenalty(HttpSession session, Model model, HttpServletRequest request) {
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		ArrayList<PEN_VO> list2 = pen_Service.getAllPenalty(stu_vo.getSTU_NUM());
+		model.addAttribute("bul1", list2);
 		return "student/stu_penaltyCheck";
-
 	}
 
 	// 장학금 조회
@@ -396,4 +403,12 @@ public class HomeController {
 		session.removeAttribute("stu_VO");
 		return "login/stu_login";
 	}
+	//벌점등록
+	@RequestMapping(value ="/insertPenalty", method=RequestMethod.POST)
+	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
+		pen_Service.insertPenalty(PEN_VO);
+		return "main/adm_main";
+	}
+	
+
 }
