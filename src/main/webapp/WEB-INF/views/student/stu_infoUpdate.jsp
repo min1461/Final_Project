@@ -99,6 +99,7 @@
 		</table>
 	</form>
 
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@ 구현 아직 안됨 @@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 	<script type="text/javascript">
 		function pwd_star() {
 			var passwordbox = document.getElementsById("pw");

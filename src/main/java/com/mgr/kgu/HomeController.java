@@ -8,17 +8,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.PROF_VO;
+import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
 
 /**
@@ -62,7 +59,9 @@ public class HomeController {
 		String pw = request.getParameter("HAK_PW");
 		STU_VO stu_vo = stu_service.getAllinfo(id, pw);
 		if (stu_vo != null) {
+			ArrayList<SCO_VO> scolist= stu_service.callMyallscholar(id);
 			session.setAttribute("stu_VO", stu_vo);
+			session.setAttribute("scolist", scolist);
 		} else {
 			return "login/stu_login";
 		}
@@ -368,8 +367,8 @@ public class HomeController {
 			// 변경할 비밀번호와 현재비밀번호가 같지 않을경우
 			if (!after_pw.equals(before_pw)) {
 				// 비밀번호와 정보를 바꾸는 메서드 동작
-				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email,
-						after_bankname, after_bankacc);
+				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email, after_bankname,
+						after_bankacc);
 				stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM(), after_pw);
 				// 변경할 비밀번호가 비어있을 경우
 			} else if (after_pw.equals("")) {
@@ -389,11 +388,12 @@ public class HomeController {
 	public String adm_studentCheck(Model model) {
 		return "admin/adm_studentCheck";
 	}
-	
+
 	// 로그아웃(세선제거)
 	@RequestMapping(value = "/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
 		return "login/stu_login";
 	}
 }

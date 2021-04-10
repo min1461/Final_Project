@@ -43,6 +43,7 @@
             <typeAlias alias="REV_VO" type="com.mgr.kgu.VO.REV_VO"></typeAlias>
             <typeAlias alias="ANN_VO" type="com.mgr.kgu.VO.ANN_VO"></typeAlias>
             <typeAlias alias="PEN_VO" type="com.mgr.kgu.VO.PEN_VO"></typeAlias>
+            <typeAlias alias="SCO" type="com.mgr.kgu.VO.SCO_VO"></typeAlias>
       </typeAliases>
  
  
