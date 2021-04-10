@@ -42,11 +42,11 @@ public class ANN_VO {
 		this.ANN_CONT = ANN_CONT;
 	}
 
-	public Integer getANN_NUM() {
+	public int getANN_NUM() {
 		return ANN_NUM;
 	}
 
-	public void setANN_NUM(Integer ANN_NUM) {
+	public void setANN_NUM(int ANN_NUM) {
 		this.ANN_NUM = ANN_NUM;
 	}
 	
