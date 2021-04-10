@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.PEN_Service;
@@ -180,14 +179,17 @@ public class HomeController {
 
 	// 관리자용 세부 공지사항 내용
 	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(@RequestParam(value="ANN_NUM") String ANN_NUM2, HttpServletRequest request, Model model) {
+	public String adm_noticeCheck(@ModelAttribute(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+			Model model) {
+		System.out.println("111111111111");
+		System.out.println(ANN_NUM2);// 얘가 NULL로 뜸,,,,
+		System.out.println("222222222222");
+		
 		int ANN_NUM = Integer.valueOf(ANN_NUM2);
-		
 		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
-		ann_VO.getANN_DATE();
-		ann_VO.getANN_CONT();
+		System.out.println("333333333333");
 		model.addAttribute("ANN_VO", ann_VO);
-		
+
 		return "admin/adm_noticeCheck";
 	}
 
@@ -447,7 +449,6 @@ public class HomeController {
 		return "login/stu_login";
 	}
 
-
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
@@ -463,8 +464,8 @@ public class HomeController {
 	}
 
 	// 벌점등록
-	@RequestMapping(value = "/insertPenalty", method = RequestMethod.POST)
-	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
+	@RequestMapping(value = "/insertPenalty")
+	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) {
 		pen_Service.insertPenalty(PEN_VO);
 		return "main/adm_main";
 	}

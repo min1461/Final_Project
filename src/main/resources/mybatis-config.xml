@@ -35,7 +35,7 @@
             <typeAlias alias="ADM_VO" type="com.mgr.kgu.VO.ADM_VO"></typeAlias>
             <typeAlias alias="VAC_VO" type="com.mgr.kgu.VO.VAC_VO"></typeAlias>
             <typeAlias alias="SUB_VO" type="com.mgr.kgu.VO.SUB_VO"></typeAlias>
-            <typeAlias alias="DOM_VO" type="com.mgr.kgu.VO.DOM_VO"></typeAlias>
+            <typeAlias alias="DOR_VO" type="com.mgr.kgu.VO.DOR_VO"></typeAlias>
             <typeAlias alias="PROF_VO" type="com.mgr.kgu.VO.PROF_VO"></typeAlias>
             <typeAlias alias="SCH_VO" type="com.mgr.kgu.VO.SCH_VO"></typeAlias>
             <typeAlias alias="ATT_VO" type="com.mgr.kgu.VO.ATT_VO"></typeAlias>
