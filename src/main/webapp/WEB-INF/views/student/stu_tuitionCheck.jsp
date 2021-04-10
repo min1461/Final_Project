@@ -40,8 +40,7 @@ pay_method: 'card',
 */
 merchant_uid: 'merchant_' + new Date().getTime(),
 name: '등록금',
-amount: 100,
-//가격
+amount: 100, //가격
 buyer_email: 'iamport@siot.do',
 buyer_name: '이름',
 buyer_tel: '010-1234-5678',
@@ -73,12 +72,6 @@ alert(msg);
 <br>
 <!-- 조회  -->
 	<form action="" method="get" name="form1" id="form1" accept-charset='UTF-8'>
-	
-	<p>아임 서포트 결제 모듈 테스트 해보기</p>
-<button id="check_module" type="button">아임 서포트 결제 모듈 테스트 해보기</button>
-</p>
-
-
 
 	<table class="apply">
 	
@@ -97,80 +90,63 @@ alert(msg);
 		
 				<td>2021</td>
 				<td>1</td>
-				<td>${joe.STU_MAJOR}</td>
-				<td>${joe.TUI_FEE}</td>
-				<td>${joe.SCH_PRICE}</td>
+				<td>${stu_VO.STU_NUM}</td>
+				<td>${tui_VO.TUI_FEE}</td>
+				<td>0</td>
 				<td><input type="button" id="tuipay" value="결제"></td>
 	
 			</tr>
+	
+	
+	<!-- 가라 ////////////////////////////////////////////////////-->
+			<tr>
+		
+				<td>2020</td>
+				<td>2</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
+	
+			</tr>
+
+			<tr>
+		
+				<td>2020</td>
+				<td>1</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
+	
+			</tr>
+
+			<tr>
+		
+				<td>2019</td>
+				<td>2</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
+	
+			</tr>						
+
+			<tr>
+		
+				<td>2019</td>
+				<td>1</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
+	
+			</tr>				
 		
 	
 	</table>
 	</form>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
- <form action="" method="get" name="form1" id="form1" accept-charset='UTF-8'>
-	<table class="apply">
-		<tr>
-				<th>학년도</th>
-				<th>학기</th>
-				<th>학년</th>
-				<th>등록금액</th>
-				<th>장학금액</th>
-				<th>결제</th>
-				
-		</tr>
-
-		<tr>
-			<td><select name="year_check">
-					<option value="">학년도</option>
-					<option value="year">2018년도</option>
-					<option value="year">2019년도</option>
-					<option value="year">2020년도</option>
-					<option value="year">2021년도</option>
-			</select></td>
-			<td>2</td>
-			<td>3</td>
-			<td>1000</td>
-			<td>0</td>
-			<td>
-				<!-- <input type="submit" value="결제" onclick='pagemove(2)'> --> <input
-				type="submit" id="tuipay" value="결제">
-			</td>
-
-			<c:forEach var="Kyeol" items="${Kyeol1}">
-
-
-				<td><select name="semester_check">
-						<option value="">학기</option>
-						<option value="semester">1학기</option>
-						<option value="semester">2학기</option>
-				</select></td>
-
-				<td><select name="grade_check">
-						<option value="">학년</option>
-						<option value="grade">1</option>
-						<option value="grade">2</option>
-						<option value="grade">3</option>
-						<option value="grade">4</option>
-				</select></td>
-				<td>${Kyeol.TUI_FEE}</td>
-				<td>${Kyeol.SCH_PRICE}</td>
-				<td>
-					<!-- <input type="submit" name="ok" value="결제" onclick=''> -->
-
-
-				</td>
-		</tr>
-		<input type="hidden" id="tui" name='tui' value=100>
-		<input type="hidden" id="id" name='id' value="Kyeol">
-		</form>
-		</c:forEach>
-	</table> 
 
 </body>
 </html>

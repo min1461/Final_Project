@@ -16,14 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
-<<<<<<< HEAD
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.PEN_Service;
 
-=======
->>>>>>> 5467f0d159e14894228c054bf6a577898153a8c0
+
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
@@ -325,7 +324,7 @@ public class HomeController {
 		return "student/stu_registerCheck";
 	}
 
-	// 등록금 조회
+	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
 	public String stu_tuitionCheck(Model model) {
 		return "student/stu_tuitionCheck";
@@ -445,7 +444,7 @@ public class HomeController {
 
 	// 등록금 결제
 	@RequestMapping(value = "/stu_tuitionPay")
-	public String stu_tuitionPay(Model model) {
+	public String stu_tuitionPay() {
 		return "stu/stu_tuitionPay";
 	}
 
