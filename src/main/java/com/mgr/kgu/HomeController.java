@@ -8,15 +8,22 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
+import com.mgr.kgu.Service.PEN_Service;
 import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
+import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
@@ -29,7 +36,7 @@ public class HomeController {
 
 	@Autowired
 	private STU_Service stu_service;
-	
+
 	@Autowired
 	private ADM_Service adm_service;
 
@@ -38,6 +45,9 @@ public class HomeController {
 
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
+
+	@Autowired
+	private PEN_Service pen_Service;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -101,9 +111,9 @@ public class HomeController {
 		String pw = request.getParameter("ADM_PW");
 		ADM_VO adm_vo = adm_service.getAllinfo(id, pw);
 		if (adm_vo != null) {
-			/*ArrayList<ADM_VO> admlist= adm_service.callMyallscholar(id);*/
+			/* ArrayList<ADM_VO> admlist= adm_service.callMyallscholar(id); */
 			session.setAttribute("adm_VO", adm_vo);
-			/*session.setAttribute("admlist", admlist);*/
+			/* session.setAttribute("admlist", admlist); */
 		} else {
 			return "login/adm_login";
 		}
@@ -341,9 +351,9 @@ public class HomeController {
 		return "admin/adm_stateCheck";
 	}
 
-	// 벌점등록
-	@RequestMapping(value = "/adm_penaltyInsert")
-	public String adm_penaltyInsert(Model model) {
+	// 벌점등록 폼
+	@RequestMapping(value = "/adm_penaltyInsert", method = RequestMethod.POST)
+	public String adm_penaltyInsert(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
 		return "admin/adm_penaltyInsert";
 	}
 
@@ -361,9 +371,11 @@ public class HomeController {
 
 	// 벌점조회
 	@RequestMapping(value = "/stu_penaltyCheck")
-	public String stu_penaltyCheck(Model model) {
+	String getAllPenalty(HttpSession session, Model model, HttpServletRequest request) {
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		ArrayList<PEN_VO> list2 = pen_Service.getAllPenalty(stu_vo.getSTU_NUM());
+		model.addAttribute("bul1", list2);
 		return "student/stu_penaltyCheck";
-
 	}
 
 	// 장학금 조회
@@ -421,13 +433,11 @@ public class HomeController {
 		return "admin/adm_studentCheck";
 	}
 
-	
 	// 등록금 결제
 	@RequestMapping(value = "/stu_tuitionPay")
 	public String stu_tuitionPay(Model model) {
 		return "stu/stu_tuitionPay";
 	}
-
 
 	// 학생 로그아웃(세선제거)
 	@RequestMapping(value = "/stu_logout")
@@ -436,18 +446,26 @@ public class HomeController {
 		session.removeAttribute("scolist");
 		return "login/stu_login";
 	}
+
+
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
-		session.removeAttribute("stu_VO");
-		session.removeAttribute("scolist");
+		session.removeAttribute("prof_VO");
 		return "login/prof_login";
 	}
+
 	// 관리자 로그아웃(세선제거)
 	@RequestMapping(value = "/adm_logout")
 	public String adm_logout(HttpSession session) {
-		session.removeAttribute("stu_VO");
-		session.removeAttribute("scolist");
+		session.removeAttribute("adm_VO");
 		return "login/adm_login";
+	}
+
+	// 벌점등록
+	@RequestMapping(value = "/insertPenalty", method = RequestMethod.POST)
+	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
+		pen_Service.insertPenalty(PEN_VO);
+		return "main/adm_main";
 	}
 }

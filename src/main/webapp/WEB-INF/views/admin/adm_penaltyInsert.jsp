@@ -9,49 +9,34 @@
 <link rel="stylesheet" href="./resources/css/adm_penaltyInsert.css">
 <body>
 <h2 class="register"> |벌점 등록</h2>
+<form action="insertPenalty" method="post">
  <table class="penaltyInsert">
-       <tr>
-          <th scope="row">벌점코드</th>
-          <td><input type="text" name="penalty_code" id="penalty_code"></td>
-        </tr> 
-       <tr>
-          <th scope="row">학년</th>
-          <td><select name="grades">
-    <option value="">학년선택</option>
-    <option value="grade1">1</option>
-    <option value="grade2">2</option>
-    <option value="grade3">3</option>
-    <option value="grade4">4</option>
-	</select>
-	</td>
-        </tr>
+      
         <tr>
-          <th scope="row">학과</th>
-          <td><input type="text" name="department" id="department"></td>
+          <th scope="row">학번</th>
+          <td><input type="text" name="STU_NUM" id="stu_num"></td>
         </tr>
-        <tr>
-          <th scope="row">학생명</th>
-          <td><input type="text" name="stu_name" id="stu_name"></td>
-        </tr>
-        <tr>
-          <th scope="row">날짜</th>
-          <td><input type='date' name="penalty_date" id="penalty_date"></td>
-        </tr>
+        
         <tr>
           <th scope="row">벌점</th>
-          <td><select name="buljum">
+          <td><select name="PEN_POI">
     <option value="">벌점선택</option>
-    <option value="penalty1">1</option>
-    <option value="penalty2">2</option>
-    <option value="penalty3">3</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
 	</select></td>
         </tr>
         <tr>
           <th scope="row">벌점사유</th>
-          <td><input type="text" name="stu_name" id="stu_name"></td>
+          <td><input type="text" name="PEN_COM" id="PEN_COM"></td>
+        </tr>
+        <tr>
+          <th scope="row">날짜</th>
+          <td><input type='date' name="PEN_DATE" id="PEN_DATE"></td>
         </tr>
     </table><br>
 <input type="submit" id="penalty_reg" value="등록" />
 <input type="button" id="btn" value="취소" />
+</form>
 </body>
 </html>
