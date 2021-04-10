@@ -7,21 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.PEN_Service;
-=======
+
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.PROF_Service;
->>>>>>> 67c8af43d09ab851580dddaecc85d771377db433
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
@@ -446,16 +445,16 @@ public class HomeController {
 		session.removeAttribute("scolist");
 		return "login/stu_login";
 	}
-<<<<<<< HEAD
+
 	//벌점등록
 	@RequestMapping(value ="/insertPenalty", method=RequestMethod.POST)
-	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
+	String insertPenalty(@ManagedAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
 		pen_Service.insertPenalty(PEN_VO);
 		return "main/adm_main";
 	}
 	
 
-=======
+
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
@@ -470,5 +469,4 @@ public class HomeController {
 		session.removeAttribute("scolist");
 		return "login/adm_login";
 	}
->>>>>>> 67c8af43d09ab851580dddaecc85d771377db433
 }

@@ -116,20 +116,14 @@ alert(msg);
 		</td>
 
     <c:forEach var="Kyeol" items="${Kyeol1}">
-		<tr>
-		<td><select name="year_check">
-    <option value="">학년도</option>
-    <option value="year">2018년도</option>
-    <option value="year">2019년도</option>
-    <option value="year">2020년도</option>
-    <option value="year">2021년도</option>
-	</select></td> 
+		
 	
 	<td><select name="semester_check">
     <option value="">학기</option>
     <option value="semester">1학기</option>
     <option value="semester">2학기</option>
 	</select></td> 
+	
 	<td><select name="grade_check">
     <option value="">학년</option>
     <option value="grade">1</option>
