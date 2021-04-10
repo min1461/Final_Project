@@ -77,7 +77,7 @@
 
  
 
-<form action="prof_login" method="post"> <!-- 로그인 폼 부분  -->
+<form action="prof_main" method="post"> <!-- 로그인 폼 부분  -->
 
   
 
