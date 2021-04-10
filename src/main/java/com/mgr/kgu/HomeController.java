@@ -2,26 +2,32 @@ package com.mgr.kgu;
 
 import java.util.ArrayList;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.PEN_Service;
+=======
+
+import com.mgr.kgu.Service.ADM_ANN_Service;
+import com.mgr.kgu.Service.ADM_Service;
+import com.mgr.kgu.Service.PROF_Service;
+>>>>>>> 67c8af43d09ab851580dddaecc85d771377db433
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
+import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
 
 /**
@@ -32,6 +38,12 @@ public class HomeController {
 
 	@Autowired
 	private STU_Service stu_service;
+	
+	@Autowired
+	private ADM_Service adm_service;
+
+	@Autowired
+	private PROF_Service prof_service;
 
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
@@ -51,13 +63,13 @@ public class HomeController {
 	// index=>교수로그인페이지
 	@RequestMapping(value = "/prof_login")
 	public String prof_login(Model model) {
-		return "main/prof_main";
+		return "login/prof_login";
 	}
 
 	// index=>관리자로그인페이지
 	@RequestMapping(value = "/adm_login")
 	public String adm_login(Model model) {
-		return "main/adm_main";
+		return "login/adm_login";
 	}
 
 	// 학생로그인페이지=>학생메인
@@ -67,7 +79,9 @@ public class HomeController {
 		String pw = request.getParameter("HAK_PW");
 		STU_VO stu_vo = stu_service.getAllinfo(id, pw);
 		if (stu_vo != null) {
+			ArrayList<SCO_VO> scolist = stu_service.callMyallscholar(id);
 			session.setAttribute("stu_VO", stu_vo);
+			session.setAttribute("scolist", scolist);
 		} else {
 			return "login/stu_login";
 		}
@@ -76,17 +90,34 @@ public class HomeController {
 
 	// 교수로그인페이지=>교수메인
 	@RequestMapping(value = "/prof_main")
-	public String prof_main(Model model, int id, String pw) {
-		PROF_VO pv = new PROF_VO(id, pw);
-		model.addAttribute("prof_VO", pv.getProf_PW());
+	public String prof_main(HttpSession session, Model model, HttpServletRequest request) {
+		int id = Integer.valueOf(request.getParameter("PROFBUN"));
+		String pw = request.getParameter("PROF_PW");
+		PROF_VO prof_VO = prof_service.getAllinfo(id, pw);
+		if (prof_VO != null) {
+			System.out.println(prof_VO.getProf_NAME());
+			System.out.println(prof_VO.getProf_NUM());
+			System.out.println(prof_VO.getProf_PW());
+			session.setAttribute("prof_VO", prof_VO);
+		} else {
+			return "login/prof_login";
+		}
 		return "main/prof_main";
 	}
 
 	// 관리자로그인페이지=>관리자메인
 	@RequestMapping(value = "/adm_main")
-	public String adm_main(Model model, int id, String pw) {
-		ADM_VO av = new ADM_VO(id, pw);
-		model.addAttribute("admin_VO", av);
+	public String adm_main(HttpSession session, Model model, HttpServletRequest request) {
+		int id = Integer.valueOf(request.getParameter("ADMBUN"));
+		String pw = request.getParameter("ADM_PW");
+		ADM_VO adm_vo = adm_service.getAllinfo(id, pw);
+		if (adm_vo != null) {
+			/*ArrayList<ADM_VO> admlist= adm_service.callMyallscholar(id);*/
+			session.setAttribute("adm_VO", adm_vo);
+			/*session.setAttribute("admlist", admlist);*/
+		} else {
+			return "login/adm_login";
+		}
 		return "main/adm_main";
 	}
 
@@ -148,10 +179,12 @@ public class HomeController {
 		return "admin/adm_noticelist";
 	}
 
-	// 관리자용 세부 공지사항일정
-	@RequestMapping(value = "/adm_scheduleCheck")
-	public String adm_scheduleCheck(Model model) {
-		return "admin/adm_scheduleCheck";
+	// 관리자용 세부 공지사항 내용
+	@RequestMapping(value = "/adm_noticeCheck")
+	public String adm_noticeCheck(ANN_VO ann_VO, Model model) {
+		System.out.println(ann_VO.getANN_CONT());
+		adm_ann_Service.getTelinfo(ann_VO);
+		return "admin/adm_noticeCheck";
 	}
 
 	// 관리자용 주요일정 리스트
@@ -161,9 +194,9 @@ public class HomeController {
 	}
 
 	// 관리자용 세부 주요일정
-	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(Model model) {
-		return "admin/adm_noticeCheck";
+	@RequestMapping(value = "/adm_scheduleCheck")
+	public String adm_scheduleCheck(Model model) {
+		return "admin/adm_scheduleCheck";
 	}
 
 	// 성적확인
@@ -375,8 +408,8 @@ public class HomeController {
 			// 변경할 비밀번호와 현재비밀번호가 같지 않을경우
 			if (!after_pw.equals(before_pw)) {
 				// 비밀번호와 정보를 바꾸는 메서드 동작
-				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email,
-						after_bankname, after_bankacc);
+				stu_service.changedInfoPW(stu_num, after_pw, after_address, after_number, after_email, after_bankname,
+						after_bankacc);
 				stu_vo2 = stu_service.getAllinfo(stu_vo.getSTU_NUM(), after_pw);
 				// 변경할 비밀번호가 비어있을 경우
 			} else if (after_pw.equals("")) {
@@ -396,13 +429,23 @@ public class HomeController {
 	public String adm_studentCheck(Model model) {
 		return "admin/adm_studentCheck";
 	}
+
 	
-	// 로그아웃(세선제거)
-	@RequestMapping(value = "/logout")
-	public String logout(HttpSession session) {
+	// 등록금 결제
+	@RequestMapping(value = "/stu_tuitionPay")
+	public String stu_tuitionPay(Model model) {
+		return "stu/stu_tuitionPay";
+	}
+
+
+	// 학생 로그아웃(세선제거)
+	@RequestMapping(value = "/stu_logout")
+	public String stu_logout(HttpSession session) {
 		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
 		return "login/stu_login";
 	}
+<<<<<<< HEAD
 	//벌점등록
 	@RequestMapping(value ="/insertPenalty", method=RequestMethod.POST)
 	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
@@ -411,4 +454,20 @@ public class HomeController {
 	}
 	
 
+=======
+	// 교수 로그아웃(세선제거)
+	@RequestMapping(value = "/prof_logout")
+	public String prof_logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
+		return "login/prof_login";
+	}
+	// 관리자 로그아웃(세선제거)
+	@RequestMapping(value = "/adm_logout")
+	public String adm_logout(HttpSession session) {
+		session.removeAttribute("stu_VO");
+		session.removeAttribute("scolist");
+		return "login/adm_login";
+	}
+>>>>>>> 67c8af43d09ab851580dddaecc85d771377db433
 }
