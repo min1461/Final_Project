@@ -12,14 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-<<<<<<< HEAD
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.PEN_Service;
 
-=======
->>>>>>> e2d0d3b02b8c16f9c6e8cedd71899be2f4d7c77f
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
@@ -449,23 +447,14 @@ public class HomeController {
 		return "login/stu_login";
 	}
 
-<<<<<<< HEAD
-	//벌점등록
-	@RequestMapping(value ="/insertPenalty", method=RequestMethod.POST)
-	String insertPenalty(@ManagedAttribute("PEN_VO") PEN_VO PEN_VO,Model model) throws Exception {
-=======
 	// 벌점등록
 	@RequestMapping(value = "/insertPenalty", method = RequestMethod.POST)
 	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
->>>>>>> e2d0d3b02b8c16f9c6e8cedd71899be2f4d7c77f
 		pen_Service.insertPenalty(PEN_VO);
 		return "main/adm_main";
 	}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e2d0d3b02b8c16f9c6e8cedd71899be2f4d7c77f
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
