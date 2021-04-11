@@ -1,13 +1,18 @@
 package com.mgr.kgu.VO;
 
-//벌점 vo
+import java.util.Date;
+
+//벌점(PENALTY)
 public class PEN_VO {
 
-	private int PEN_NUM;
-	private int STU_NUM;
-	private int PEN_POI;
-	private String PEN_COM;
-	private String PEN_DATE;
+	private int PEN_NUM; //벌점코드
+	private int STU_NUM; //학번
+	private int PEN_POI; //벌점크기
+	private String PEN_COM; //벌점사유
+	private Date PEN_DATE; //벌점부여일
+	
+	public PEN_VO() {
+	}
 	
 	public int getPEN_NUM() {
 		return PEN_NUM;
@@ -33,20 +38,10 @@ public class PEN_VO {
 	public void setPEN_COM(String pEN_COM) {
 		PEN_COM = pEN_COM;
 	}
-	public String getPEN_DATE() {
+	public Date getPEN_DATE() {
 		return PEN_DATE;
 	}
-	public void setPEN_DATE(String pEN_DATE) {
+	public void setPEN_DATE(Date pEN_DATE) {
 		PEN_DATE = pEN_DATE;
 	}
-	public PEN_VO(int pEN_NUM, int sTU_NUM, int pEN_POI, String pEN_COM, String pEN_DATE) {
-		super();
-		PEN_NUM = pEN_NUM;
-		STU_NUM = sTU_NUM;
-		PEN_POI = pEN_POI;
-		PEN_COM = pEN_COM;
-		PEN_DATE = pEN_DATE;
-	}
-
-	public PEN_VO() {}
 }
