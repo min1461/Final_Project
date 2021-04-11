@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mgr.kgu.DAO.PEN_DAO">
+<select id="getAllPenalty" resultType="TUI_VO">
+		SELECT * FROM TUITION WHERE STU_NUM=#{STU_NUM}
+	</select>
+	
+<insert id="insertTUI" parameterType="TUI_VO">
+		INSERT INTO TUITION(TUI_NUM,TUI_FEE) VALUES(#{TUI_NUM},#{TUI_FEE});
+	</insert>
+</mapper>

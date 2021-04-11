@@ -72,7 +72,7 @@ alert(msg);
 	<h2 class="title1">|등록금 조회 및 결제</h2>
 <br>
 <!-- 조회  -->
-	<form action="" method="get" name="form1" id="form1" accept-charset='UTF-8'>
+	<form action="" method="get">
 
 	<table class="apply">
 	
@@ -86,18 +86,18 @@ alert(msg);
 		</tr>
 
 		<!-- 조회 불러오기 -->
-	<c:forEach var="tuiinfo1" items="${mAllTuiinfo}">
+	
 			<tr>
 		
 				<td>2021</td>
 				<td>1</td>
 				<td>${tui_VO.TUI_NUM}</td>
-				<td>${tui_VO.TUI_FEE}</td>
+				<td>${TUI_FEE}</td>
 				<td>0</td>
 				<td><input type="button" id="tuipay" value="결제"></td>
 	
 			</tr>
-	</c:forEach>
+
 	
 	<!-- 가라 ////////////////////////////////////////////////////-->
 			<tr>

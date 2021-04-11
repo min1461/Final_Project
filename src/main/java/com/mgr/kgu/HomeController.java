@@ -76,13 +76,15 @@ public class HomeController {
 	// index=>교수로그인페이지
 	@RequestMapping(value = "/prof_login")
 	public String prof_login(Model model) {
-		return "login/prof_login";
+		/*return "login/prof_login";*/
+		return "main/prof_main";
 	}
 
 	// index=>관리자로그인페이지
 	@RequestMapping(value = "/adm_login")
 	public String adm_login(Model model) {
-		return "login/adm_login";
+		/*return "login/adm_login";*/
+		return "main/adm_main";
 	}
 
 	// 학생로그인페이지=>학생메인
@@ -334,9 +336,8 @@ public class HomeController {
 
 	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
-	public String stu_tuitionCheck(HttpSession session, Model model, HttpServletRequest request){
-		TUI_VO tui_vo = tui_Service.getAllinfo(num, fee);
-		session.setAttribute("mAllTuiinfo",tui_vo);
+	public String stu_tuitionCheck(HttpServletRequest request, Model model){
+		model.addAttribute("TUI_FEE",200);
 		return "student/stu_tuitionCheck";
 	}
 

@@ -5,7 +5,7 @@ package com.mgr.kgu.VO;
 public class TUI_VO {
     
 	private int tui_NUM;
-	//금액
+	
 	private int tui_FEE;
 	
 
