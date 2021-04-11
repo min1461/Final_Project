@@ -332,8 +332,12 @@ public class HomeController {
 
 	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
-	public String stu_tuitionCheck(HttpServletRequest request, Model model){
-		model.addAttribute("TUI_FEE",200);
+	public String stu_tuitionCheck(HttpSession session, HttpServletRequest request, Model model){
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		int STU_NUM = stu_vo.getSTU_NUM();
+		System.out.println(STU_NUM);
+		TUI_VO tui_vo = tui_Service.allTuiInfo(STU_NUM); /*반환되는 값tui_vo*/
+		model.addAttribute("tui_VO",tui_vo); //불러올이름, JSP에 있는거랑 이름 가
 		return "student/stu_tuitionCheck";
 	}
 

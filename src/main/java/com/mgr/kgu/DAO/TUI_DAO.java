@@ -6,5 +6,5 @@ import com.mgr.kgu.VO.TUI_VO;
 
 
 public interface TUI_DAO {
-	TUI_VO getAllinfo(@Param("TUI_NUM") int TUI_NUM,  @Param("TUI_FEE") int TUI_FEE);
+	TUI_VO allTuiInfo(@Param("STU_NUM") int STU_NUM);
 }

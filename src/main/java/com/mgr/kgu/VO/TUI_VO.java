@@ -5,7 +5,7 @@ import java.sql.Date;
 //등록금(TUITION)
 public class TUI_VO {
 	private int TUI_NUM; //등록금코드
-	private int STD_NUM; //학번
+	private int STU_NUM; //학번
 	private String TUI_UNI; //소속대학
 	private int TUI_FEE; //등록금 금액
 	private Date TUI_PAY; //등록금 결제일
@@ -17,11 +17,11 @@ public class TUI_VO {
 	public void setTUI_NUM(int tUI_NUM) {
 		TUI_NUM = tUI_NUM;
 	}
-	public int getSTD_NUM() {
-		return STD_NUM;
+	public int getSTU_NUM() {
+		return STU_NUM;
 	}
-	public void setSTD_NUM(int sTD_NUM) {
-		STD_NUM = sTD_NUM;
+	public void setSTU_NUM(int sTU_NUM) {
+		STU_NUM = sTU_NUM;
 	}
 	public String getTUI_UNI() {
 		return TUI_UNI;

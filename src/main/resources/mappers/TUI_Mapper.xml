@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mgr.kgu.DAO.TUI_DAO">
-<select id="getAllTui" resultType="TUI_VO">
-		SELECT * FROM TUITION WHERE STU_NUM=#{STU_NUM}
+
+<select id="allTuiInfo" resultType="com.mgr.kgu.VO.TUI_VO">
+		SELECT * FROM TUITION
+		WHERE STU_NUM = #{STU_NUM};
 	</select>
 	
 </mapper>

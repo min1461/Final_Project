@@ -72,7 +72,7 @@ alert(msg);
 	<h2 class="title1">|등록금 조회 및 결제</h2>
 <br>
 <!-- 조회  -->
-	<form action="" method="get">
+	<form action="allTuiInfo" method="get">
 
 	<table class="apply">
 	
