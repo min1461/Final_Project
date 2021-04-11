@@ -1,21 +1,6 @@
 package com.mgr.kgu.VO;
 
-<<<<<<< HEAD
-
-//등록금 vo
-public class TUI_VO {
-    
-	private int tui_NUM;
-	
-	private int tui_FEE;
-	
-
-	public int getTui_NUM() {
-		return tui_NUM;
-	}
-=======
-import java.util.Date;
->>>>>>> fd0ab9b2f3ab5237b109e8418ab96e056043a88b
+import java.sql.Date;
 
 //등록금(TUITION)
 public class TUI_VO {
@@ -25,19 +10,7 @@ public class TUI_VO {
 	private int TUI_FEE; //등록금 금액
 	private Date TUI_PAY; //등록금 결제일
 	
-	public TUI_VO() {
-	}
-	
-<<<<<<< HEAD
-	public int getTui_FEE() {
-		return tui_NUM;
-	}
 
-	public void setTui_FEE(int tui_FEE) {
-		this.tui_FEE = tui_FEE;
-	}
-	
-=======
 	public int getTUI_NUM() {
 		return TUI_NUM;
 	}
@@ -68,6 +41,5 @@ public class TUI_VO {
 	public void setTUI_PAY(Date tUI_PAY) {
 		TUI_PAY = tUI_PAY;
 	}
->>>>>>> fd0ab9b2f3ab5237b109e8418ab96e056043a88b
 }
 

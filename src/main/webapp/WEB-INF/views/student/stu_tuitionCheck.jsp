@@ -92,7 +92,7 @@ alert(msg);
 				<td>2021</td>
 				<td>1</td>
 				<td>${tui_VO.TUI_NUM}</td>
-				<td>${TUI_FEE}</td>
+				<td>${tui_VO.TUI_FEE}</td>
 				<td>0</td>
 				<td><input type="button" id="tuipay" value="결제"></td>
 	
