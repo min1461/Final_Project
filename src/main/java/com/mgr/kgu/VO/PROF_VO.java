@@ -1,12 +1,10 @@
 package com.mgr.kgu.VO;
 
+//교수(PROFESSOR)
 public class PROF_VO {
-	// 교수 번호
-	private int PROF_NUM;
-	// 교수 이름
-	private String PROF_NAME;
-	// 교수 비밀번호
-	private String PROF_PW;
+	private int PROF_NUM; // 교수 번호
+	private String PROF_NAME; // 교수 이름
+	private String PROF_PW; // 교수 비밀번호
 
 	public PROF_VO() {
 	}

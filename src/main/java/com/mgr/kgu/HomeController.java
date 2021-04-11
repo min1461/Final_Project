@@ -10,10 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
@@ -21,6 +19,8 @@ import com.mgr.kgu.Service.DOR_Service;
 import com.mgr.kgu.Service.PEN_Service;
 import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.Service.STU_Service;
+import com.mgr.kgu.Service.SUB_Service;
+import com.mgr.kgu.Service.TUI_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.DOR_VO;
@@ -28,6 +28,8 @@ import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
+import com.mgr.kgu.VO.SUB_VO;
+import com.mgr.kgu.VO.TUI_VO;
 
 /**
  * Handles requests for the application home page.
@@ -51,7 +53,15 @@ public class HomeController {
 	private PEN_Service pen_Service;
 
 	@Autowired
+
 	private DOR_Service dor_Service;
+
+	private TUI_Service tui_Service;
+
+	@Autowired
+	private SUB_Service sub_Service;
+
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -59,18 +69,21 @@ public class HomeController {
 	// index=>학생로그인페이지
 	@RequestMapping(value = "/stu_login")
 	public String stu_login(Model model) {
+		/* return "login/stu_login"; */
 		return "login/stu_login";
 	}
 
 	// index=>교수로그인페이지
 	@RequestMapping(value = "/prof_login")
 	public String prof_login(Model model) {
+		/* return "login/prof_login"; */
 		return "login/prof_login";
 	}
 
 	// index=>관리자로그인페이지
 	@RequestMapping(value = "/adm_login")
 	public String adm_login(Model model) {
+		/* return "login/adm_login"; */
 		return "login/adm_login";
 	}
 
@@ -183,16 +196,12 @@ public class HomeController {
 
 	// 관리자용 세부 공지사항 내용
 	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(@ModelAttribute(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+	public String adm_noticeCheck(@RequestParam(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
 			Model model) {
-		System.out.println("111111111111");
-		System.out.println(ANN_NUM2);// 얘가 NULL로 뜸,,,,
-		System.out.println("222222222222");
-		
+
 		int ANN_NUM = Integer.valueOf(ANN_NUM2);
 		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
-		System.out.println("333333333333");
-		model.addAttribute("ANN_VO", ann_VO);
+		model.addAttribute("ann_VO", ann_VO);
 
 		return "admin/adm_noticeCheck";
 	}
@@ -311,19 +320,35 @@ public class HomeController {
 
 	// 수강신청 입력
 	@RequestMapping(value = "/stu_registerInsert")
-	public String stu_registerInsert(Model model) {
+	public String stu_registerInsert(HttpSession session, Model model, HttpServletRequest request) {
+		ArrayList<SUB_VO> sub_VO = sub_Service.callAllSubject();
+		model.addAttribute("sub_VO", sub_VO);
 		return "student/stu_registerInsert";
 	}
 
-	// 수강신청 입력
+	// 수강신청 입력 프로세스
+	@RequestMapping(value = "/stu_registerInsertProcess")
+	public String stu_registerInsertProcess(HttpSession session, Model model, HttpServletRequest request) {
+		int sub_num = Integer.valueOf(request.getParameter("SUB_NUM"));
+		int stu_num = (int) ((STU_VO) session.getAttribute("sub_VO")).getSTU_NUM();
+		sub_Service.subjectInsertProcess(sub_num, stu_num);
+		return "student/stu_main";
+	}
+
+	// 수강신청 확인
 	@RequestMapping(value = "/stu_registerCheck")
 	public String stu_registerCheck(Model model) {
 		return "student/stu_registerCheck";
 	}
 
-	// 등록금 조회
+	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
-	public String stu_tuitionCheck(Model model) {
+	public String stu_tuitionCheck(HttpSession session, HttpServletRequest request, Model model) {
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		int STU_NUM = stu_vo.getSTU_NUM();
+		System.out.println(STU_NUM);
+		ArrayList<TUI_VO> tui_vo = tui_Service.allTuiInfo(STU_NUM); /* 반환되는 값tui_vo */
+		model.addAttribute("tui_VO", tui_vo); // 불러올이름, JSP에 있는거랑 이름 가
 		return "student/stu_tuitionCheck";
 	}
 
@@ -450,7 +475,7 @@ public class HomeController {
 
 	// 등록금 결제
 	@RequestMapping(value = "/stu_tuitionPay")
-	public String stu_tuitionPay(Model model) {
+	public String stu_tuitionPay() {
 		return "stu/stu_tuitionPay";
 	}
 

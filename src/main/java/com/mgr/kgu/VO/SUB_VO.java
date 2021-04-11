@@ -14,9 +14,7 @@ public class SUB_VO {
 	private Date SUB_ENDDAY;
 	private int SUB_MAX;
 	private int SUB_MIN;
-	private int SUB_CUR;
 	private String SUB_STATE;
-	private int SUB_HAK;
 	
 	public int getSUB_NUM() {
 		return SUB_NUM;
@@ -72,23 +70,11 @@ public class SUB_VO {
 	public void setSUB_MIN(int sUB_MIN) {
 		SUB_MIN = sUB_MIN;
 	}
-	public int getSUB_CUR() {
-		return SUB_CUR;
-	}
-	public void setSUB_CUR(int sUB_CUR) {
-		SUB_CUR = sUB_CUR;
-	}
 	public String getSUB_STATE() {
 		return SUB_STATE;
 	}
 	public void setSUB_STATE(String sUB_STATE) {
 		SUB_STATE = sUB_STATE;
-	}
-	public int getSUB_HAK() {
-		return SUB_HAK;
-	}
-	public void setSUB_HAK(int sUB_HAK) {
-		SUB_HAK = sUB_HAK;
 	}
 
 }

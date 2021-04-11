@@ -1,24 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="./resources/css/scholarship.css">
 <title>등록금 조회 및 결제</title>
 </head>
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <script>
 $("#tuipay").click(function () {
-var IMP = window.IMP; // 생략가능
+var IMP = window.IMP; 
 IMP.init('imp44221020');
-// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
-// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
 IMP.request_pay({
-pg: 'inicis', // version 1.1.0부터 지원.
+pg: 'inicis', 
 /*
 'kakao':카카오페이,
 html5_inicis':이니시스(웹표준결제)
@@ -39,28 +40,15 @@ pay_method: 'card',
 'phone':휴대폰소액결제
 */
 merchant_uid: 'merchant_' + new Date().getTime(),
-/*
-merchant_uid에 경우
-https://docs.iamport.kr/implementation/payment
-위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
-참고하세요.
-나중에 포스팅 해볼게요.
-*/
-name: '주문명:결제테스트',
-//결제창에서 보여질 이름
-amount: 1000,
-//가격
+name: '등록금',
+amount: 100, //가격
 buyer_email: 'iamport@siot.do',
-buyer_name: '구매자이름',
+buyer_name: '이름',
 buyer_tel: '010-1234-5678',
 buyer_addr: '서울특별시 종로구',
 buyer_postcode: '123-456',
-m_redirect_url: 'https://www.yourdomain.com/payments/complete'
-/*
-모바일 결제시,
-결제가 끝나고 랜딩되는 URL을 지정
-(카카오페이, 페이코, 다날의 경우는 필요없음. PC와 마찬가지로 callback함수로 결과가 떨어짐)
-*/
+m_redirect_url: ''
+
 }, function (rsp) {
 console.log(rsp);
 if (rsp.success) {
@@ -81,78 +69,85 @@ alert(msg);
 
 
 <body>
-<h2 class="title1"> |등록금 조회 및 결제</h2>
-		<br> 
-		<table class="apply">
-		<tr>
-		<th>성명</th> <th>학번</th> <th>학과</th> <th>주소</th>
-		</tr>
-<c:forEach var="joe" items="${joe1}">
-		<tr>
-		<td>${joe.STU_NAME}</td>
-	    <td>${joe.STU_NUM}</td> 
-		<td>${joe.STU_MAJOR}</td> 
-		<td>${joe.STU_ADDRESS}</td> 
+	<h2 class="title1">|등록금 조회 및 결제</h2>
+<br>
+<!-- 조회  -->
+	<form action="allTuiInfo">
+
+	<table class="apply">
 	
+		<tr>
+			<th>학년도</th>
+			<th>학기</th>
+			<th>학과</th>
+			<th>등록금액</th>
+			<th>장학금액</th>
+			<th>결제</th>
 		</tr>
-</c:forEach>			
-		</table>
-		
-		
-<!-- 		
-		<p>아임 서포트 결제 모듈 테스트 해보기</p>
-<button id="check_module" type="button">아임 서포트 결제 모듈 테스트 해보기</button> -->
+
+		<!-- 조회 불러오기 -->
+
+			<c:forEach var="tV" items="${tui_VO}">
+				<tr>
+					<td>2021</td>
+					<td>1</td>
+					<td>${tV.TUI_NUM}</td>
+					<td>${tV.TUI_FEE}</td>
+					<td>0</td>
+					<td><input type="button" id="tuipay" value="결제"></td>
+				</tr>
+			</c:forEach>
 
 
-
- 
-<br><br><br><br><br>
+			<!-- 가라 ////////////////////////////////////////////////////-->
+			<tr>
 		
-		<table class="apply">
-		<tr>
-	<form action="" method="get" name="form1" id="form1" accept-charset='UTF-8' >
-	<th>학년도</th> <th>학기</th> <th>학년</th><th>등록금액</th> <th>장학금액</th> <th>결제</th>  
-		</tr>
-		
-		<tr><td>2018</td><td>2</td><td>3</td><td>1000</td><td>0</td>
-		<td><!-- <input type="submit" value="결제" onclick='pagemove(2)'> -->
-		<input type="submit" id="tuipay" value="결제">
-<!-- <button id="check_module" type="button">결제</button>	 -->	
-		</td>
+				<td>2020</td>
+				<td>2</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
+	
+			</tr>
 
-    <c:forEach var="Kyeol" items="${Kyeol1}">
-		<tr>
-		<td><select name="year_check">
-    <option value="">학년도</option>
-    <option value="year">2018년도</option>
-    <option value="year">2019년도</option>
-    <option value="year">2020년도</option>
-    <option value="year">2021년도</option>
-	</select></td> 
+			<tr>
+		
+				<td>2020</td>
+				<td>1</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
 	
-	<td><select name="semester_check">
-    <option value="">학기</option>
-    <option value="semester">1학기</option>
-    <option value="semester">2학기</option>
-	</select></td> 
-	<td><select name="grade_check">
-    <option value="">학년</option>
-    <option value="grade">1</option>
-    <option value="grade">2</option>
-    <option value="grade">3</option>
-    <option value="grade">4</option>
-	</select></td> 
-	<td>${Kyeol.TUI_FEE}</td> <td>${Kyeol.SCH_PRICE}</td> 
-	<td><!-- <input type="submit" name="ok" value="결제" onclick=''> -->
+			</tr>
+
+			<tr>
+		
+				<td>2019</td>
+				<td>2</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
 	
+			</tr>						
+
+			<tr>
+		
+				<td>2019</td>
+				<td>1</td>
+				<td>컴퓨터공학과</td>
+				<td>100</td>
+				<td>0</td>
+				<td>결제완료</td>
 	
-	</td> 
-		</tr>
-   <input type="hidden" id="tui" name='tui' value=100>
-   <input type="hidden" id="id" name='id' value="Kyeol">
+			</tr>				
+		
+	
+	</table>
 	</form>
-</c:forEach>
-		</table>
+
 
 </body>
 </html>
