@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mgr.kgu.DAO.DOR_DAO">
+<select id="getAllDOR" resultType="DOR_VO">
+		SELECT DOR_NUM,STU_NUM,DOR_ROM,DOR_STA FROM DORMITORY WHERE DOR_STA LIKE '신청' OR DOR_STA LIKE '보류'
+	</select>
+	
+<insert id="insertDor" parameterType="DOR_VO">
+		INSERT INTO DORMITORY(STU_NUM,DOR_PANA, DOR_PAST, DOR_PARN) VALUES (#{STU_NUM}, #{DOR_PANA}, #{DOR_PAST}, #{DOR_PARN})
+</insert>
+
+</mapper>

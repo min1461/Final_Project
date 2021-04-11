@@ -17,11 +17,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
+import com.mgr.kgu.Service.DOR_Service;
 import com.mgr.kgu.Service.PEN_Service;
 import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
+import com.mgr.kgu.VO.DOR_VO;
 import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.SCO_VO;
@@ -48,6 +50,8 @@ public class HomeController {
 	@Autowired
 	private PEN_Service pen_Service;
 
+	@Autowired
+	private DOR_Service dor_Service;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -323,10 +327,17 @@ public class HomeController {
 		return "student/stu_tuitionCheck";
 	}
 
-	// 입사신청
-	@RequestMapping(value = "/stu_joinInsert")
-	public String stu_joinInsert(Model model) {
+	// 입사신청 폼
+	@RequestMapping(value = "/stu_joinInsert", method = RequestMethod.POST)
+	public String stu_joinInsert(@ModelAttribute("DOR_VO") DOR_VO DOR_VO,Model model) {	
 		return "student/stu_joinInsert";
+	}
+	
+	// 입사신청 insert
+	@RequestMapping(value = "/insertDor")
+	public String insertDor(@ModelAttribute("DOR_VO") DOR_VO DOR_VO, Model model) {
+		dor_Service.insertDor(DOR_VO);
+		return "main/stu_main";
 	}
 
 	// 장학금신청
@@ -336,8 +347,10 @@ public class HomeController {
 	}
 
 	// 기숙사배정
-	@RequestMapping(value = "/adm_roomCheck")
-	public String adm_roomCheck(Model model) {
+	@RequestMapping(value = "/adm_roomCheck", method=RequestMethod.POST)
+	public String getAllDOR(Model model) {
+		ArrayList<DOR_VO> list2 = dor_Service.getAllDOR();
+		model.addAttribute("gisuk1", list2);
 		return "admin/adm_roomCheck";
 	}
 
