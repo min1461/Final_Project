@@ -336,8 +336,8 @@ public class HomeController {
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
 		int STU_NUM = stu_vo.getSTU_NUM();
 		System.out.println(STU_NUM);
-		TUI_VO tui_vo = tui_Service.allTuiInfo(STU_NUM); /*반환되는 값tui_vo*/
-		model.addAttribute("tui_VO",tui_vo); //불러올이름, JSP에 있는거랑 이름 가
+		TUI_VO tui_vo = tui_Service.allTuiInfo(STU_NUM); //반환되는 값tui_vo
+		model.addAttribute("tui_VO",tui_vo); //불러올이름, jsp에 있는거랑 이름 같아야함
 		return "student/stu_tuitionCheck";
 	}
 
