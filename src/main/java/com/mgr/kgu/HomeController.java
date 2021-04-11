@@ -1,5 +1,6 @@
 package com.mgr.kgu;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,18 +24,19 @@ import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.PEN_Service;
 
 
-
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.PEN_Service;
 import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.Service.STU_Service;
+import com.mgr.kgu.Service.TUI_Service;
 import com.mgr.kgu.VO.ADM_VO;
 import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
 import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
+import com.mgr.kgu.VO.TUI_VO;
 
 /**
  * Handles requests for the application home page.
@@ -56,6 +58,9 @@ public class HomeController {
 
 	@Autowired
 	private PEN_Service pen_Service;
+	
+	@Autowired
+	private TUI_Service tui_Service;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -189,14 +194,17 @@ public class HomeController {
 
 	// 관리자용 세부 공지사항 내용
 	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(@RequestParam(value="ANN_NUM") String ANN_NUM2, HttpServletRequest request, Model model) {
+	public String adm_noticeCheck(@ModelAttribute(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+			Model model) {
+		System.out.println("111111111111");
+		System.out.println(ANN_NUM2);// 얘가 NULL로 뜸,,,,
+		System.out.println("222222222222");
+		
 		int ANN_NUM = Integer.valueOf(ANN_NUM2);
-		
 		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
-		ann_VO.getANN_DATE();
-		ann_VO.getANN_CONT();
+		System.out.println("333333333333");
 		model.addAttribute("ANN_VO", ann_VO);
-		
+
 		return "admin/adm_noticeCheck";
 	}
 
@@ -326,7 +334,9 @@ public class HomeController {
 
 	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
-	public String stu_tuitionCheck(Model model) {
+	public String stu_tuitionCheck(HttpSession session, Model model, HttpServletRequest request){
+		TUI_VO tui_vo = tui_Service.getAllinfo(num, fee);
+		session.setAttribute("mAllTuiinfo",tui_vo);
 		return "student/stu_tuitionCheck";
 	}
 
@@ -457,7 +467,6 @@ public class HomeController {
 	}
 
 
-
 	// 교수 로그아웃(세선제거)
 	@RequestMapping(value = "/prof_logout")
 	public String prof_logout(HttpSession session) {
@@ -473,8 +482,8 @@ public class HomeController {
 	}
 
 	// 벌점등록
-	@RequestMapping(value = "/insertPenalty", method = RequestMethod.POST)
-	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) throws Exception {
+	@RequestMapping(value = "/insertPenalty")
+	String insertPenalty(@ModelAttribute("PEN_VO") PEN_VO PEN_VO, Model model) {
 		pen_Service.insertPenalty(PEN_VO);
 		return "main/adm_main";
 	}

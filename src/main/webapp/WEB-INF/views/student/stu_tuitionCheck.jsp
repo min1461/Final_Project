@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="./resources/css/scholarship.css">
 <title>등록금 조회 및 결제</title>
 </head>
@@ -85,18 +86,18 @@ alert(msg);
 		</tr>
 
 		<!-- 조회 불러오기 -->
-	
+	<c:forEach var="tuiinfo1" items="${mAllTuiinfo}">
 			<tr>
 		
 				<td>2021</td>
 				<td>1</td>
-				<td>${stu_VO.STU_NUM}</td>
+				<td>${tui_VO.TUI_NUM}</td>
 				<td>${tui_VO.TUI_FEE}</td>
 				<td>0</td>
 				<td><input type="button" id="tuipay" value="결제"></td>
 	
 			</tr>
-	
+	</c:forEach>
 	
 	<!-- 가라 ////////////////////////////////////////////////////-->
 			<tr>
