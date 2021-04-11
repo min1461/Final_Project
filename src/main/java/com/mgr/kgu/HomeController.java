@@ -179,16 +179,12 @@ public class HomeController {
 
 	// 관리자용 세부 공지사항 내용
 	@RequestMapping(value = "/adm_noticeCheck")
-	public String adm_noticeCheck(@ModelAttribute(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+	public String adm_noticeCheck(@RequestParam(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
 			Model model) {
-		System.out.println("111111111111");
-		System.out.println(ANN_NUM2);// 얘가 NULL로 뜸,,,,
-		System.out.println("222222222222");
 		
 		int ANN_NUM = Integer.valueOf(ANN_NUM2);
 		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
-		System.out.println("333333333333");
-		model.addAttribute("ANN_VO", ann_VO);
+		model.addAttribute("ann_VO", ann_VO);
 
 		return "admin/adm_noticeCheck";
 	}
