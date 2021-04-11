@@ -86,20 +86,20 @@ alert(msg);
 		</tr>
 
 		<!-- 조회 불러오기 -->
-	
-			<tr>
-		
-				<td>2021</td>
-				<td>1</td>
-				<td>${tui_VO.TUI_NUM}</td>
-				<td>${tui_VO.TUI_FEE}</td>
-				<td>0</td>
-				<td><input type="button" id="tuipay" value="결제"></td>
-	
-			</tr>
 
-	
-	<!-- 가라 ////////////////////////////////////////////////////-->
+			<c:forEach var="tV" items="${tui_VO}">
+				<tr>
+					<td>2021</td>
+					<td>1</td>
+					<td>${tV.TUI_NUM}</td>
+					<td>${tV.TUI_FEE}</td>
+					<td>0</td>
+					<td><input type="button" id="tuipay" value="결제"></td>
+				</tr>
+			</c:forEach>
+
+
+			<!-- 가라 ////////////////////////////////////////////////////-->
 			<tr>
 		
 				<td>2020</td>

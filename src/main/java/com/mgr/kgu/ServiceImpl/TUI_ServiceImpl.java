@@ -1,5 +1,7 @@
 package com.mgr.kgu.ServiceImpl;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,7 @@ public class TUI_ServiceImpl implements TUI_Service {
 	private TUI_DAO TUI_DAO;
 
 	@Override
-	public TUI_VO allTuiInfo(int STU_NUM) {
+	public ArrayList<TUI_VO> allTuiInfo(int STU_NUM) {
 		return TUI_DAO.allTuiInfo(STU_NUM);
 	}
 

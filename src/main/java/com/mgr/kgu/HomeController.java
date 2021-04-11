@@ -1,28 +1,17 @@
 package com.mgr.kgu;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-
 import org.springframework.web.bind.annotation.RequestMethod;
-
-
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.mgr.kgu.Service.ADM_ANN_Service;
-import com.mgr.kgu.Service.PEN_Service;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
 import com.mgr.kgu.Service.ADM_Service;
@@ -70,21 +59,21 @@ public class HomeController {
 	@RequestMapping(value = "/stu_login")
 	public String stu_login(Model model) {
 		/*return "login/stu_login";*/
-		return "main/stu_main";
+		return "login/stu_login";
 	}
 
 	// index=>교수로그인페이지
 	@RequestMapping(value = "/prof_login")
 	public String prof_login(Model model) {
 		/*return "login/prof_login";*/
-		return "main/prof_main";
+		return "login/prof_login";
 	}
 
 	// index=>관리자로그인페이지
 	@RequestMapping(value = "/adm_login")
 	public String adm_login(Model model) {
 		/*return "login/adm_login";*/
-		return "main/adm_main";
+		return "login/adm_login";
 	}
 
 	// 학생로그인페이지=>학생메인
@@ -336,7 +325,7 @@ public class HomeController {
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
 		int STU_NUM = stu_vo.getSTU_NUM();
 		System.out.println(STU_NUM);
-		TUI_VO tui_vo = tui_Service.allTuiInfo(STU_NUM); /*반환되는 값tui_vo*/
+		ArrayList<TUI_VO> tui_vo = tui_Service.allTuiInfo(STU_NUM); /*반환되는 값tui_vo*/
 		model.addAttribute("tui_VO",tui_vo); //불러올이름, JSP에 있는거랑 이름 가
 		return "student/stu_tuitionCheck";
 	}
