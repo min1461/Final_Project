@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD 선언 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mgr.kgu.DAO.SUB_DAO">
+	<select id="callAllSubject" resultType="com.mgr.kgu.VO.SUB_VO">
+		SELECT * FROM SUBJECT;
+	</select>
+	
+	<insert id="subjectInsertProcess">
+		INSERT INTO SCORE(STU_NUM,SUB_NUM) VALUES(#{sub_num},#{stu_num});
+	</insert>
+</mapper>
