@@ -1,8 +1,7 @@
 package com.mgr.kgu.VO;
 
-//기숙사 vo
+//기숙사(DORMITORY)
 public class DOR_VO {
-
     //기숙사 코드
 	private int DOR_NUM;
     //학번
