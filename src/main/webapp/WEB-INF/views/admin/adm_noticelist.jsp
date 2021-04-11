@@ -20,11 +20,10 @@
 		</tr>
 		<c:forEach var="nl" items="${nlist1}">
 			<tr>
-				<td>${nl.ANN_NUM}<input type="hidden" id="ANN_NUM"
-					value="${nl.ANN_NUM}" />
+				<td>${nl.ANN_NUM} <input name="ANN_NUM"  type="hidden" value="${nl.ANN_NUM} " />
 				</td>
 				<td><a href="javascript:void(0);"
-					onclick="btnclick('adm_noticeCheck')">${nl.ANN_TITLE}</a></td>
+					onclick="btnclick('adm_noticeCheck?ANN_NUM=${nl.ANN_NUM}')">${nl.ANN_TITLE}</a></td>
 				<td>${nl.ANN_HEAD}</td>
 				<td>${nl.ANN_DATE}</td>
 			</tr>
@@ -38,18 +37,20 @@
 
 	<!-- ajax 페이지 불러오는 부분 -->
 	<script type="text/javascript">
-		
-		function btnclick(_url) { //onclick="btnclick(원하는 페이지)"클릭시 ajax 실행
 
-		var ANN_NUM = $("#ANN_NUM").val();
+		function btnclick(_url) { //onclick="btnclick(원하는 페이지)"클릭시 ajax 실행
+		/* var choice = '왜안나와';
+		var choice2 = $('#ANN_NUM').val();
+		alert(choice);
+		alert(choice2); */
 		
+
 			$.ajax({
 				url : _url, //호출 url 설정, GET방식일경우 뒤에 파라티터를 붙여서 사용해도됨
 				type : 'post', //전송방식을 지정한다 get, post
-				data : ANN_NUM,
-				//datatype : //Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용하면 됨
+				
+				//datatype : 'text',//Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용하면 됨
 				success : function(data) { //성공했을때의 처리 부분, 해당부분에서 데이터 핸들링
-
 					$('#center_page').html(data); //div에 받아온 값을 넣는다
 				},
 				error : function() { //에러났을때의 처리 부분
