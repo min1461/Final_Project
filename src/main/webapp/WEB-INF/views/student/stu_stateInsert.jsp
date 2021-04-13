@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>휴복학 신청</title>
 </head>
-<link rel="stylesheet" href="./resources/css/std_stateInsert.css">
+<link rel="stylesheet" href="./resources/css/stu_stateInsert.css">
 <body>
 	<h1 class="title">|휴복학 신청</h1>
 	<form action="" method="post">

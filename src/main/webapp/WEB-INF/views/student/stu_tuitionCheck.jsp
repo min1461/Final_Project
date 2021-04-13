@@ -43,8 +43,6 @@ merchant_uid: 'merchant_' + new Date().getTime(),
 name: '등록금',
 amount: 100, //가격
 buyer_email: 'iamport@siot.do',
-buyer_name: '이름',
-buyer_tel: '010-1234-5678',
 buyer_addr: '서울특별시 종로구',
 buyer_postcode: '123-456',
 m_redirect_url: ''
@@ -66,11 +64,10 @@ alert(msg);
 });
 </script>
 
-
-
 <body>
 	<h2 class="title1">|등록금 조회 및 결제</h2>
 <br>
+ 
 <!-- 조회  -->
 	<form action="allTuiInfo">
 
@@ -86,12 +83,12 @@ alert(msg);
 		</tr>
 
 		<!-- 조회 불러오기 -->
-
+	
 			<c:forEach var="tV" items="${tui_VO}">
 				<tr>
 					<td>2021</td>
 					<td>1</td>
-					<td>${tV.TUI_NUM}</td>
+					<td>${tV.TUI_UNI}</td>
 					<td>${tV.TUI_FEE}</td>
 					<td>0</td>
 					<td><input type="button" id="tuipay" value="결제"></td>
@@ -100,6 +97,7 @@ alert(msg);
 
 
 			<!-- 가라 ////////////////////////////////////////////////////-->
+
 			<tr>
 		
 				<td>2020</td>

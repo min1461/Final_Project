@@ -1,0 +1,8 @@
+diff a/src/main/java/com/mgr/kgu/DAO/TUI_DAO.java b/src/main/java/com/mgr/kgu/DAO/TUI_DAO.java	(rejected hunks)
+@@ -8,6 +8,5 @@
+ 
+ 
+ public interface TUI_DAO {
+-	TUI_VO allTuiInfo(@Param("STU_NUM") int STU_NUM);
+ 	ArrayList<TUI_VO> allTuiInfo(@Param("STU_NUM") int STU_NUM);
+ }

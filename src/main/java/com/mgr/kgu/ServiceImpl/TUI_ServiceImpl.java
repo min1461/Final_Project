@@ -16,9 +16,9 @@ public class TUI_ServiceImpl implements TUI_Service {
 	private TUI_DAO TUI_DAO;
 
 	@Override
-	public ArrayList<TUI_VO> allTuiInfo(int STU_NUM) {
-		return TUI_DAO.allTuiInfo(STU_NUM);
+    public ArrayList<TUI_VO> allTuiInfo(int STU_NUM) {
+        return TUI_DAO.allTuiInfo(STU_NUM);
+    
 	}
-
 
 }

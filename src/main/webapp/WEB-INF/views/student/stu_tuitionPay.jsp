@@ -24,7 +24,7 @@ response.setContentType("text/html; charset=euc-kr");%>
 
 
 
-IMP.init('imp44221020');
+IMP.init('imp66159679');
 
 IMP.request_pay({
     pg : 'inicis', // version 1.1.0부터 지원.
@@ -45,8 +45,8 @@ IMP.request_pay({
     
        	$.ajax({
        		type:"get",
-       		url: "orderInsert.java", 
-        	url: "http://localhost:8081/KGUniversity/stu_main", 
+       		url: "orderInsert.java", // 이렇게 호출하는대가 있는진 모르겠지만 말도 안되는 경로고 ㅋ
+        	url: "http://localhost:8081/3_semiProject/orderInsert", // 실제로 호출하는 URL을 적어줘야되 도메인까지 아 저는 여태 배웟을때 파일을 호출하고 form에서도 서블릿을 호출하려면
        
         	data:{
         		Price:"<%=tui%>"     	
@@ -66,7 +66,7 @@ IMP.request_pay({
             setTimeout("startPage()", 5000);
         }  
         function startPage(){
-            document.location.href="./2page2.jsp";
+            document.location.href="stu_tuitionCheck";
         }
 
         

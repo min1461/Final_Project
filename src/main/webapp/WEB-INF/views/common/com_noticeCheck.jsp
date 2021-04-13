@@ -7,36 +7,29 @@
 <meta charset="UTF-8">
 <title>공지사항 내용</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
-<link href="./resources/css/n_contents.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
 <div class="container">
 	<div class="row">
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
-				<tr>
-					<th colspan="2" style="background-color: #eeeeee; text-align:center;">공지사항 보기</th>
-				</tr>
-			</thead>
 			<tbody>
-			<c:forEach var="gongbo" items="${gongbo1}">
 				<tr>
 					<td style="width: 20%; border:1px solid #dddddd;">제목</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${gongbo.TITLE}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ANN_TITLE}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성자</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${gongbo.WRITER}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ANN_HEAD}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성일</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${gongbo.WRITERDAY}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ANN_DATE}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">내용</td>
-					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${gongbo.CONTENT}</td>
+					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${ann_VO.ANN_CONT}</td>
 				</tr>
-				</c:forEach>
 			</tbody>
 		</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('com_noticelist')">목록</button>

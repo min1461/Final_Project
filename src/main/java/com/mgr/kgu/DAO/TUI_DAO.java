@@ -8,5 +8,6 @@ import com.mgr.kgu.VO.TUI_VO;
 
 
 public interface TUI_DAO {
-	ArrayList<TUI_VO> allTuiInfo(@Param("STU_NUM") int STU_NUM);
+	
+    ArrayList<TUI_VO> allTuiInfo(@Param("STU_NUM") int STU_NUM);
 }

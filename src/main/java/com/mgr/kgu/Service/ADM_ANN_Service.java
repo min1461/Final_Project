@@ -11,7 +11,7 @@ public interface ADM_ANN_Service {
 
 	void insertinfo(ANN_VO ann_VO);
 
-	void updateinfo(ANN_VO ann_VO);
+	boolean updateinfo(int ANN_NUM, String ANN_TITLE, String ANN_CONT);
 
 	void deleteinfo(ANN_VO ann_VO);
 

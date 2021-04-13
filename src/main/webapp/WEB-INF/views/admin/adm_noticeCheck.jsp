@@ -7,10 +7,18 @@
 <meta charset="UTF-8">
 <title>공지사항 내용</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
+<style type="text/css">
+	.text {
+	border:none;
+	width:100%;
+	height:100%;
+}
+</style>
 </head>
 <body>
 <div class="container">
 	<div class="row">
+	<form action="adm_noticeUpdateForm" method="post">
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
 				<tr>
@@ -20,7 +28,7 @@
 			<tbody>
 				<tr>
 					<td style="width: 20%; border:1px solid #dddddd;">제목</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ANN_TITLE}</td>
+					<td colspan="2" style="border:1px solid #dddddd;"><input type="text" class="text" name="ANN_TITLE" value="${ann_VO.ANN_TITLE}"></td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성자</td>
@@ -32,13 +40,17 @@
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">내용</td>
-					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${ann_VO.ANN_CONT}</td>
+					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;"><input type="text" class="text" name="ANN_CONT" value="${ann_VO.ANN_CONT}"></td>
+					<input type="hidden" value="${ann_VO.ANN_NUM}" name="ANN_NUM" />
 				</tr>
 			</tbody>
 		</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticelist')">목록</button>
-		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeUpdate')">수정</button>
+		<input type="submit" value="수정">				
+		<%-- <button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeUpdateForm?ANN_NUM=${ann_VO.ANN_NUM}+ANN_TITLE=${ann_VO.ANN_TITLE}+ANN_CONT=${ann_VO.ANN_CONT}')">수정</button> --%>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeDelete')">삭제</button>
+		</form>
+
 	</div>
 </div>
 

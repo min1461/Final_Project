@@ -1,5 +1,6 @@
 package com.mgr.kgu;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,9 +54,9 @@ public class HomeController {
 	private PEN_Service pen_Service;
 
 	@Autowired
-
 	private DOR_Service dor_Service;
 
+	@Autowired
 	private TUI_Service tui_Service;
 
 	@Autowired
@@ -146,7 +147,12 @@ public class HomeController {
 
 	// 세부공지사항
 	@RequestMapping(value = "/com_noticeCheck")
-	public String com_noticeCheck(Model model) {
+	public String com_noticeCheck(@RequestParam(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+			Model model) {
+
+		int ANN_NUM = Integer.valueOf(ANN_NUM2);
+		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
+		model.addAttribute("ann_VO", ann_VO);
 		return "common/com_noticeCheck";
 	}
 
@@ -277,8 +283,38 @@ public class HomeController {
 
 	// 관리자 공지사항 수정
 	@RequestMapping(value = "/adm_noticeUpdate")
-	public String adm_noticeUpdate(Model model) {
+	public String com_noticeUpdate(@RequestParam(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+			Model model) {
+
+		int ANN_NUM = Integer.valueOf(ANN_NUM2);
+		ANN_VO ann_VO = adm_ann_Service.getTelinfo(ANN_NUM);
+		model.addAttribute("ann_VO", ann_VO);
 		return "admin/adm_noticeUpdate";
+	}
+	
+	// 관리자 공지사항 수정
+	@RequestMapping(value = "/adm_noticeUpdateForm")
+	public String com_noticeUpdateFrom(HttpSession session, HttpServletRequest request, @RequestParam(value = "ANN_CONT") String ann_cont, Model model) {
+		
+		int ann_num = Integer.valueOf(request.getParameter("ANN_NUM"));
+		String ann_title = request.getParameter("ANN_TITLE");
+		System.out.println("동작전"+ann_title);
+		adm_ann_Service.updateinfo(ann_num, ann_title, ann_cont);
+		System.out.println("동작후"+ann_title);
+		ArrayList<ANN_VO> nlist1 = adm_ann_Service.getAllinfo();
+		session.setAttribute("nlist1", nlist1);
+		System.out.println("home"+ann_title);
+		
+		return "main/adm_main";
+
+	}
+	
+	// 관리자 공지사항 삭제
+	@RequestMapping(value = "/adm_noticeDelete")
+	public String com_noticeDelete(ANN_VO ann_VO, Model model) {
+
+		adm_ann_Service.deleteinfo(ann_VO);
+		return "admin/adm_main";
 	}
 
 	// 관리자 공지사항 입력 폼
@@ -343,12 +379,11 @@ public class HomeController {
 
 	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
-	public String stu_tuitionCheck(HttpSession session, HttpServletRequest request, Model model) {
+	public String stu_tuitionCheck(HttpSession session, HttpServletRequest request, Model model){
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
 		int STU_NUM = stu_vo.getSTU_NUM();
-		System.out.println(STU_NUM);
-		ArrayList<TUI_VO> tui_vo = tui_Service.allTuiInfo(STU_NUM); /* 반환되는 값tui_vo */
-		model.addAttribute("tui_VO", tui_vo); // 불러올이름, JSP에 있는거랑 이름 가
+		ArrayList<TUI_VO> tui_vo = tui_Service.allTuiInfo(STU_NUM); /*반환되는 값tui_vo*/
+		model.addAttribute("tui_VO",tui_vo); //불러올이름, JSP에 있는거랑 이름 가
 		return "student/stu_tuitionCheck";
 	}
 

@@ -33,9 +33,9 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 	}
 	
 	@Override
-	public void updateinfo(ANN_VO ann_VO) {
-		// TODO Auto-generated method stub
-		annkaja.updateinfo(ann_VO);
+	public boolean updateinfo(int ANN_NUM, String ANN_TITLE, String ANN_CONT) {
+		System.out.println("impl"+ANN_TITLE);
+		return annkaja.updateinfo(ANN_NUM, ANN_TITLE, ANN_CONT);
 	}
 	
 	@Override
@@ -43,6 +43,8 @@ public class ADM_ANN_ServiceImpl implements ADM_ANN_Service {
 		// TODO Auto-generated method stub
 		annkaja.deleteinfo(ann_VO);
 	}
+
+
 
 
 

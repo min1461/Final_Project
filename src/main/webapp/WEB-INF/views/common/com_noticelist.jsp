@@ -21,8 +21,10 @@
 		<%-- <c:forEach var="i" items="${}"> --%>
 		<c:forEach var="nl" items="${nlist}">
 		<tr>
-			<td>${nl.ANN_NUM}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_noticeCheck')">${nl.ANN_TITLE}</a></td>
+			<td>${nl.ANN_NUM} <input name="ANN_NUM"  type="hidden" value="${nl.ANN_NUM} " />
+			</td>
+			<td><a href="javascript:void(0);"
+				onclick="btnclick('com_noticeCheck?ANN_NUM=${nl.ANN_NUM}')">${nl.ANN_TITLE}</a></td>
 			<td>${nl.ANN_HEAD}</td>
 			<td>${nl.ANN_DATE}</td>
 		</tr>

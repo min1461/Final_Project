@@ -13,7 +13,7 @@ public interface ADM_ANN_DAO {
 
 	void insertinfo(ANN_VO ann_VO);
 
-	void updateinfo(ANN_VO ann_VO);
+	boolean updateinfo(@Param("ANN_NUM") int ANN_NUM, @Param("ANN_TITLE") String ANN_TITLE, @Param("ANN_CONT") String ANN_CONT);
 
 	void deleteinfo(ANN_VO ann_VO);
 
