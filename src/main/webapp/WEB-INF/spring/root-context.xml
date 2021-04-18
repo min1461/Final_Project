@@ -32,9 +32,9 @@
 		<beans:property name="driverClass"
 			value="org.mariadb.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mariadb://curonova.net:3306/kguni" />
-		<beans:property name="username" value="kgu" />
-		<beans:property name="password" value="kgu" />
+			value="jdbc:mariadb://kguniversity.cdey9ehc0c8s.ap-northeast-2.rds.amazonaws.com:3306/kguniversity" />
+		<beans:property name="username" value="kguniversity" />
+		<beans:property name="password" value="kguniversity" />
 	</beans:bean>
 
 	<!-- Sql Session Factory Bean -->
