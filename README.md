@@ -3,5 +3,4 @@
 
 #국비교육 프로젝트 : KGUniversity
 
-SpringFramework 프로젝트
-Controller, jsp, MariaDB
+SpringFramework,Controller, jsp, MariaDB 프로젝트
