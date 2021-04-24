@@ -7,12 +7,26 @@
     
 ### Project Duration and Members
 + Project Duration
-    - 🚧 현재 프로젝트 마무리가 미흡하여 추가적으로 보안중.
+    - 2021.03.12 ~ 2021.05. 참여인원 : 6명
 + Members
-    - 🚧 현재 프로젝트 마무리가 미흡하여 추가적으로 보안중.
+    - [강민규](github.com/min1461/)
+    - [김민석](https://github.com/MinSeok-Kim96/)
+    - [이준우](https://github.com/CuroNova/)
+    - [이해준](https://github.com/dlgowns/)
+    - [최유정](https://github.com/sun0326/)
+    - [최현경](https://github.com/jelly1199555/)
         
 ### Development Environment
-    - 🚧 현재 프로젝트 마무리가 미흡하여 추가적으로 보안중.
+    - OS
+        - Window 10
+    - Development Tool
+        - Eclipse, DBeaver, Amazon RDS
+    - Language/Skills
+        - Java, HTML5, CSS3, JavaScript, JSP, jQuery
+    - Server
+        - Apache Tomcat 8.5
+    - DB
+        - MariaDB
 
 ### Introduction
     - 🚧 현재 프로젝트 마무리가 미흡하여 추가적으로 보안중.
