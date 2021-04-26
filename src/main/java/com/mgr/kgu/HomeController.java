@@ -298,12 +298,9 @@ public class HomeController {
 		
 		int ann_num = Integer.valueOf(request.getParameter("ANN_NUM"));
 		String ann_title = request.getParameter("ANN_TITLE");
-		System.out.println("동작전"+ann_title);
 		adm_ann_Service.updateinfo(ann_num, ann_title, ann_cont);
-		System.out.println("동작후"+ann_title);
 		ArrayList<ANN_VO> nlist1 = adm_ann_Service.getAllinfo();
 		session.setAttribute("nlist1", nlist1);
-		System.out.println("home"+ann_title);
 		
 		return "main/adm_main";
 
