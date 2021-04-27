@@ -58,7 +58,7 @@
 		</article>
 
 
-		<form action="stu_main" method="get">
+		<form action="stu_main" method="post">
 			<div id="login_box">
 				<h2>LOGIN</h2>
 				<ul id="input_button">

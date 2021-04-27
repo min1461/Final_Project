@@ -27,8 +27,8 @@
 						</tr>
  						<tr>
 							<td style="border: 1px solid #dddddd;">작성자</td>
-							<td colspan="2" style="border: 1px solid #dddddd;"><input
-								type="text" class="textinsert" name="ANN_HEAD"></td>
+							<td colspan="2" style="border: 1px solid #dddddd;">${ADM_NAME}
+								<input type="hidden" name="ADM_NUM" value="${ADM_NUM}"></td>
 						</tr>
 						<tr>
 							<td style="border: 1px solid #dddddd;">내용</td>

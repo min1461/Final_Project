@@ -32,7 +32,7 @@
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성자</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ANN_HEAD}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ADM_NAME}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성일</td>

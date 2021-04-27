@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +26,8 @@
 			</td>
 			<td><a href="javascript:void(0);"
 				onclick="btnclick('com_noticeCheck?ANN_NUM=${nl.ANN_NUM}')">${nl.ANN_TITLE}</a></td>
-			<td>${nl.ANN_HEAD}</td>
-			<td>${nl.ANN_DATE}</td>
+			<td>${nl.ADM_NAME}</td>
+			<td><fmt:formatDate value="${nl.ANN_DATE}" pattern="yyyy년 MM월 dd일" /></td>
 		</tr>
 		</c:forEach>
 		<%-- </c:forEach> --%>
