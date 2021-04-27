@@ -162,25 +162,39 @@ public class HomeController {
 
 	// 학교 주요일정 리스트
 	@RequestMapping(value = "/com_uschedulelist")
-	public String com_uschedulelist(Model model) {
+	public String com_uschedulelist(HttpSession session, Model model, HttpServletRequest request) {
+		ArrayList<SCD_VO> slist = adm_scd_Service.getAllinfo();
+		session.setAttribute("slist", slist);
 		return "common/com_uschedulelist";
 	}
 
 	// 학교 세부주요일정
 	@RequestMapping(value = "/com_uscheduleCheck")
-	public String com_uscheduleCheck(Model model) {
+	public String com_uscheduleCheck(@RequestParam(value = "SCD_NUM") String SCD_NUM2, HttpServletRequest request,
+			Model model) {
+
+		int SCD_NUM = Integer.valueOf(SCD_NUM2);
+		SCD_VO scd_VO = adm_scd_Service.getTelinfo(SCD_NUM);
+		model.addAttribute("scd_VO", scd_VO);
 		return "common/com_uscheduleCheck";
 	}
 
 	// 시험일정 리스트
 	@RequestMapping(value = "/com_pschedulelist")
-	public String com_pschedulelist(Model model) {
+	public String com_pschedulelist(HttpSession session, Model model, HttpServletRequest request) {
+		ArrayList<SCD_VO> slist = adm_scd_Service.getAllinfo();
+		session.setAttribute("slist", slist);
 		return "common/com_pschedulelist";
 	}
 
 	// 세부 시험일정
 	@RequestMapping(value = "/com_pscheduleCheck")
-	public String com_pscheduleCheck(Model model) {
+	public String com_pscheduleCheck(@RequestParam(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+			Model model) {
+
+		int SCD_NUM = Integer.valueOf(ANN_NUM2);
+		SCD_VO scd_VO = adm_scd_Service.getTelinfo(SCD_NUM);
+		model.addAttribute("scd_VO", scd_VO);
 		return "common/com_pscheduleCheck";
 	}
 
@@ -347,7 +361,8 @@ public class HomeController {
 
 	// 관리자 공지사항 입력
 	@RequestMapping(value = "/adm_noticeInsert")
-	public String adm_noticeInsert(Model model) {
+	public String adm_noticeInsert(HttpSession session, Model model) {
+		
 		return "admin/adm_noticeInsert";
 	}
 
@@ -367,7 +382,7 @@ public class HomeController {
 
 	// 관리자 주요일정 입력
 	@RequestMapping(value = "/adm_scheduleInsert")
-	public String adm_scheduleInsert(Model model) {
+	public String adm_scheduleInsert(HttpSession session, Model model) {
 		return "admin/adm_scheduleInsert";
 	}
 

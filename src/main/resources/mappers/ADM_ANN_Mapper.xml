@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mgr.kgu.DAO.ADM_ANN_DAO">
 	<insert id="insertinfo">
-		INSERT INTO ANNOUNCE(ANN_TITLE, ADM_NUM, ANN_CONT) VALUES (#{ANN_TITLE}, #{ADM_NUM}, #{ANN_CONT})
+		INSERT INTO ANNOUNCE(ANN_TITLE, ADM_NUM, ANN_CONT, ADM_NAME) VALUES (#{ANN_TITLE}, #{ADM_NUM}, #{ANN_CONT}, #{ADM_NAME})
 	</insert>
 	
 	<select id="getAllinfo" resultType="ANN_VO">

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,32 +15,28 @@
 	<div class="row">
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
-				<tr>
-					<th colspan="2" style="background-color: #eeeeee; text-align:center;">주요일정 보기</th>
-				</tr>
-			</thead>
 			<tbody>
-			<c:forEach var="jubo" items="${jubo1}">
 				<tr>
 					<td style="width: 20%; border:1px solid #dddddd;">제목</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${jubo.TITLE}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${scd_VO.SCD_TITLE}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성자</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${jubo.WRITER}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${scd_VO.ADM_NAME}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성일</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${jubo.WRITERDAY}</td>
+					<td colspan="2" style="border:1px solid #dddddd;"><fmt:formatDate value="${scd_VO.SCD_DATE}" pattern="yyyy년 MM월 dd일" /></td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">내용</td>
-					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${jubo.CONTENT}</td>
+					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${scd_VO.SCD_CONT}</td>
 				</tr>
-			</c:forEach>
 			</tbody>
 		</table>
+		<div align="right">
 		<button class="button" href="javascript:void(0);" onclick="btnclick('com_uschedulelist')">목록</button>
+		</div>
 	</div>
 </div>
 

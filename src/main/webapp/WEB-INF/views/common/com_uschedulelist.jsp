@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,22 +13,22 @@
 <body>
 <h2 class="title1"> |학교 주요일정</h2>
 	<table class="tabletool1">
-		<tr class="tablecategory2">
+		<tr>
 			<th width="15%">날짜</th>
 			<th width="55%">제목</th>
 			<th width="15%">작성자</th>
 			<th width="15%">작성일</th>
 		</tr>
-		<%-- <c:forEach var="i" items="${}"> --%>
-		<c:forEach var="juyo" items="${juyo1}">
-		<tr>
-			<td>${juyo1.DATE}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('com_uscheduleCheck')">${juyo1.TITLE}</a></td>
-			<td>${juyo1.WRITER}</td>
-			<td>${juyo1.WRITERDAY}</td>
-		</tr>
+		<c:forEach var="sl" items="${slist}">
+			<tr>
+				<td>${sl.SCD_NUM} <input name="SCD_NUM"  type="hidden" value="${sl.SCD_NUM} " />
+				</td>
+				<td><a href="javascript:void(0);"
+					onclick="btnclick('com_uscheduleCheck?SCD_NUM=${sl.SCD_NUM}')">${sl.SCD_TITLE}</a></td>
+				<td>${sl.ADM_NAME}</td>
+				<td><fmt:formatDate value="${sl.SCD_DATE}" pattern="yyyy년 MM월 dd일" /></td>
+			</tr>
 		</c:forEach>
-		<%-- </c:forEach> --%>
 	</table>
 
    <!-- ajax 페이지 불러오는 부분 -->

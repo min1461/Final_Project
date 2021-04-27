@@ -29,7 +29,6 @@
 				<td><fmt:formatDate value="${nl.ANN_DATE}" pattern="yyyy년 MM월 dd일" /></td>
 			</tr>
 		</c:forEach>
-		<%-- </c:forEach> --%>
 	</table>
 	<br>
 	<button class="button" href="javascript:void(0);"
