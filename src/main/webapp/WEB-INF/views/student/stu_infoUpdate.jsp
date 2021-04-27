@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@
 				<td id="infomenu">전공</td>
 				<td id="infovalue">${stu_VO.STU_MAJOR}</td>
 				<td id="infomenu">생년월일</td>
-				<td id="infovalue">${stu_VO.STU_BIRTH}</td>
+				<td id="infovalue"><fmt:formatDate value="${stu_VO.STU_BIRTH}" pattern="yyyy년 MM월 dd일" /></td>
 				<td id="infomenu">국적</td>
 				<td id="infovalue">${stu_VO.STU_NAT}</td>
 				<td id="infomenu">신청학점/<br />이수학점
@@ -69,7 +70,7 @@
 			</tr>
 			<tr>
 				<td id="infomenu">입학일</td>
-				<td id="infovalue">${stu_VO.STU_ADMDAY}</td>
+				<td id="infovalue"><fmt:formatDate value="${stu_VO.STU_ADMDAY}" pattern="yyyy년 MM월 dd일" /></td>
 				<td id="infomenu">상태</td>
 				<td id="infovalue">${stu_VO.STU_STATE}</td>
 				<td id="infomenu">현재비밀번호</td>
