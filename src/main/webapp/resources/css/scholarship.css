@@ -33,17 +33,17 @@
 	border-right: 0;
 }
 
-h3{
+h3 {
 	color: #A4A4A4;
 }
 
-.except{
-	margin-bottom : 20px;
+.except {
+	margin-bottom: 20px;
 }
 
 /* 강의평가 */
-#hh{
-	width : 50px;
+#hh {
+	width: 50px;
 }
 
 #ww {
@@ -58,4 +58,39 @@ h3{
 	margin-left: 45%;
 	width: 80px;
 	height: 30px;
+}
+
+#select {
+	width : 10%;
+}
+
+
+#sub_num {
+	width : 10%;
+}
+#prof_name {
+	width : 7%;
+}
+#sub_name {
+	width : 25%;
+}
+#sub_time {
+	width : 11%;
+}
+#sub_room {
+	width : 8%;
+}
+#sub_max {
+	width : 8%;
+}
+#sub_min {
+	width : 8%;
+}
+
+#sub_state {
+	width : 8%;
+}
+
+#sub_hak {
+	width : 5%;
 }
