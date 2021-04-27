@@ -4,43 +4,63 @@ import java.util.Date;
 
 //학교일정(SCHEDULE)
 public class SCD_VO {
-	private int SCD_NUM; //일정번호
-	private String SCD_TITLE; //일정 제목
-	private String SCD_HEAD; //일정 작성자
-	private Date SCD_DATE; //일정 작성일
-	private String SCD_COUNT; //일정 내용
+	private int SCD_NUM; //공지 번호
+	private String SCD_TITLE; //공지 제목
+	private String ADM_NUM; //공지 작성자
+	private String ADM_NAME; //공지 작성자
+	private Date SCD_DATE; //공지 작성일
+	private String SCD_CONT; //공지 내용
 	
 	public SCD_VO() {
 	}
-	
+
 	public int getSCD_NUM() {
 		return SCD_NUM;
 	}
+
 	public void setSCD_NUM(int sCD_NUM) {
 		SCD_NUM = sCD_NUM;
 	}
+
 	public String getSCD_TITLE() {
 		return SCD_TITLE;
 	}
+
 	public void setSCD_TITLE(String sCD_TITLE) {
 		SCD_TITLE = sCD_TITLE;
 	}
-	public String getSCD_HEAD() {
-		return SCD_HEAD;
+
+	public String getADM_NUM() {
+		return ADM_NUM;
 	}
-	public void setSCD_HEAD(String sCD_HEAD) {
-		SCD_HEAD = sCD_HEAD;
+
+	public void setADM_NUM(String aDM_NUM) {
+		ADM_NUM = aDM_NUM;
 	}
+
+	public String getADM_NAME() {
+		return ADM_NAME;
+	}
+
+	public void setADM_NAME(String aDM_NAME) {
+		ADM_NAME = aDM_NAME;
+	}
+
 	public Date getSCD_DATE() {
 		return SCD_DATE;
 	}
+
 	public void setSCD_DATE(Date sCD_DATE) {
 		SCD_DATE = sCD_DATE;
 	}
-	public String getSCD_COUNT() {
-		return SCD_COUNT;
+
+	public String getSCD_CONT() {
+		return SCD_CONT;
 	}
-	public void setSCD_COUNT(String sCD_COUNT) {
-		SCD_COUNT = sCD_COUNT;
+
+	public void setSCD_CONT(String sCD_CONT) {
+		SCD_CONT = sCD_CONT;
 	}
+	
+
 }

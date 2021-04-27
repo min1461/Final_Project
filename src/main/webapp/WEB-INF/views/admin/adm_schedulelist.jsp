@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +20,15 @@
 			<th width="15%">작성일</th>
 		</tr>
 		<%-- <c:forEach var="i" items="${}"> --%>
-		<c:forEach var="adminjuyo" items="${adminjuyo1}">
-		<tr>
-			<td>${juyo.DATE}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('adm_scheduleCheck')">${juyo.TITLE}</a></td>
-			<td>${juyo.WRITER}</td>
-			<td>${juyo.WRITERDAY}</td>
-		</tr>
+		<c:forEach var="sl" items="${slist1}">
+			<tr>
+				<td>${sl.SCD_NUM} <input name="SCD_NUM"  type="hidden" value="${sl.SCD_NUM} " />
+				</td>
+				<td><a href="javascript:void(0);"
+					onclick="btnclick('adm_scheduleCheck?SCD_NUM=${sl.SCD_NUM}')">${sl.SCD_TITLE}</a></td>
+				<td>${sl.ADM_NAME}</td>
+				<td><fmt:formatDate value="${sl.SCD_DATE}" pattern="yyyy년 MM월 dd일" /></td>
+			</tr>
 		</c:forEach>
 		<%-- </c:forEach> --%>
 	</table>
@@ -34,7 +37,7 @@
 
    <!-- ajax 페이지 불러오는 부분 -->
    <script type="text/javascript">
-      function btnclick(_url) { //onclick="btnclick(원하는 페이지)"클릭시 ajax 실행
+      function btnclick(_url) { //onclick="btnclick(원하는 페이지)"클릭시 aj ax 실행
          $.ajax({
             url : _url, //호출 url 설정, GET방식일경우 뒤에 파라티터를 붙여서 사용해도됨
             type : 'post', //전송방식을 지정한다 get, post

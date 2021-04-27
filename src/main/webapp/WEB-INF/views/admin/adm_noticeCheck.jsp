@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +37,7 @@
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성일</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${ann_VO.ANN_DATE}</td>
+					<td colspan="2" style="border:1px solid #dddddd;"><fmt:formatDate value="${ann_VO.ANN_DATE}" pattern="yyyy년 MM월 dd일" /></td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">내용</td>

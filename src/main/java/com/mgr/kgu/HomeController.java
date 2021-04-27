@@ -1,6 +1,5 @@
 package com.mgr.kgu;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mgr.kgu.Service.ADM_ANN_Service;
+import com.mgr.kgu.Service.ADM_SCD_Service;
 import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.DOR_Service;
 import com.mgr.kgu.Service.PEN_Service;
@@ -27,6 +27,7 @@ import com.mgr.kgu.VO.ANN_VO;
 import com.mgr.kgu.VO.DOR_VO;
 import com.mgr.kgu.VO.PEN_VO;
 import com.mgr.kgu.VO.PROF_VO;
+import com.mgr.kgu.VO.SCD_VO;
 import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
 import com.mgr.kgu.VO.SUB_VO;
@@ -49,6 +50,9 @@ public class HomeController {
 
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
+	
+	@Autowired
+	private ADM_SCD_Service adm_scd_Service;
 
 	@Autowired
 	private PEN_Service pen_Service;
@@ -214,14 +218,34 @@ public class HomeController {
 
 	// 관리자용 주요일정 리스트
 	@RequestMapping(value = "/adm_schedulelist")
-	public String adm_schedulelist(Model model) {
+	public String adm_schedulelist(HttpSession session, Model model, HttpServletRequest request) {
+		ArrayList<SCD_VO> slist1 = adm_scd_Service.getAllinfo();
+		session.setAttribute("slist1", slist1);
 		return "admin/adm_schedulelist";
 	}
 
 	// 관리자용 세부 주요일정
 	@RequestMapping(value = "/adm_scheduleCheck")
-	public String adm_scheduleCheck(Model model) {
+	public String adm_scheduleCheck(@RequestParam(value = "SCD_NUM") String SCD_NUM2, HttpServletRequest request,
+			Model model) {
+		int SCD_NUM = Integer.valueOf(SCD_NUM2);
+		SCD_VO scd_VO = adm_scd_Service.getTelinfo(SCD_NUM);
+		model.addAttribute("scd_VO", scd_VO);
 		return "admin/adm_scheduleCheck";
+	}
+	
+	// 관리자 주요일정 수정
+	@RequestMapping(value = "/adm_scheduleUpdateForm")
+	public String adm_scheduleUpdateForm(HttpSession session, HttpServletRequest request, @RequestParam(value = "SCD_CONT") String scd_cont, Model model) {
+		
+		int scd_num = Integer.valueOf(request.getParameter("SCD_NUM"));
+		String scd_title = request.getParameter("SCD_TITLE");
+		adm_scd_Service.updateinfo(scd_num, scd_title, scd_cont);
+		ArrayList<SCD_VO> slist1 = adm_scd_Service.getAllinfo();
+		session.setAttribute("slist1", slist1);
+		
+		return "main/adm_main";
+
 	}
 
 	// 성적확인
@@ -294,7 +318,7 @@ public class HomeController {
 	
 	// 관리자 공지사항 수정
 	@RequestMapping(value = "/adm_noticeUpdateForm")
-	public String com_noticeUpdateFrom(HttpSession session, HttpServletRequest request, @RequestParam(value = "ANN_CONT") String ann_cont, Model model) {
+	public String adm_noticeUpdateFrom(HttpSession session, HttpServletRequest request, @RequestParam(value = "ANN_CONT") String ann_cont, Model model) {
 		
 		int ann_num = Integer.valueOf(request.getParameter("ANN_NUM"));
 		String ann_title = request.getParameter("ANN_TITLE");
