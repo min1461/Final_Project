@@ -357,6 +357,14 @@ public class HomeController {
 		return "admin/adm_scheduleUpdate";
 	}
 
+	
+	// 관리자 공지사항 입력 폼
+	@RequestMapping(value = "/adm_scheduleInsertForm")
+	public String adm_scheduleInsertForm(SCD_VO scd_VO, Model model) {
+		adm_scd_Service.insertinfo(scd_VO);
+		return "main/adm_main";
+	}
+
 	// 관리자 주요일정 입력
 	@RequestMapping(value = "/adm_scheduleInsert")
 	public String adm_scheduleInsert(Model model) {

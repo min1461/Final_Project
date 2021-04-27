@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mgr.kgu.DAO.ADM_SCD_DAO">
 	<insert id="insertinfo">
-		INSERT INTO SCHEDULE(SCD_TITLE, SCD_NUM, SCD_CONT) VALUES (#{SCD_TITLE}, #{ADM_NUM}, #{SCD_CONT})
+		INSERT INTO SCHEDULE(SCD_TITLE, SCD_NUM, SCD_CONT, ADM_NAME) VALUES (#{SCD_TITLE}, #{SCD_NUM}, #{SCD_CONT}, #{ADM_NAME})
 	</insert>
 	
 	<select id="getAllinfo" resultType="SCD_VO">
