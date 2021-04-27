@@ -6,7 +6,7 @@
 	</insert>
 	
 	<select id="getAllinfo" resultType="SCD_VO">
-		SELECT * FROM SCHEDULE
+		SELECT * FROM SCHEDULE ORDER BY SCD_NUM DESC;
 	</select>
 
 	<select id="getTelinfo" resultType="SCD_VO">
