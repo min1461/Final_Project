@@ -16,73 +16,85 @@
 		<br>
 		<table class="apply">
 			<tr>
-				<th>수강신청</th>
-				<th>교과목코드</th>
-				<th>교수번호</th>
-				<th>과목명</th>
-				<th>강의시간(교시)</th>
-				<th>강의실</th>
-				<th>수강시작일</th>
-				<th>수강종료일</th>
-				<th>최대정원</th>
-				<th>최소정원</th>
-				<th>이수구분</th>
+				<th id='select'>수강신청</th>
+				<th id='sub_num'>교과목코드</th>
+				<th id='prof_name'>교수번호</th>
+				<th id='sub_name'>과목명</th>
+				<th id='sub_time'>강의시간(교시)</th>
+				<th id='sub_room'>강의실</th>
+				<th id='sub_max'>최대정원</th>
+				<th id='sub_min'>최소정원</th>
+				<th id='sub_state'>이수구분</th>
+				<th id='sub_hak'>학점</th>
 			</tr>
-			<form action="stu_registerInsertProcess">
-				<c:forEach var="gae" items="${sub_VO}">
-					<tr>
-						<td><input type="submit" name="submit" value="신청"></td>
-						<td>${gae.SUB_NUM}<input type="hidden" name="SUB_NUM"
-							value="${gae.SUB_NUM}" /></td>
-						<td>${gae.PROF_NUM}</td>
-						<td>${gae.SUB_NAME}</td>
-						<td>${gae.SUB_TIME}</td>
-						<td>${gae.SUB_ROOM}</td>
-						<td>${gae.SUB_STADAY}</td>
-						<td>${gae.SUB_ENDDAY}</td>
-						<td>${gae.SUB_MAX}</td>
-						<td>${gae.SUB_MIN}</td>
-						<td>${gae.SUB_STATE}</td>
-					</tr>
-				</c:forEach>
-			</form>
+			<c:forEach var="gae" items="${sub_VO}" varStatus="status">
+				<tr>
+					<td><button onclick="insertTR('${status.index}')">신청</button></td>
+					<td class='sub_num'>${gae.SUB_NUM}</td>
+					<td class='prof_name'>${gae.PROF_NAME}</td>
+					<td class='sub_name'>${gae.SUB_NAME}</td>
+					<td class='sub_time'>${gae.SUB_TIME}</td>
+					<td class='sub_room'>${gae.SUB_ROOM}</td>
+					<td class='sub_max'>${gae.SUB_MAX}</td>
+					<td class='sub_min'>${gae.SUB_MIN}</td>
+					<td class='sub_state'>${gae.SUB_STATE}</td>
+					<td class='sub_hak'>${gae.SUB_HAK}</td>
+				</tr>
+			</c:forEach>
 		</table>
 		<br>
 
 		<h3>신청내역</h3>
 		<br>
-		<table id="except">
-			<c:forEach var="shin" items="${shin1}">
-				<tr>
-					<td>신청학점</td>
-					<td>${shin.STU_APPCRE}</td>
-				</tr>
-			</c:forEach>
-		</table>
-		<table class="apply">
+		<table class="apply" id="apply">
 			<tr>
-				<th>수강취소</th>
-				<th>교과목코드</th>
-				<th>교과목명</th>
-				<th>학점</th>
-				<th>교수명</th>
-				<th>이수구분</th>
-				<th>요일</th>
-				<th>시간</th>
+				<th id='select'>수강취소</th>
+				<th id='sub_num'>교과목코드</th>
+				<th id='prof_name'>교수번호</th>
+				<th id='sub_name'>과목명</th>
+				<th id='sub_time'>강의시간(교시)</th>
+				<th id='sub_room'>강의실</th>
+				<th id='sub_max'>최대정원</th>
+				<th id='sub_min'>최소정원</th>
+				<th id='sub_state'>이수구분</th>
+				<th id='sub_hak'>학점</th>
 			</tr>
-			<c:forEach var="shin2" items="${shin2}">
-				<tr>
-					<td>${shin2.CANCEL}</td>
-					<td>${shin2.SUB_NUM}</td>
-					<td>${shin2.SUB_NAME}</td>
-					<td>${shin2.GRA_HAK}</td>
-					<td>${shin2.PROF_NAME}</td>
-					<td>${shin2.SUB_STATE}</td>
-					<td>${shin2.SUB_DAY}</td>
-					<td>${shin2.SUB_TIME}</td>
-				</tr>
-			</c:forEach>
 		</table>
 	</div>
 </body>
+<script>
+	function insertTR(_num) {
+		var html = '';
+		var i = _num;
+
+		var SUB_NUM = $('.sub_num').eq(i).text();
+		var PROF_NAME = $('.prof_name').eq(i).text();
+		var SUB_NAME = $('.sub_name').eq(i).text();
+		var SUB_TIME = $('.sub_time').eq(i).text();
+		var SUB_ROOM = $('.sub_room').eq(i).text();
+		var SUB_MAX = $('.sub_max').eq(i).text();
+		var SUB_MIN = $('.sub_min').eq(i).text();
+		var SUB_STATE = $('.sub_state').eq(i).text();
+		var SUB_HAK = $('.sub_hak').eq(i).text();
+
+		html += '<tr>';
+		html += '<td><button onclick="deleteTR(this)"> 수강취소 </button></td>';
+		html += '<td>' + SUB_NUM + '</td>';
+		html += '<td>' + PROF_NAME + '</td>';
+		html += '<td>' + SUB_NAME + '</td>';
+		html += '<td>' + SUB_TIME + '</td>';
+		html += '<td>' + SUB_ROOM + '</td>';
+		html += '<td>' + SUB_MAX + '</td>';
+		html += '<td>' + SUB_MIN + '</td>';
+		html += '<td>' + SUB_STATE + '</td>';
+		html += '<td>' + SUB_HAK + '</td>';
+		html += '</tr>';
+
+		$("#apply").append(html);
+	}
+	function deleteTR(obj) {
+		var tr = $(obj).parent().parent();
+		tr.remove();
+	}
+</script>
 </html>
