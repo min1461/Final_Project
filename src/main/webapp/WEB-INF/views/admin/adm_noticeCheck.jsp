@@ -48,7 +48,6 @@
 		</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticelist')">목록</button>
 		<input type="submit" value="수정">				
-		<%-- <button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeUpdateForm?ANN_NUM=${ann_VO.ANN_NUM}+ANN_TITLE=${ann_VO.ANN_TITLE}+ANN_CONT=${ann_VO.ANN_CONT}')">수정</button> --%>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('adm_noticeDelete')">삭제</button>
 		</form>
 

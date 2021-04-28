@@ -18,6 +18,7 @@ import com.mgr.kgu.Service.ADM_SCD_Service;
 import com.mgr.kgu.Service.ADM_Service;
 import com.mgr.kgu.Service.DOR_Service;
 import com.mgr.kgu.Service.PEN_Service;
+import com.mgr.kgu.Service.PROF_SCD_Service;
 import com.mgr.kgu.Service.PROF_Service;
 import com.mgr.kgu.Service.STU_Service;
 import com.mgr.kgu.Service.SUB_Service;
@@ -31,6 +32,7 @@ import com.mgr.kgu.VO.SCD_VO;
 import com.mgr.kgu.VO.SCO_VO;
 import com.mgr.kgu.VO.STU_VO;
 import com.mgr.kgu.VO.SUB_VO;
+import com.mgr.kgu.VO.TSCD_VO;
 import com.mgr.kgu.VO.TUI_VO;
 
 /**
@@ -53,6 +55,9 @@ public class HomeController {
 	
 	@Autowired
 	private ADM_SCD_Service adm_scd_Service;
+	
+	@Autowired
+	private PROF_SCD_Service prof_scd_Service;
 
 	@Autowired
 	private PEN_Service pen_Service;
@@ -182,31 +187,38 @@ public class HomeController {
 	// 시험일정 리스트
 	@RequestMapping(value = "/com_pschedulelist")
 	public String com_pschedulelist(HttpSession session, Model model, HttpServletRequest request) {
-		ArrayList<SCD_VO> slist = adm_scd_Service.getAllinfo();
-		session.setAttribute("slist", slist);
+		ArrayList<TSCD_VO> tlist1 = prof_scd_Service.getAllinfo();
+		session.setAttribute("tlist1", tlist1);
 		return "common/com_pschedulelist";
 	}
 
 	// 세부 시험일정
 	@RequestMapping(value = "/com_pscheduleCheck")
-	public String com_pscheduleCheck(@RequestParam(value = "ANN_NUM") String ANN_NUM2, HttpServletRequest request,
+	public String com_pscheduleCheck(@RequestParam(value = "TSCD_NUM") String TSCD_NUM2, HttpServletRequest request,
 			Model model) {
 
-		int SCD_NUM = Integer.valueOf(ANN_NUM2);
-		SCD_VO scd_VO = adm_scd_Service.getTelinfo(SCD_NUM);
-		model.addAttribute("scd_VO", scd_VO);
+		int TSCD_NUM = Integer.valueOf(TSCD_NUM2);
+		TSCD_VO tscd_VO = prof_scd_Service.getTelinfo(TSCD_NUM);
+		model.addAttribute("tscd_VO", tscd_VO);
 		return "common/com_pscheduleCheck";
 	}
 
 	// 교수용 시험일정 리스트
 	@RequestMapping(value = "/prof_schedulelist")
-	public String prof_schedulelist(Model model) {
+	public String prof_schedulelist(HttpSession session, Model model, HttpServletRequest request) {
+		ArrayList<TSCD_VO> tlist = prof_scd_Service.getAllinfo();
+		session.setAttribute("tlist", tlist);
 		return "professor/prof_schedulelist";
 	}
 
 	// 교수용 세부 시험일정
 	@RequestMapping(value = "/prof_scheduleCheck")
-	public String prof_scheduleCheck(Model model) {
+	public String prof_scheduleCheck(@RequestParam(value = "TSCD_NUM") String TSCD_NUM2, HttpServletRequest request,
+			Model model) {
+
+		int TSCD_NUM = Integer.valueOf(TSCD_NUM2);
+		TSCD_VO tscd_VO = prof_scd_Service.getTelinfo(TSCD_NUM);
+		model.addAttribute("tscd_VO", tscd_VO);
 		return "professor/prof_scheduleCheck";
 	}
 
@@ -387,15 +399,28 @@ public class HomeController {
 	}
 
 	// 교수 시험일정 수정
-	@RequestMapping(value = "/prof_scheduleUpdate")
-	public String prof_scheduleUpdate(Model model) {
-		return "professor/prof_scheduleUpdate";
+	@RequestMapping(value = "/prof_scheduleUpdateForm")
+	public String prof_scheduleUpdateForm(HttpSession session, HttpServletRequest request, @RequestParam(value = "TSCD_CONT") String tscd_cont, Model model) {
+		
+		int tscd_num = Integer.valueOf(request.getParameter("TSCD_NUM"));
+		String tscd_title = request.getParameter("TSCD_TITLE");
+		prof_scd_Service.updateinfo(tscd_num, tscd_title, tscd_cont);
+		ArrayList<TSCD_VO> tlist1 = prof_scd_Service.getAllinfo();
+		session.setAttribute("tlist1", tlist1);
+		return "main/prof_main";
 	}
 
 	// 교수 시험일정 입력
 	@RequestMapping(value = "/prof_scheduleInsert")
-	public String prof_scheduleInsert(Model model) {
+	public String prof_scheduleInsert(HttpSession session, Model model) {
 		return "professor/prof_scheduleInsert";
+	}
+	
+	// 교수 시험일정 입력폼
+	@RequestMapping(value = "/prof_scheduleInsertForm")
+	public String prof_scheduleInsertForm(TSCD_VO tscd_VO, Model model) {
+		prof_scd_Service.insertinfo(tscd_VO);
+		return "main/prof_main";
 	}
 
 	// 수강신청 입력

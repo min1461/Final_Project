@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +9,18 @@
 <title>교수용 시험일정 내용</title>
 <script src="./resources/js/jquery-latest.min.js"></script>
 <link href="./resources/css/n_contents.css" rel="stylesheet" type="text/css" >
+<style type="text/css">
+	.text {
+	border:none;
+	width:100%;
+	height:100%;
+}
+</style>
 </head>
 <body>
 <div class="container">
 	<div class="row">
+	<form action="prof_scheduleUpdateForm" method="post">
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; width:100%;">
 			<thead>
 				<tr>
@@ -19,29 +28,29 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach var="profsibo" items="${profsibo1}">
 				<tr>
 					<td style="width: 20%; border:1px solid #dddddd;">제목</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${profsibo.TITLE}</td>
+					<td colspan="2" style="border:1px solid #dddddd;"><input type="text" class="text" name="TSCD_TITLE" value="${tscd_VO.TSCD_TITLE}"></td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성자</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${profsibo.WRITER}</td>
+					<td colspan="2" style="border:1px solid #dddddd;">${tscd_VO.PROF_NAME}</td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">작성일</td>
-					<td colspan="2" style="border:1px solid #dddddd;">${profsibo.WRITERDAY}</td>
+					<td colspan="2" style="border:1px solid #dddddd;"><fmt:formatDate value="${tscd_VO.TSCD_DATE}" pattern="yyyy년 MM월 dd일" /></td>
 				</tr>
 				<tr>
 					<td style="border:1px solid #dddddd;">내용</td>
-					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;">${profsibo.CONTENT}</td>
+					<td colspan="2" style="height: 400px; border:1px solid #dddddd; text-align:left;"><input type="text" class="text" name="TSCD_CONT" value="${tscd_VO.TSCD_CONT}"></td>
+					<input type="hidden" value="${tscd_VO.TSCD_NUM}" name="TSCD_NUM" />
 				</tr>
-			</c:forEach>
 			</tbody>
 		</table>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('prof_schedulelist')">목록</button>
-		<button class="button" href="javascript:void(0);" onclick="btnclick('prof_scheduleUpdate')">수정</button>
+		<input type="submit" value="수정">				
 		<button class="button" href="javascript:void(0);" onclick="btnclick('prof_scheduleDelete')">삭제</button>
+		</form>
 	</div>
 </div>
 

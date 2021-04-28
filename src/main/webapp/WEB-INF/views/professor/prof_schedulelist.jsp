@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,21 +14,21 @@
 <h2 class="title1"> |시험일정</h2>
 	<table class="tabletool1">
 		<tr>
-			<th width="15%">날짜</th>
+			<th width="15%">번호</th>
 			<th width="55%">제목</th>
 			<th width="15%">작성자</th>
 			<th width="15%">작성일</th>
 		</tr>
-		<%-- <c:forEach var="i" items="${}"> --%>
-		<c:forEach var="profsihum" items="${profsihum1}">
-		<tr>
-			<td>${profsihum.DATE}</td>
-			<td><a href="javascript:void(0);" onclick="btnclick('prof_scheduleCheck')">${profsihum.TITLE}</a></td>
-			<td>${profsihum.WRITER}</td>
-			<td>${profsihum.WRITERDAY}</td>
-		</tr>
+		<c:forEach var="tl" items="${tlist}">
+			<tr>
+				<td>${tl.TSCD_NUM} <input name="TSCD_NUM"  type="hidden" value="${tl.TSCD_NUM} " />
+				</td>
+				<td><a href="javascript:void(0);"
+					onclick="btnclick('prof_scheduleCheck?TSCD_NUM=${tl.TSCD_NUM}')">${tl.TSCD_TITLE}</a></td>
+				<td>${tl.PROF_NAME}</td>
+				<td><fmt:formatDate value="${tl.TSCD_DATE}" pattern="yyyy년 MM월 dd일" /></td>
+			</tr>
 		</c:forEach>
-		<%-- </c:forEach> --%>
 	</table>
 	<br>
 		<button class="button" href="javascript:void(0);" onclick="btnclick('prof_scheduleInsert')">글쓰기</button>

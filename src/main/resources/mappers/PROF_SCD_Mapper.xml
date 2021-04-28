@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mgr.kgu.DAO.PROF_SCD_DAO">
+	<insert id="insertinfo">
+		INSERT INTO TESTSCHEDULE(TSCD_TITLE, TSCD_NUM, TSCD_CONT, PROF_NAME, PROF_NUM) VALUES (#{TSCD_TITLE}, #{TSCD_NUM}, #{TSCD_CONT}, #{PROF_NAME}, #{PROF_NUM})
+	</insert>
+	
+	<select id="getAllinfo" resultType="TSCD_VO">
+		SELECT * FROM TESTSCHEDULE ORDER BY TSCD_NUM DESC;
+	</select>
+
+	<select id="getTelinfo" resultType="TSCD_VO">
+		SELECT * FROM TESTSCHEDULE WHERE TSCD_NUM=#{TSCD_NUM}
+	</select>
+
+	<update id="updateinfo">
+		UPDATE TESTSCHEDULE SET TSCD_TITLE=#{TSCD_TITLE}, TSCD_CONT=#{TSCD_CONT} WHERE TSCD_NUM=#{TSCD_NUM}
+	</update>
+	
+	<delete id="deleteinfo">
+		DELETE FROM TESTSCHEDULE WHERE TSCD_NUM=#{TSCD_NUM}
+	</delete>
+</mapper>
