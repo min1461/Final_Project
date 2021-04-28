@@ -52,10 +52,10 @@ public class HomeController {
 
 	@Autowired
 	private ADM_ANN_Service adm_ann_Service;
-	
+
 	@Autowired
 	private ADM_SCD_Service adm_scd_Service;
-	
+
 	@Autowired
 	private PROF_SCD_Service prof_scd_Service;
 
@@ -70,7 +70,6 @@ public class HomeController {
 
 	@Autowired
 	private SUB_Service sub_Service;
-
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -259,17 +258,18 @@ public class HomeController {
 		model.addAttribute("scd_VO", scd_VO);
 		return "admin/adm_scheduleCheck";
 	}
-	
+
 	// 관리자 주요일정 수정
 	@RequestMapping(value = "/adm_scheduleUpdateForm")
-	public String adm_scheduleUpdateForm(HttpSession session, HttpServletRequest request, @RequestParam(value = "SCD_CONT") String scd_cont, Model model) {
-		
+	public String adm_scheduleUpdateForm(HttpSession session, HttpServletRequest request,
+			@RequestParam(value = "SCD_CONT") String scd_cont, Model model) {
+
 		int scd_num = Integer.valueOf(request.getParameter("SCD_NUM"));
 		String scd_title = request.getParameter("SCD_TITLE");
 		adm_scd_Service.updateinfo(scd_num, scd_title, scd_cont);
 		ArrayList<SCD_VO> slist1 = adm_scd_Service.getAllinfo();
 		session.setAttribute("slist1", slist1);
-		
+
 		return "main/adm_main";
 
 	}
@@ -341,21 +341,22 @@ public class HomeController {
 		model.addAttribute("ann_VO", ann_VO);
 		return "admin/adm_noticeUpdate";
 	}
-	
+
 	// 관리자 공지사항 수정
 	@RequestMapping(value = "/adm_noticeUpdateForm")
-	public String adm_noticeUpdateFrom(HttpSession session, HttpServletRequest request, @RequestParam(value = "ANN_CONT") String ann_cont, Model model) {
-		
+	public String adm_noticeUpdateFrom(HttpSession session, HttpServletRequest request,
+			@RequestParam(value = "ANN_CONT") String ann_cont, Model model) {
+
 		int ann_num = Integer.valueOf(request.getParameter("ANN_NUM"));
 		String ann_title = request.getParameter("ANN_TITLE");
 		adm_ann_Service.updateinfo(ann_num, ann_title, ann_cont);
 		ArrayList<ANN_VO> nlist1 = adm_ann_Service.getAllinfo();
 		session.setAttribute("nlist1", nlist1);
-		
+
 		return "main/adm_main";
 
 	}
-	
+
 	// 관리자 공지사항 삭제
 	@RequestMapping(value = "/adm_noticeDelete")
 	public String com_noticeDelete(ANN_VO ann_VO, Model model) {
@@ -374,7 +375,7 @@ public class HomeController {
 	// 관리자 공지사항 입력
 	@RequestMapping(value = "/adm_noticeInsert")
 	public String adm_noticeInsert(HttpSession session, Model model) {
-		
+
 		return "admin/adm_noticeInsert";
 	}
 
@@ -384,7 +385,6 @@ public class HomeController {
 		return "admin/adm_scheduleUpdate";
 	}
 
-	
 	// 관리자 공지사항 입력 폼
 	@RequestMapping(value = "/adm_scheduleInsertForm")
 	public String adm_scheduleInsertForm(SCD_VO scd_VO, Model model) {
@@ -400,8 +400,9 @@ public class HomeController {
 
 	// 교수 시험일정 수정
 	@RequestMapping(value = "/prof_scheduleUpdateForm")
-	public String prof_scheduleUpdateForm(HttpSession session, HttpServletRequest request, @RequestParam(value = "TSCD_CONT") String tscd_cont, Model model) {
-		
+	public String prof_scheduleUpdateForm(HttpSession session, HttpServletRequest request,
+			@RequestParam(value = "TSCD_CONT") String tscd_cont, Model model) {
+
 		int tscd_num = Integer.valueOf(request.getParameter("TSCD_NUM"));
 		String tscd_title = request.getParameter("TSCD_TITLE");
 		prof_scd_Service.updateinfo(tscd_num, tscd_title, tscd_cont);
@@ -415,7 +416,7 @@ public class HomeController {
 	public String prof_scheduleInsert(HttpSession session, Model model) {
 		return "professor/prof_scheduleInsert";
 	}
-	
+
 	// 교수 시험일정 입력폼
 	@RequestMapping(value = "/prof_scheduleInsertForm")
 	public String prof_scheduleInsertForm(TSCD_VO tscd_VO, Model model) {
@@ -433,13 +434,16 @@ public class HomeController {
 
 	// 수강신청 입력 프로세스
 	@RequestMapping(value = "/stu_registerInsertProcess")
-	public String stu_registerInsertProcess(HttpSession session, Model model, HttpServletRequest request) {
-		System.out.println("후앗1");
-		int sub_num = Integer.valueOf(request.getParameter("SUB_NUM"));
-		int stu_num = (int) ((STU_VO) session.getAttribute("sub_VO")).getSTU_NUM();
-		System.out.println("후앗2");
-		sub_Service.subjectInsertProcess(sub_num, stu_num);
-		System.out.println("후앗3");
+	public String stu_registerInsertProcess(HttpSession session, Model model, HttpServletRequest request, int[] arr) {
+		System.out.println("후앗");
+		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
+		int stu_num = stu_vo.getSTU_NUM();
+		System.out.println(stu_num);
+		System.out.println("배열돌아용");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+			sub_Service.subjectInsertProcess(arr[i], stu_num);
+		}
 		return "student/stu_main";
 	}
 
@@ -451,20 +455,20 @@ public class HomeController {
 
 	// 등록금 조회 및 결제
 	@RequestMapping(value = "/stu_tuitionCheck")
-	public String stu_tuitionCheck(HttpSession session, HttpServletRequest request, Model model){
+	public String stu_tuitionCheck(HttpSession session, HttpServletRequest request, Model model) {
 		STU_VO stu_vo = (STU_VO) session.getAttribute("stu_VO");
 		int STU_NUM = stu_vo.getSTU_NUM();
-		ArrayList<TUI_VO> tui_vo = tui_Service.allTuiInfo(STU_NUM); /*반환되는 값tui_vo*/
-		model.addAttribute("tui_VO",tui_vo); //불러올이름, JSP에 있는거랑 이름 가
+		ArrayList<TUI_VO> tui_vo = tui_Service.allTuiInfo(STU_NUM); /* 반환되는 값tui_vo */
+		model.addAttribute("tui_VO", tui_vo); // 불러올이름, JSP에 있는거랑 이름 가
 		return "student/stu_tuitionCheck";
 	}
 
 	// 입사신청 폼
 	@RequestMapping(value = "/stu_joinInsert", method = RequestMethod.POST)
-	public String stu_joinInsert(@ModelAttribute("DOR_VO") DOR_VO DOR_VO,Model model) {	
+	public String stu_joinInsert(@ModelAttribute("DOR_VO") DOR_VO DOR_VO, Model model) {
 		return "student/stu_joinInsert";
 	}
-	
+
 	// 입사신청 insert
 	@RequestMapping(value = "/insertDor")
 	public String insertDor(@ModelAttribute("DOR_VO") DOR_VO DOR_VO, Model model) {
@@ -479,7 +483,7 @@ public class HomeController {
 	}
 
 	// 기숙사배정
-	@RequestMapping(value = "/adm_roomCheck", method=RequestMethod.POST)
+	@RequestMapping(value = "/adm_roomCheck", method = RequestMethod.POST)
 	public String getAllDOR(Model model) {
 		ArrayList<DOR_VO> list2 = dor_Service.getAllDOR();
 		model.addAttribute("gisuk1", list2);

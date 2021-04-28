@@ -21,7 +21,7 @@ public class SUB_ServiceImpl implements SUB_Service {
 	}
 
 	@Override
-	public boolean subjectInsertProcess(int sub_num, int stu_num) {
-		return true;
+	public void subjectInsertProcess(int sub_num, int stu_num) {
+		System.out.println("동작");
 	}
 }
