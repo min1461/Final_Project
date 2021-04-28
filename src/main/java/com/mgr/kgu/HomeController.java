@@ -409,9 +409,12 @@ public class HomeController {
 	// 수강신청 입력 프로세스
 	@RequestMapping(value = "/stu_registerInsertProcess")
 	public String stu_registerInsertProcess(HttpSession session, Model model, HttpServletRequest request) {
+		System.out.println("후앗1");
 		int sub_num = Integer.valueOf(request.getParameter("SUB_NUM"));
 		int stu_num = (int) ((STU_VO) session.getAttribute("sub_VO")).getSTU_NUM();
+		System.out.println("후앗2");
 		sub_Service.subjectInsertProcess(sub_num, stu_num);
+		System.out.println("후앗3");
 		return "student/stu_main";
 	}
 

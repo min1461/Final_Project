@@ -45,7 +45,7 @@
 		</table>
 		<br>
 
-		<h3>신청내역</h3>
+		<h3>예비신청내역</h3>
 		<br>
 		<table class="apply" id="apply">
 			<tr>
@@ -79,7 +79,7 @@
 		var SUB_HAK = $('.sub_hak').eq(i).text();
 
 		html += '<tr>';
-		html += '<td><button onclick="deleteTR(this,'+SUB_NUM+')"> 수강취소 </button></td>';
+		html += '<td><button onclick="deleteTR(this,'+SUB_NUM+','+i+')"> 취소 </button></td>';
 		html += '<td class="addsubnum">' + SUB_NUM + '</td>';
 		html += '<td>' + PROF_NAME + '</td>';
 		html += '<td>' + SUB_NAME + '</td>';
@@ -94,9 +94,10 @@
 		document.getElementById(i).disabled = true;
 		$("#apply").append(html);
 	}
-	function deleteTR(obj,sub_num) {
+	function deleteTR(obj,sub_num,status_num) {
 		var tr = $(obj).parent().parent();
 		tr.remove();
+		document.getElementById(status_num).disabled = false;
 	}
 </script>
 </html>
