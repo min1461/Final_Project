@@ -10,6 +10,6 @@ import com.mgr.kgu.VO.SUB_VO;
 public interface SUB_DAO {
 	ArrayList<SUB_VO> callAllSubject();
 
-	boolean subjectInsertProcess(@Param("sub_num") int sub_num, @Param("stu_num") int stu_num);
+	void subjectInsertProcess(@Param("sub_num") int sub_num, @Param("stu_num") int stu_num);
 
 }
