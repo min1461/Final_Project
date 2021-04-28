@@ -29,7 +29,8 @@
 			</tr>
 			<c:forEach var="gae" items="${sub_VO}" varStatus="status">
 				<tr>
-					<td><button onclick="insertTR('${status.index}')">신청</button></td>
+					<td><button class='insertTR' id='${status.index}'
+							onclick="insertTR('${status.index}')">신청</button></td>
 					<td class='sub_num'>${gae.SUB_NUM}</td>
 					<td class='prof_name'>${gae.PROF_NAME}</td>
 					<td class='sub_name'>${gae.SUB_NAME}</td>
@@ -78,8 +79,8 @@
 		var SUB_HAK = $('.sub_hak').eq(i).text();
 
 		html += '<tr>';
-		html += '<td><button onclick="deleteTR(this)"> 수강취소 </button></td>';
-		html += '<td>' + SUB_NUM + '</td>';
+		html += '<td><button onclick="deleteTR(this,'+SUB_NUM+')"> 수강취소 </button></td>';
+		html += '<td class="addsubnum">' + SUB_NUM + '</td>';
 		html += '<td>' + PROF_NAME + '</td>';
 		html += '<td>' + SUB_NAME + '</td>';
 		html += '<td>' + SUB_TIME + '</td>';
@@ -90,9 +91,10 @@
 		html += '<td>' + SUB_HAK + '</td>';
 		html += '</tr>';
 
+		document.getElementById(i).disabled = true;
 		$("#apply").append(html);
 	}
-	function deleteTR(obj) {
+	function deleteTR(obj,sub_num) {
 		var tr = $(obj).parent().parent();
 		tr.remove();
 	}
